@@ -1346,8 +1346,15 @@
   };
 
   applyFs(); applyTg();
+  /* #demo — seeded state for store screenshots; harmless for real users */
+  if(location.hash.indexOf("#demo")===0 && !state.profile){
+    state.profile={name:"ಅಮ್ಮ",goals:["phone","health"]};
+    ["fw-l0","fw-l1","alpha1-l0","alpha1-l1"].forEach(function(k){ state.done[k]=true; });
+    state.xp=63; state.streak=4; save();
+  }
   if(state.profile){ initContent(); renderPath(); show("path"); }
   else { renderSetup(); show("setup"); }
+  if(location.hash==="#demo-guru" && state.profile){ guruOpen(); }
 })();
 </script>
 <script>

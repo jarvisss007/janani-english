@@ -31,8 +31,15 @@ python3 -m http.server 8080
 # open http://localhost:8080
 ```
 
+## Publishing
+
+Play Store launch kit is ready — see [PLAY_STORE.md](PLAY_STORE.md) for the step-by-step guide.
+Store assets (icon, feature graphic, phone screenshots) live in [store-assets/](store-assets/).
+Privacy policy: [privacy.html](privacy.html).
+
 ## Roadmap
 
-- Curriculum 2.0: ~300 items with grammar patterns (full A1)
+- Google Play release (kit ready — see PLAY_STORE.md)
+- Deeper Level 2–4 content; native-speaker review of Kannada
 - Recorded family voice instead of TTS
-- Google Play release via Trusted Web Activity
+- More languages: Hindi, Tamil, Telugu
