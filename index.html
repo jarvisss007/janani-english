@@ -231,6 +231,20 @@
   .tg.on{background:var(--jade)} .tg i{position:absolute;top:3px;left:3px;width:28px;height:28px;border-radius:50%;background:#fff;transition:left .18s;box-shadow:0 1px 3px rgba(0,0,0,.25)} .tg.on i{left:29px}
   .sheet .reset{margin-top:16px;width:100%;background:#fff;border:2px solid #F2B8B8;color:var(--coral-d);border-radius:14px;padding:14px;font-weight:900}
   .sheet .close{margin-top:10px;width:100%}
+
+  /* ================= GURU CHAT ================= */
+  .guru-wrap{padding:4px 16px 16px;display:flex;flex-direction:column;min-height:72vh}
+  .chat{display:flex;flex-direction:column;gap:10px;padding:8px 0}
+  .bub{max-width:84%;padding:12px 14px;border-radius:18px;font-weight:700;line-height:1.5;white-space:pre-line}
+  .bub.guru{background:var(--silk);color:var(--ink);align-self:flex-start;border-bottom-left-radius:6px;box-shadow:0 4px 14px rgba(0,0,0,.25)}
+  .bub.me{background:linear-gradient(180deg,#FFD98A,var(--gold));color:#4A2F00;align-self:flex-end;border-bottom-right-radius:6px}
+  .guru-choices{display:flex;flex-direction:column;gap:10px;padding:6px 0}
+  .gch{border:1px solid rgba(255,255,255,.18);border-radius:16px;background:rgba(255,255,255,.10);color:#F3E8D2;padding:14px;text-align:left;font-weight:800}
+  .gch:active{background:rgba(255,255,255,.2)}
+  .gch .kn2{display:block;font-size:.8em;opacity:.75;font-weight:600;margin-top:2px}
+  .guru-in{display:flex;gap:8px;align-items:center;margin-top:auto;position:sticky;bottom:0;padding:10px 0 calc(12px + env(safe-area-inset-bottom))}
+  .guru-in input{flex:1;min-width:0;border-radius:14px;border:none;padding:15px 14px;font-size:1rem;font-family:inherit;font-weight:700;color:var(--ink);background:var(--silk)}
+  .keyrow input{width:100%;border-radius:12px;border:2px solid var(--silk-line);padding:12px;font-family:inherit;font-weight:700;background:#fff;color:var(--ink)}
 </style>
 
 <div class="stars"></div><div class="stars2"></div>
@@ -272,6 +286,7 @@
     </div>
     <div style="padding:16px 16px 0">
       <button class="btn3d hidden" id="btnReview" style="width:100%">🏹 ದಿನದ ಅಭ್ಯಾಸ · TODAY'S ABHYASA</button>
+      <button class="btn3d jade" id="btnGuru" style="width:100%;margin-top:12px">🪶 ಗುರು ಜೊತೆ ಮಾತು · PRACTICE CONVERSATION</button>
     </div>
     <div id="pathNodes"></div>
     <div class="journey-end">
@@ -291,6 +306,23 @@
       <div class="fb-msg hidden" id="fbMsg"></div>
       <button class="btn3d" id="btnCheck" disabled>ಪರಿಶೀಲಿಸಿ · CHECK</button>
     </div></div>
+  </div>
+
+  <!-- ================= GURU ================= -->
+  <div class="screen hidden" id="screenGuru">
+    <div class="lesson-top">
+      <button class="quit" id="btnGuruBack" aria-label="Back">←</button>
+      <div class="kn" style="font-weight:900;color:#FFE9BD;font-size:1.05rem">🪶 ಗುರು · Conversation practice</div>
+    </div>
+    <div class="guru-wrap">
+      <div class="chat" id="chatLog"></div>
+      <div class="guru-choices" id="guruChoices"></div>
+      <div class="guru-in hidden" id="guruInRow">
+        <button class="spk" id="btnMic" style="width:54px;height:54px;font-size:1.2rem" aria-label="Speak">🎤</button>
+        <input id="guruText" placeholder="Type in English…" autocomplete="off">
+        <button class="spk" id="btnSend" style="width:54px;height:54px;font-size:1.2rem" aria-label="Send">➤</button>
+      </div>
+    </div>
   </div>
 
   <!-- ================= CELEBRATION ================= -->
@@ -322,6 +354,10 @@
       <button class="tg on" id="tgAccent" role="switch"><i></i></button></div>
     <div class="srow"><div class="lab kn">ಆರಾಮ ಮೋಡ್ (♾ ಹೃದಯ)<span class="en">Relaxed mode — never run out of hearts</span></div>
       <button class="tg on" id="tgRelax" role="switch"><i></i></button></div>
+    <div class="srow" style="flex-direction:column;align-items:stretch;gap:8px">
+      <div class="lab kn">AI ಗುರು (ಐಚ್ಛಿಕ)<span class="en">Claude API key — turns Guru into a live AI tutor. Stays only on this phone.</span></div>
+      <div class="keyrow"><input id="guruKey" type="password" placeholder="sk-ant-…" autocomplete="off"></div>
+    </div>
     <button class="reset kn" id="btnReset">ಪ್ರಗತಿಯನ್ನು ಅಳಿಸಿ · Reset all progress</button>
     <button class="btn3d close kn" id="btnCloseSheet">ಮುಚ್ಚಿ · CLOSE</button>
   </div>
@@ -416,6 +452,29 @@
       {en:"It is cold outside", kn:"ಹೊರಗೆ ಚಳಿ ಇದೆ", pr:"ಇಟ್ ಈಸ್ ಕೋಲ್ಡ್ ಔಟ್‌ಸೈಡ್"},
       {en:"Close the door, please", kn:"ದಯವಿಟ್ಟು ಬಾಗಿಲು ಮುಚ್ಚಿ", pr:"ಕ್ಲೋಸ್ ದ ಡೋರ್, ಪ್ಲೀಸ್"}
     ]},
+    {t:"ಬೇಕು — ಹೇಳುವ ರೀತಿ", e:"Saying what you need", mark:"🍚", words:[
+      {en:"I want water", kn:"ನನಗೆ ನೀರು ಬೇಕು", pr:"ಐ ವಾಂಟ್ ವಾಟರ್"},
+      {en:"I want coffee", kn:"ನನಗೆ ಕಾಫಿ ಬೇಕು", pr:"ಐ ವಾಂಟ್ ಕಾಫಿ"},
+      {en:"I need help", kn:"ನನಗೆ ಸಹಾಯ ಬೇಕು", pr:"ಐ ನೀಡ್ ಹೆಲ್ಪ್"},
+      {en:"I need medicine", kn:"ನನಗೆ ಔಷಧಿ ಬೇಕು", pr:"ಐ ನೀಡ್ ಮೆಡಿಸಿನ್"},
+      {en:"I do not want this", kn:"ನನಗೆ ಇದು ಬೇಡ", pr:"ಐ ಡು ನಾಟ್ ವಾಂಟ್ ದಿಸ್"},
+      {en:"I like tea", kn:"ನನಗೆ ಟೀ ಇಷ್ಟ", pr:"ಐ ಲೈಕ್ ಟೀ"}
+    ]},
+    {t:"ಪ್ರಶ್ನೆಗಳು", e:"Asking questions", mark:"❓", words:[
+      {en:"What is this", kn:"ಇದು ಏನು", pr:"ವಾಟ್ ಈಸ್ ದಿಸ್"},
+      {en:"Where is the bus", kn:"ಬಸ್ ಎಲ್ಲಿದೆ", pr:"ವೇರ್ ಈಸ್ ದ ಬಸ್"},
+      {en:"When will you come", kn:"ನೀನು ಯಾವಾಗ ಬರ್ತೀಯ", pr:"ವೆನ್ ವಿಲ್ ಯೂ ಕಮ್"},
+      {en:"Who is this", kn:"ಇವರು ಯಾರು", pr:"ಹೂ ಈಸ್ ದಿಸ್"},
+      {en:"Can I sit here", kn:"ಇಲ್ಲಿ ಕೂರಬಹುದಾ", pr:"ಕ್ಯಾನ್ ಐ ಸಿಟ್ ಹಿಯರ್"}
+    ]},
+    {t:"ದಿನದ ಕ್ರಿಯೆಗಳು", e:"Everyday verbs", mark:"🚶", words:[
+      {en:"I am going home", kn:"ನಾನು ಮನೆಗೆ ಹೋಗ್ತಿದ್ದೇನೆ", pr:"ಐ ಆಮ್ ಗೋಯಿಂಗ್ ಹೋಮ್"},
+      {en:"Please come here", kn:"ದಯವಿಟ್ಟು ಇಲ್ಲಿ ಬನ್ನಿ", pr:"ಪ್ಲೀಸ್ ಕಮ್ ಹಿಯರ್"},
+      {en:"Please give me that", kn:"ಅದನ್ನು ಕೊಡಿ", pr:"ಪ್ಲೀಸ್ ಗಿವ್ ಮಿ ದಟ್"},
+      {en:"I will take this", kn:"ನಾನು ಇದನ್ನು ತಗೊಳ್ತೇನೆ", pr:"ಐ ವಿಲ್ ಟೇಕ್ ದಿಸ್"},
+      {en:"I am eating", kn:"ನಾನು ಊಟ ಮಾಡ್ತಿದ್ದೇನೆ", pr:"ಐ ಆಮ್ ಈಟಿಂಗ್"},
+      {en:"I am going to sleep", kn:"ನಾನು ಮಲಗ್ತೇನೆ", pr:"ಐ ಆಮ್ ಗೋಯಿಂಗ್ ಟು ಸ್ಲೀಪ್"}
+    ]},
     {t:"ಅಮೆರಿಕದ ದಿನಗಳು", e:"Life in America", mark:"🗽", words:[
       {en:"The weather is nice today", kn:"ಇವತ್ತು ಹವಾ ಚೆನ್ನಾಗಿದೆ", pr:"ದ ವೆದರ್ ಈಸ್ ನೈಸ್ ಟುಡೇ"},
       {en:"I am very happy here", kn:"ನಾನು ಇಲ್ಲಿ ತುಂಬಾ ಖುಷಿಯಾಗಿದ್ದೇನೆ", pr:"ಐ ಆಮ್ ವೆರಿ ಹ್ಯಾಪಿ ಹಿಯರ್"},
@@ -475,7 +534,7 @@
   /* ============================================================ DOM */
   function $(id){ return document.getElementById(id); }
   function esc(s){ return String(s).replace(/[&<>"]/g,function(m){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m];}); }
-  var screens={path:$("screenPath"),lesson:$("screenLesson"),done:$("screenDone")};
+  var screens={path:$("screenPath"),lesson:$("screenLesson"),done:$("screenDone"),guru:$("screenGuru")};
   function show(n){ for(var k in screens) screens[k].classList.toggle("hidden",k!==n); window.scrollTo(0,0); }
   function shuffle(a){ for(var i=a.length-1;i>0;i--){ var j=Math.floor(Math.random()*(i+1)),t=a[i];a[i]=a[j];a[j]=t; } return a; }
   function sample(arr,n,exclude){
@@ -921,10 +980,136 @@
     try{ if(navigator.vibrate) navigator.vibrate(60); }catch(e){}
   }
 
+  /* ============================================================ GURU — conversation practice */
+  var DIALOGS=[
+    {t:"ಅಂಗಡಿಯಲ್ಲಿ", e:"At the shop", steps:[
+      {g:{en:"Hello! How can I help you?",kn:"ನಮಸ್ಕಾರ! ನಿಮಗೆ ಏನು ಬೇಕು?"},
+       c:[{en:"I want rice, please",kn:"ನನಗೆ ಅಕ್ಕಿ ಬೇಕು"},{en:"Do you have milk?",kn:"ಹಾಲು ಇದೆಯಾ?"},{en:"How much is this?",kn:"ಇದು ಎಷ್ಟು?"}]},
+      {g:{en:"Here it is. Anything else?",kn:"ಇಲ್ಲಿದೆ. ಇನ್ನೇನಾದರೂ ಬೇಕಾ?"},
+       c:[{en:"No, thank you",kn:"ಬೇಡ, ಧನ್ಯವಾದ"},{en:"Yes, I want sugar",kn:"ಹೌದು, ಸಕ್ಕರೆ ಬೇಕು"}]},
+      {g:{en:"That is five dollars.",kn:"ಅದು ಐದು ಡಾಲರ್."},
+       c:[{en:"I will pay by card",kn:"ಕಾರ್ಡ್‌ನಲ್ಲಿ ಕೊಡ್ತೇನೆ"},{en:"Here is the money",kn:"ಇಲ್ಲಿದೆ ಹಣ"}]},
+      {g:{en:"Thank you! Have a nice day!",kn:"ಧನ್ಯವಾದ! ಶುಭ ದಿನ!"},
+       c:[{en:"Thank you, goodbye!",kn:"ಧನ್ಯವಾದ, ಹೋಗಿ ಬರ್ತೀನಿ!"}]}
+    ]},
+    {t:"ವೈದ್ಯರ ಬಳಿ", e:"At the doctor", steps:[
+      {g:{en:"Good morning. What is the problem?",kn:"ಶುಭೋದಯ. ಏನು ತೊಂದರೆ?"},
+       c:[{en:"I have pain here",kn:"ಇಲ್ಲಿ ನೋವಿದೆ"},{en:"I am not feeling well",kn:"ಆರೋಗ್ಯ ಸರಿಯಿಲ್ಲ"}]},
+      {g:{en:"Since when?",kn:"ಯಾವಾಗಿನಿಂದ?"},
+       c:[{en:"Since yesterday",kn:"ನಿನ್ನೆಯಿಂದ"},{en:"Since two days",kn:"ಎರಡು ದಿನದಿಂದ"}]},
+      {g:{en:"Take this medicine every day.",kn:"ಈ ಔಷಧಿಯನ್ನು ಪ್ರತಿ ದಿನ ತಗೊಳ್ಳಿ."},
+       c:[{en:"Okay, thank you doctor",kn:"ಸರಿ, ಧನ್ಯವಾದ ಡಾಕ್ಟರ್"}]}
+    ]},
+    {t:"ಮಗನ ಫೋನ್ ಕರೆ", e:"Phone call with your son", steps:[
+      {g:{en:"Hello Amma! Did you eat?",kn:"ಹಲೋ ಅಮ್ಮ! ಊಟ ಆಯ್ತಾ?"},
+       c:[{en:"Yes, I ate",kn:"ಹೌದು, ಊಟ ಆಯ್ತು"},{en:"Not yet, I am cooking",kn:"ಇನ್ನೂ ಇಲ್ಲ, ಅಡುಗೆ ಮಾಡ್ತಿದ್ದೇನೆ"}]},
+      {g:{en:"How are you feeling today?",kn:"ಇವತ್ತು ಹೇಗಿದ್ದೀರಾ?"},
+       c:[{en:"I am fine",kn:"ಚೆನ್ನಾಗಿದ್ದೇನೆ"},{en:"I am a little tired",kn:"ಸ್ವಲ್ಪ ಸುಸ್ತಾಗಿದೆ"}]},
+      {g:{en:"I will call you tomorrow.",kn:"ನಾಳೆ ಫೋನ್ ಮಾಡ್ತೇನೆ."},
+       c:[{en:"Okay. Good night, my son",kn:"ಸರಿ. ಶುಭ ರಾತ್ರಿ, ಮಗನೇ"},{en:"I miss you",kn:"ನಿನ್ನ ನೆನಪು ಆಗ್ತಿದೆ"}]}
+    ]}
+  ];
+  var guruMode=null, gDlg=null, gStep=0, chatHist=[], guruBusy=false;
+  function chatScroll(){ window.scrollTo(0,document.body.scrollHeight); }
+  function guruBubble(txt,sayEn){
+    var d=document.createElement("div"); d.className="bub guru kn"; d.textContent=txt;
+    $("chatLog").appendChild(d); chatScroll();
+    if(sayEn) speak(sayEn);
+  }
+  function meBubble(txt){ var d=document.createElement("div"); d.className="bub me kn"; d.textContent=txt; $("chatLog").appendChild(d); chatScroll(); }
+  function guruOpen(){
+    show("guru"); $("chatLog").innerHTML=""; $("guruChoices").innerHTML=""; chatHist=[];
+    var key=(state.settings.guruKey||"").trim();
+    if(key.length>20){
+      guruMode="ai"; $("guruInRow").classList.remove("hidden");
+      guruBubble("Hello, Akkamma! Let us practice English.\nನಮಸ್ಕಾರ! ಇಂಗ್ಲಿಷ್ ಅಭ್ಯಾಸ ಮಾಡೋಣ. ಏನಾದರೂ ಹೇಳಿ ಅಥವಾ ಕೇಳಿ — 🎤 ಒತ್ತಿ ಮಾತಾಡಬಹುದು.","Hello Akkamma! Let us practice English.");
+    } else {
+      guruMode="script"; $("guruInRow").classList.add("hidden"); guruMenu();
+    }
+  }
+  function guruMenu(){
+    guruBubble("ಯಾವ ಸಂಭಾಷಣೆ ಅಭ್ಯಾಸ ಮಾಡೋಣ?\nWhich conversation shall we practice?");
+    var box=$("guruChoices"); box.innerHTML="";
+    DIALOGS.forEach(function(d){
+      var b=document.createElement("button"); b.className="gch kn";
+      b.innerHTML=esc(d.t)+'<span class="kn2">'+esc(d.e)+'</span>';
+      b.onclick=function(){ gDlg=d; gStep=0; box.innerHTML=""; guruStep(); };
+      box.appendChild(b);
+    });
+  }
+  function guruStep(){
+    if(gStep>=gDlg.steps.length){
+      state.xp+=5; save(); renderHud();
+      guruBubble("ಚೆನ್ನಾಗಿ ಮಾತಾಡಿದಿರಿ! +5 ⭐\nThat is exactly how it sounds in real life.");
+      Sfx.done(); guruMenu(); return;
+    }
+    var st=gDlg.steps[gStep];
+    guruBubble(st.g.en+"\n"+st.g.kn, st.g.en);
+    var box=$("guruChoices"); box.innerHTML="";
+    st.c.forEach(function(ch){
+      var b=document.createElement("button"); b.className="gch kn";
+      b.innerHTML="<b>"+esc(ch.en)+"</b><span class=\"kn2\">"+esc(ch.kn)+"</span>";
+      b.onclick=function(){ box.innerHTML=""; meBubble(ch.en); speak(ch.en); gStep++; setTimeout(guruStep,1400); };
+      box.appendChild(b);
+    });
+  }
+  var GURU_SYS='You are "Guru", a warm patient English tutor for Akkamma, a Kannada-speaking woman in her 50s learning beginner English to live with her son in the USA. Every reply MUST follow this exact format, nothing else: line 1: one short simple English sentence (A1 level, max 8 words). line 2: its Kannada meaning. line 3: the English pronunciation written in Kannada script. If her English had a mistake, your English sentence shows the corrected way to say it. When natural, end with one very simple follow-up question in the same 3-line format. Never write paragraphs. Never use words beyond beginner level.';
+  function guruSendText(){
+    var inp=$("guruText"), txt=inp.value.trim();
+    if(!txt||guruBusy) return;
+    inp.value=""; meBubble(txt);
+    chatHist.push({role:"user",content:txt});
+    guruBusy=true;
+    var typing=document.createElement("div"); typing.className="bub guru kn"; typing.textContent="…"; $("chatLog").appendChild(typing); chatScroll();
+    fetch("https://api.anthropic.com/v1/messages",{
+      method:"POST",
+      headers:{
+        "content-type":"application/json",
+        "x-api-key":(state.settings.guruKey||"").trim(),
+        "anthropic-version":"2023-06-01",
+        "anthropic-dangerous-direct-browser-access":"true"
+      },
+      body:JSON.stringify({model:"claude-haiku-4-5-20251001",max_tokens:300,system:GURU_SYS,messages:chatHist.slice(-12)})
+    }).then(function(r){ if(!r.ok) throw new Error("HTTP "+r.status); return r.json(); })
+    .then(function(j){
+      typing.remove();
+      var t=(j.content&&j.content[0]&&j.content[0].text)||"…";
+      chatHist.push({role:"assistant",content:t});
+      var kIdx=t.search(/[ಀ-೿]/);
+      guruBubble(t, kIdx>0? t.slice(0,kIdx).trim() : t);
+      guruBusy=false;
+    }).catch(function(e){
+      typing.remove(); guruBusy=false;
+      guruBubble("ಕ್ಷಮಿಸಿ — ಇಂಟರ್ನೆಟ್ ಅಥವಾ ಕೀ ಸಮಸ್ಯೆ ("+e.message+").\nPlease check the internet connection, or the API key in Settings.");
+    });
+  }
+  function setupMic(){
+    var SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+    if(!SR){ $("btnMic").style.display="none"; return; }
+    var rec=null;
+    $("btnMic").onclick=function(){
+      try{
+        if(rec){ rec.stop(); rec=null; return; }
+        rec=new SR(); rec.lang="en-IN"; rec.interimResults=false;
+        rec.onresult=function(ev){ var t=ev.results[0][0].transcript; $("guruText").value=t; guruSendText(); };
+        rec.onend=function(){ rec=null; $("btnMic").style.background=""; };
+        $("btnMic").style.background="var(--coral)";
+        rec.start();
+      }catch(e){ rec=null; $("btnMic").style.background=""; }
+    };
+  }
+
   /* ============================================================ WIRING */
   $("btnQuit").onclick=function(){ if(confirm("ಪಾಠ ನಿಲ್ಲಿಸಬೇಕೆ? · Quit this lesson?")){ renderPath(); show("path"); } };
   $("btnDoneNext").onclick=function(){ renderPath(); show("path"); };
   $("btnReview").onclick=function(){ startReview(); };
+  $("btnGuru").onclick=function(){ guruOpen(); };
+  $("btnGuruBack").onclick=function(){ renderPath(); show("path"); };
+  $("btnSend").onclick=function(){ guruSendText(); };
+  $("guruText").addEventListener("keydown",function(e){ if(e.key==="Enter") guruSendText(); });
+  $("guruKey").value=state.settings.guruKey||"";
+  $("guruKey").addEventListener("change",function(){ state.settings.guruKey=$("guruKey").value.trim(); save(); });
+  setupMic();
   $("btnGear").onclick=function(){ $("sheetBg").classList.remove("hidden"); };
   $("btnCloseSheet").onclick=function(){ $("sheetBg").classList.add("hidden"); };
   $("sheetBg").addEventListener("click",function(e){ if(e.target===$("sheetBg")) $("sheetBg").classList.add("hidden"); });
