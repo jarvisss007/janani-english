@@ -3,7 +3,7 @@
 <meta name="theme-color" content="#0D0A20">
 <link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="icon-192.png">
-<title>ಮಹಾಯಾತ್ರೆ · Akkamma's Mahayatra — Learn English</title>
+<title>ಜನನಿ · Janani — English for Amma</title>
 <style>
   :root{
     --sky1:#0D0A20; --sky2:#1B1136; --sky3:#3A1B47; --sky4:#6E2B3F; --horizon:#C97C3F;
@@ -232,6 +232,15 @@
   .sheet .reset{margin-top:16px;width:100%;background:#fff;border:2px solid #F2B8B8;color:var(--coral-d);border-radius:14px;padding:14px;font-weight:900}
   .sheet .close{margin-top:10px;width:100%}
 
+  /* ================= SETUP ================= */
+  .setup-card{margin:10px 16px 30px;background:var(--silk);border-radius:24px;padding:22px 18px;color:var(--ink);box-shadow:0 18px 44px rgba(0,0,0,.4)}
+  .setup-card label{font-weight:900;display:block;margin:16px 0 8px;font-size:calc(1.02rem*var(--fs))}
+  .setup-card label .lab-en{display:block;font-size:calc(.72rem*var(--fs));color:var(--ink-soft);font-weight:700}
+  .setup-card input{width:100%;border:2px solid var(--silk-line);border-radius:14px;padding:15px;font-family:inherit;font-size:calc(1.05rem*var(--fs));font-weight:800;background:#fff;color:var(--ink)}
+  .chips2{display:flex;flex-wrap:wrap;gap:10px;margin-top:4px}
+  .chip2{border:2px solid var(--silk-line);border-radius:999px;background:#fff;padding:11px 16px;font-weight:800;color:var(--ink);font-size:calc(.92rem*var(--fs))}
+  .chip2.on{background:var(--gold);border-color:var(--gold-d);color:#4A2F00}
+
   /* ================= GURU CHAT ================= */
   .guru-wrap{padding:4px 16px 16px;display:flex;flex-direction:column;min-height:72vh}
   .chat{display:flex;flex-direction:column;gap:10px;padding:8px 0}
@@ -281,8 +290,8 @@
         <circle cx="65" cy="65" r="13" fill="url(#gW)"/>
         <circle cx="65" cy="65" r="5" fill="#7A5218"/>
       </svg>
-      <h2 class="kn">ಅಕ್ಕಮ್ಮನ ಮಹಾಯಾತ್ರೆ 🛕 → 🗽</h2>
-      <p class="kn">ಅಭ್ಯಾಸದಿಂದ ಎಲ್ಲವೂ ಸಾಧ್ಯ</p>
+      <h2 class="kn" id="greetTitle">ನಮಸ್ಕಾರ 🌼</h2>
+      <p class="kn">ನಿಮ್ಮ ಮಹಾಯಾತ್ರೆ 🛕 → 🗽 — ಅಭ್ಯಾಸದಿಂದ ಎಲ್ಲವೂ ಸಾಧ್ಯ</p>
     </div>
     <div style="padding:16px 16px 0">
       <button class="btn3d hidden" id="btnReview" style="width:100%">🏹 ದಿನದ ಅಭ್ಯಾಸ · TODAY'S ABHYASA</button>
@@ -308,6 +317,21 @@
     </div></div>
   </div>
 
+  <!-- ================= SETUP (first open) ================= -->
+  <div class="screen hidden" id="screenSetup">
+    <div class="greet">
+      <h2 class="kn" style="color:#FFF3D6">🪷 ಜನನಿ · Janani</h2>
+      <p class="kn">ಅಮ್ಮಂದಿರಿಗಾಗಿ ಇಂಗ್ಲಿಷ್ · English, made for mothers</p>
+    </div>
+    <div class="setup-card">
+      <label class="kn" for="setName">ನಿಮ್ಮ ಹೆಸರು ಏನು?<span class="lab-en">Your name</span></label>
+      <input id="setName" autocomplete="off" placeholder="ಹೆಸರು / Name">
+      <label class="kn">ನಿಮಗೆ ಯಾವುದು ಮುಖ್ಯ? ಎಲ್ಲವನ್ನೂ ಒತ್ತಬಹುದು<span class="lab-en">What matters most? Tap all that apply — these lessons come first</span></label>
+      <div class="chips2" id="goalChips"></div>
+      <button class="btn3d" id="btnSetupGo" style="width:100%;margin-top:20px">ಯಾತ್ರೆ ಶುರು ಮಾಡಿ · BEGIN</button>
+    </div>
+  </div>
+
   <!-- ================= GURU ================= -->
   <div class="screen hidden" id="screenGuru">
     <div class="lesson-top">
@@ -330,7 +354,7 @@
     <div class="complete">
       <span class="confetti">🌼</span><span class="confetti">✨</span><span class="confetti">🌸</span><span class="confetti">⭐</span>
       <div class="burst">🐚</div>
-      <h2 class="kn">ವಿಜಯ, ಅಕ್ಕಮ್ಮ! 🐚</h2>
+      <h2 class="kn" id="doneTitle">ವಿಜಯ! 🐚</h2>
       <div class="sub kn">ಇನ್ನೊಂದು ದೀಪ ಹತ್ತಿತು — ಶಂಖನಾದ! · Another deepa is lit — sound the conch!</div>
       <div class="stat-cards">
         <div class="scard"><div class="in"><div class="cap">XP ⭐</div><div class="val" id="dXp">0</div></div></div>
@@ -358,6 +382,7 @@
       <div class="lab kn">AI ಗುರು (ಐಚ್ಛಿಕ)<span class="en">Claude API key — turns Guru into a live AI tutor. Stays only on this phone.</span></div>
       <div class="keyrow"><input id="guruKey" type="password" placeholder="sk-ant-…" autocomplete="off"></div>
     </div>
+    <button class="reset kn" id="btnProfile" style="border-color:var(--silk-line);color:var(--ink)">ಹೆಸರು / ಗುರಿ ಬದಲಿಸಿ · Edit name &amp; goals</button>
     <button class="reset kn" id="btnReset">ಪ್ರಗತಿಯನ್ನು ಅಳಿಸಿ · Reset all progress</button>
     <button class="btn3d close kn" id="btnCloseSheet">ಮುಚ್ಚಿ · CLOSE</button>
   </div>
@@ -371,8 +396,8 @@
      en=English, kn=Kannada meaning, pr=pronunciation in Kannada script.
      A native speaker should sanity-check the Kannada.
      ============================================================ */
-  var UNITS = [
-    {t:"ಮೊದಲ ಮಾತು", e:"First words", mark:"🛕", words:[
+  var BASE_UNITS = [
+    {id:"fw", t:"ಮೊದಲ ಮಾತು", e:"First words", mark:"🛕", words:[
       {en:"Hello, how are you", kn:"ನಮಸ್ಕಾರ, ಹೇಗಿದ್ದೀರಾ", pr:"ಹಲೋ, ಹೌ ಆರ್ ಯೂ"},
       {en:"I am fine, thank you", kn:"ನಾನು ಚೆನ್ನಾಗಿದ್ದೇನೆ, ಧನ್ಯವಾದ", pr:"ಐ ಆಮ್ ಫೈನ್, ಥ್ಯಾಂಕ್ ಯೂ"},
       {en:"Good morning", kn:"ಶುಭೋದಯ", pr:"ಗುಡ್ ಮಾರ್ನಿಂಗ್"},
@@ -380,15 +405,15 @@
       {en:"Excuse me", kn:"ಸ್ವಲ್ಪ ಕೇಳಿ", pr:"ಎಕ್ಸ್‌ಕ್ಯೂಸ್ ಮಿ"},
       {en:"Nice to meet you", kn:"ನಿಮ್ಮನ್ನು ಭೇಟಿಯಾಗಿ ಸಂತೋಷ", pr:"ನೈಸ್ ಟು ಮೀಟ್ ಯೂ"}
     ]},
-    {t:"ನನ್ನ ಬಗ್ಗೆ", e:"About me", mark:"🏡", words:[
-      {en:"My name is Akkamma", kn:"ನನ್ನ ಹೆಸರು ಅಕ್ಕಮ್ಮ", pr:"ಮೈ ನೇಮ್ ಈಸ್ ಅಕ್ಕಮ್ಮ"},
+    {id:"about", t:"ನನ್ನ ಬಗ್ಗೆ", e:"About me", mark:"🏡", words:[
+      {en:"My name is __NAME__", kn:"ನನ್ನ ಹೆಸರು __NAME__", pr:"ಮೈ ನೇಮ್ ಈಸ್ __NAME__"},
       {en:"I am from India", kn:"ನಾನು ಭಾರತದಿಂದ ಬಂದವಳು", pr:"ಐ ಆಮ್ ಫ್ರಮ್ ಇಂಡಿಯಾ"},
       {en:"I speak Kannada", kn:"ನಾನು ಕನ್ನಡ ಮಾತಾಡ್ತೇನೆ", pr:"ಐ ಸ್ಪೀಕ್ ಕನ್ನಡ"},
       {en:"I am learning English", kn:"ನಾನು ಇಂಗ್ಲಿಷ್ ಕಲಿಯುತ್ತಿದ್ದೇನೆ", pr:"ಐ ಆಮ್ ಲರ್ನಿಂಗ್ ಇಂಗ್ಲಿಷ್"},
       {en:"This is my son", kn:"ಇವನು ನನ್ನ ಮಗ", pr:"ದಿಸ್ ಈಸ್ ಮೈ ಸನ್"},
       {en:"I live with my son", kn:"ನಾನು ನನ್ನ ಮಗನ ಜೊತೆ ಇರುತ್ತೇನೆ", pr:"ಐ ಲಿವ್ ವಿತ್ ಮೈ ಸನ್"}
     ]},
-    {t:"ಸಂಖ್ಯೆ ಮತ್ತು ಸಮಯ", e:"Numbers & time", mark:"🕰️", words:[
+    {id:"num", t:"ಸಂಖ್ಯೆ ಮತ್ತು ಸಮಯ", e:"Numbers & time", mark:"🕰️", words:[
       {en:"two", kn:"ಎರಡು", pr:"ಟೂ"},
       {en:"five", kn:"ಐದು", pr:"ಫೈವ್"},
       {en:"ten", kn:"ಹತ್ತು", pr:"ಟೆನ್"},
@@ -399,7 +424,7 @@
       {en:"tomorrow", kn:"ನಾಳೆ", pr:"ಟುಮಾರೊ"},
       {en:"I will come tomorrow", kn:"ನಾನು ನಾಳೆ ಬರುತ್ತೇನೆ", pr:"ಐ ವಿಲ್ ಕಮ್ ಟುಮಾರೊ"}
     ]},
-    {t:"ಫೋನ್ ಕರೆ", e:"Phone & video call", mark:"📱", words:[
+    {id:"phone", t:"ಫೋನ್ ಕರೆ", e:"Phone & video call", mark:"📱", words:[
       {en:"Can you hear me", kn:"ನನ್ನ ಧ್ವನಿ ಕೇಳಿಸ್ತಿದೆಯಾ", pr:"ಕ್ಯಾನ್ ಯೂ ಹಿಯರ್ ಮಿ"},
       {en:"I can see you", kn:"ನೀನು ಕಾಣಿಸ್ತಿದ್ದೀಯ", pr:"ಐ ಕ್ಯಾನ್ ಸೀ ಯೂ"},
       {en:"Did you eat", kn:"ಊಟ ಆಯ್ತಾ", pr:"ಡಿಡ್ ಯೂ ಈಟ್"},
@@ -407,7 +432,7 @@
       {en:"I will call you back", kn:"ನಾನು ವಾಪಸ್ ಫೋನ್ ಮಾಡ್ತೇನೆ", pr:"ಐ ವಿಲ್ ಕಾಲ್ ಯೂ ಬ್ಯಾಕ್"},
       {en:"The phone is not working", kn:"ಫೋನ್ ಕೆಲಸ ಮಾಡ್ತಿಲ್ಲ", pr:"ದ ಫೋನ್ ಈಸ್ ನಾಟ್ ವರ್ಕಿಂಗ್"}
     ]},
-    {t:"ಸಹಾಯ ಕೇಳಿ", e:"Getting help", mark:"🙏", words:[
+    {id:"help", t:"ಸಹಾಯ ಕೇಳಿ", e:"Getting help", mark:"🙏", words:[
       {en:"Can you help me, please", kn:"ದಯವಿಟ್ಟು ನನಗೆ ಸಹಾಯ ಮಾಡ್ತೀರಾ", pr:"ಕ್ಯಾನ್ ಯೂ ಹೆಲ್ಪ್ ಮಿ, ಪ್ಲೀಸ್"},
       {en:"I do not understand", kn:"ನನಗೆ ಅರ್ಥ ಆಗ್ತಿಲ್ಲ", pr:"ಐ ಡು ನಾಟ್ ಅಂಡರ್‌ಸ್ಟ್ಯಾಂಡ್"},
       {en:"Please speak slowly", kn:"ದಯವಿಟ್ಟು ನಿಧಾನವಾಗಿ ಮಾತಾಡಿ", pr:"ಪ್ಲೀಸ್ ಸ್ಪೀಕ್ ಸ್ಲೋಲಿ"},
@@ -416,7 +441,7 @@
       {en:"Where is the bathroom", kn:"ಶೌಚಾಲಯ ಎಲ್ಲಿದೆ", pr:"ವೇರ್ ಈಸ್ ದ ಬಾತ್‌ರೂಮ್"},
       {en:"I am lost", kn:"ನಾನು ದಾರಿ ತಪ್ಪಿದ್ದೇನೆ", pr:"ಐ ಆಮ್ ಲಾಸ್ಟ್"}
     ]},
-    {t:"ವಿಮಾನ ಪ್ರಯಾಣ", e:"Airport & travel", mark:"✈️", words:[
+    {id:"air", t:"ವಿಮಾನ ಪ್ರಯಾಣ", e:"Airport & travel", mark:"✈️", words:[
       {en:"Passport", kn:"ಪಾಸ್‌ಪೋರ್ಟ್", pr:"ಪಾಸ್‌ಪೋರ್ಟ್"},
       {en:"Here is my passport", kn:"ಇದು ನನ್ನ ಪಾಸ್‌ಪೋರ್ಟ್", pr:"ಹಿಯರ್ ಈಸ್ ಮೈ ಪಾಸ್‌ಪೋರ್ಟ್"},
       {en:"I am visiting my son", kn:"ನನ್ನ ಮಗನನ್ನು ನೋಡಲು ಬಂದಿದ್ದೇನೆ", pr:"ಐ ಆಮ್ ವಿಸಿಟಿಂಗ್ ಮೈ ಸನ್"},
@@ -426,7 +451,7 @@
       {en:"My bag is missing", kn:"ನನ್ನ ಬ್ಯಾಗ್ ಕಾಣ್ತಿಲ್ಲ", pr:"ಮೈ ಬ್ಯಾಗ್ ಈಸ್ ಮಿಸ್ಸಿಂಗ್"},
       {en:"Please call my son", kn:"ದಯವಿಟ್ಟು ನನ್ನ ಮಗನಿಗೆ ಫೋನ್ ಮಾಡಿ", pr:"ಪ್ಲೀಸ್ ಕಾಲ್ ಮೈ ಸನ್"}
     ]},
-    {t:"ಅಂಗಡಿ ಮತ್ತು ಹಣ", e:"Shopping & money", mark:"🛒", words:[
+    {id:"shop", t:"ಅಂಗಡಿ ಮತ್ತು ಹಣ", e:"Shopping & money", mark:"🛒", words:[
       {en:"How much is this", kn:"ಇದು ಎಷ್ಟು", pr:"ಹೌ ಮಚ್ ಈಸ್ ದಿಸ್"},
       {en:"That is too expensive", kn:"ಅದು ತುಂಬಾ ದುಬಾರಿ", pr:"ದಟ್ ಈಸ್ ಟೂ ಎಕ್ಸ್‌ಪೆನ್ಸಿವ್"},
       {en:"Where is the milk", kn:"ಹಾಲು ಎಲ್ಲಿದೆ", pr:"ವೇರ್ ಈಸ್ ದ ಮಿಲ್ಕ್"},
@@ -434,7 +459,7 @@
       {en:"I will pay by card", kn:"ನಾನು ಕಾರ್ಡ್‌ನಲ್ಲಿ ಕೊಡ್ತೇನೆ", pr:"ಐ ವಿಲ್ ಪೇ ಬೈ ಕಾರ್ಡ್"},
       {en:"Can I get a bag", kn:"ಒಂದು ಚೀಲ ಕೊಡ್ತೀರಾ", pr:"ಕ್ಯಾನ್ ಐ ಗೆಟ್ ಎ ಬ್ಯಾಗ್"}
     ]},
-    {t:"ಆರೋಗ್ಯ", e:"Doctor & health", mark:"🩺", words:[
+    {id:"health", t:"ಆರೋಗ್ಯ", e:"Doctor & health", mark:"🩺", words:[
       {en:"Doctor", kn:"ವೈದ್ಯರು", pr:"ಡಾಕ್ಟರ್"},
       {en:"Medicine", kn:"ಔಷಧಿ", pr:"ಮೆಡಿಸಿನ್"},
       {en:"I need a doctor", kn:"ನನಗೆ ವೈದ್ಯರು ಬೇಕು", pr:"ಐ ನೀಡ್ ಎ ಡಾಕ್ಟರ್"},
@@ -444,7 +469,7 @@
       {en:"Where is the pharmacy", kn:"ಔಷಧಿ ಅಂಗಡಿ ಎಲ್ಲಿದೆ", pr:"ವೇರ್ ಈಸ್ ದ ಫಾರ್ಮಸಿ"},
       {en:"It is an emergency", kn:"ಇದು ತುರ್ತು ಪರಿಸ್ಥಿತಿ", pr:"ಇಟ್ ಈಸ್ ಆನ್ ಇಮರ್ಜೆನ್ಸಿ"}
     ]},
-    {t:"ಮನೆಯಲ್ಲಿ", e:"At home", mark:"🏠", words:[
+    {id:"home", t:"ಮನೆಯಲ್ಲಿ", e:"At home", mark:"🏠", words:[
       {en:"I am cooking dinner", kn:"ನಾನು ಅಡುಗೆ ಮಾಡ್ತಿದ್ದೇನೆ", pr:"ಐ ಆಮ್ ಕುಕಿಂಗ್ ಡಿನ್ನರ್"},
       {en:"Come, eat food", kn:"ಬಾ, ಊಟ ಮಾಡು", pr:"ಕಮ್, ಈಟ್ ಫುಡ್"},
       {en:"The food is very tasty", kn:"ಊಟ ತುಂಬಾ ರುಚಿಯಾಗಿದೆ", pr:"ದ ಫುಡ್ ಈಸ್ ವೆರಿ ಟೇಸ್ಟಿ"},
@@ -452,7 +477,7 @@
       {en:"It is cold outside", kn:"ಹೊರಗೆ ಚಳಿ ಇದೆ", pr:"ಇಟ್ ಈಸ್ ಕೋಲ್ಡ್ ಔಟ್‌ಸೈಡ್"},
       {en:"Close the door, please", kn:"ದಯವಿಟ್ಟು ಬಾಗಿಲು ಮುಚ್ಚಿ", pr:"ಕ್ಲೋಸ್ ದ ಡೋರ್, ಪ್ಲೀಸ್"}
     ]},
-    {t:"ಬೇಕು — ಹೇಳುವ ರೀತಿ", e:"Saying what you need", mark:"🍚", words:[
+    {id:"want", t:"ಬೇಕು — ಹೇಳುವ ರೀತಿ", e:"Saying what you need", mark:"🍚", words:[
       {en:"I want water", kn:"ನನಗೆ ನೀರು ಬೇಕು", pr:"ಐ ವಾಂಟ್ ವಾಟರ್"},
       {en:"I want coffee", kn:"ನನಗೆ ಕಾಫಿ ಬೇಕು", pr:"ಐ ವಾಂಟ್ ಕಾಫಿ"},
       {en:"I need help", kn:"ನನಗೆ ಸಹಾಯ ಬೇಕು", pr:"ಐ ನೀಡ್ ಹೆಲ್ಪ್"},
@@ -460,14 +485,14 @@
       {en:"I do not want this", kn:"ನನಗೆ ಇದು ಬೇಡ", pr:"ಐ ಡು ನಾಟ್ ವಾಂಟ್ ದಿಸ್"},
       {en:"I like tea", kn:"ನನಗೆ ಟೀ ಇಷ್ಟ", pr:"ಐ ಲೈಕ್ ಟೀ"}
     ]},
-    {t:"ಪ್ರಶ್ನೆಗಳು", e:"Asking questions", mark:"❓", words:[
+    {id:"q", t:"ಪ್ರಶ್ನೆಗಳು", e:"Asking questions", mark:"❓", words:[
       {en:"What is this", kn:"ಇದು ಏನು", pr:"ವಾಟ್ ಈಸ್ ದಿಸ್"},
       {en:"Where is the bus", kn:"ಬಸ್ ಎಲ್ಲಿದೆ", pr:"ವೇರ್ ಈಸ್ ದ ಬಸ್"},
       {en:"When will you come", kn:"ನೀನು ಯಾವಾಗ ಬರ್ತೀಯ", pr:"ವೆನ್ ವಿಲ್ ಯೂ ಕಮ್"},
       {en:"Who is this", kn:"ಇವರು ಯಾರು", pr:"ಹೂ ಈಸ್ ದಿಸ್"},
       {en:"Can I sit here", kn:"ಇಲ್ಲಿ ಕೂರಬಹುದಾ", pr:"ಕ್ಯಾನ್ ಐ ಸಿಟ್ ಹಿಯರ್"}
     ]},
-    {t:"ದಿನದ ಕ್ರಿಯೆಗಳು", e:"Everyday verbs", mark:"🚶", words:[
+    {id:"verb", t:"ದಿನದ ಕ್ರಿಯೆಗಳು", e:"Everyday verbs", mark:"🚶", words:[
       {en:"I am going home", kn:"ನಾನು ಮನೆಗೆ ಹೋಗ್ತಿದ್ದೇನೆ", pr:"ಐ ಆಮ್ ಗೋಯಿಂಗ್ ಹೋಮ್"},
       {en:"Please come here", kn:"ದಯವಿಟ್ಟು ಇಲ್ಲಿ ಬನ್ನಿ", pr:"ಪ್ಲೀಸ್ ಕಮ್ ಹಿಯರ್"},
       {en:"Please give me that", kn:"ಅದನ್ನು ಕೊಡಿ", pr:"ಪ್ಲೀಸ್ ಗಿವ್ ಮಿ ದಟ್"},
@@ -475,7 +500,7 @@
       {en:"I am eating", kn:"ನಾನು ಊಟ ಮಾಡ್ತಿದ್ದೇನೆ", pr:"ಐ ಆಮ್ ಈಟಿಂಗ್"},
       {en:"I am going to sleep", kn:"ನಾನು ಮಲಗ್ತೇನೆ", pr:"ಐ ಆಮ್ ಗೋಯಿಂಗ್ ಟು ಸ್ಲೀಪ್"}
     ]},
-    {t:"ಅಮೆರಿಕದ ದಿನಗಳು", e:"Life in America", mark:"🗽", words:[
+    {id:"usa", t:"ಅಮೆರಿಕದ ದಿನಗಳು", e:"Life in America", mark:"🗽", words:[
       {en:"The weather is nice today", kn:"ಇವತ್ತು ಹವಾ ಚೆನ್ನಾಗಿದೆ", pr:"ದ ವೆದರ್ ಈಸ್ ನೈಸ್ ಟುಡೇ"},
       {en:"I am very happy here", kn:"ನಾನು ಇಲ್ಲಿ ತುಂಬಾ ಖುಷಿಯಾಗಿದ್ದೇನೆ", pr:"ಐ ಆಮ್ ವೆರಿ ಹ್ಯಾಪಿ ಹಿಯರ್"},
       {en:"Have a nice day", kn:"ಶುಭ ದಿನವಾಗಲಿ", pr:"ಹ್ಯಾವ್ ಎ ನೈಸ್ ಡೇ"},
@@ -486,25 +511,39 @@
     ]}
   ];
 
-  /* English alphabet — reading letters is the long-term unlock */
-  (function(){
-    var names={A:"ಎ",B:"ಬಿ",C:"ಸಿ",D:"ಡಿ",E:"ಇ",F:"ಎಫ್",G:"ಜಿ",H:"ಎಚ್",I:"ಐ",J:"ಜೆ",K:"ಕೆ",L:"ಎಲ್",M:"ಎಂ",N:"ಎನ್",O:"ಓ",P:"ಪಿ",Q:"ಕ್ಯೂ",R:"ಆರ್",S:"ಎಸ್",T:"ಟಿ",U:"ಯು",V:"ವಿ",W:"ಡಬ್ಲ್ಯು",X:"ಎಕ್ಸ್",Y:"ವೈ",Z:"ಜ಼ೀ"};
-    function letterWords(s){ return s.split("").map(function(L){ return {en:L, kn:names[L], pr:names[L], _alpha:true}; }); }
-    UNITS.splice(1,0,{t:"ಇಂಗ್ಲಿಷ್ ಅಕ್ಷರಗಳು ೧", e:"Letters A–M", mark:"🔤", alpha:true, words:letterWords("ABCDEFGHIJKLM")});
-    UNITS.splice(4,0,{t:"ಇಂಗ್ಲಿಷ್ ಅಕ್ಷರಗಳು ೨", e:"Letters N–Z", mark:"🔡", alpha:true, words:letterWords("NOPQRSTUVWXYZ")});
-  })();
-
-  var LESSONS = [];
-  UNITS.forEach(function(u, ui){
-    var per=3, w=u.words, i;
-    for(i=0;i<w.length;i+=per){
-      var chunk=w.slice(i,i+per);
-      if(i>0) chunk=chunk.concat([w[i-1]]);
-      LESSONS.push({ui:ui, words:chunk, key:"u"+ui+"l"+(i/per|0)});
-    }
-  });
-  var ALLWORDS=[];
-  UNITS.forEach(function(u){ u.words.forEach(function(w){ ALLWORDS.push(w); }); });
+  /* Content is built per person: name spliced in, goal units promoted. */
+  var UNITS=[], LESSONS=[], ALLWORDS=[];
+  var LETTER_NAMES={A:"ಎ",B:"ಬಿ",C:"ಸಿ",D:"ಡಿ",E:"ಇ",F:"ಎಫ್",G:"ಜಿ",H:"ಎಚ್",I:"ಐ",J:"ಜೆ",K:"ಕೆ",L:"ಎಲ್",M:"ಎಂ",N:"ಎನ್",O:"ಓ",P:"ಪಿ",Q:"ಕ್ಯೂ",R:"ಆರ್",S:"ಎಸ್",T:"ಟಿ",U:"ಯು",V:"ವಿ",W:"ಡಬ್ಲ್ಯು",X:"ಎಕ್ಸ್",Y:"ವೈ",Z:"ಜ಼ೀ"};
+  function letterWords(s){ return s.split("").map(function(L){ return {en:L, kn:LETTER_NAMES[L], pr:LETTER_NAMES[L], _alpha:true}; }); }
+  function nameize(w,name){
+    if(w.en.indexOf("__NAME__")===-1) return w;
+    return {en:w.en.split("__NAME__").join(name), kn:w.kn.split("__NAME__").join(name), pr:w.pr.split("__NAME__").join(name)};
+  }
+  function profName(){ return (state.profile&&state.profile.name)||"ಅಮ್ಮ"; }
+  function initContent(){
+    var name=profName();
+    var goals=(state.profile&&state.profile.goals)||[];
+    UNITS=BASE_UNITS.map(function(u){
+      return {id:u.id,t:u.t,e:u.e,mark:u.mark,words:u.words.map(function(w){ return nameize(w,name); })};
+    });
+    UNITS.splice(1,0,{id:"alpha1", t:"ಇಂಗ್ಲಿಷ್ ಅಕ್ಷರಗಳು ೧", e:"Letters A–M", mark:"🔤", alpha:true, words:letterWords("ABCDEFGHIJKLM")});
+    UNITS.splice(4,0,{id:"alpha2", t:"ಇಂಗ್ಲಿಷ್ ಅಕ್ಷರಗಳು ೨", e:"Letters N–Z", mark:"🔡", alpha:true, words:letterWords("NOPQRSTUVWXYZ")});
+    var order=["fw","alpha1","about"];
+    goals.forEach(function(g){ if(order.indexOf(g)===-1&&g!=="usa") order.push(g); });
+    UNITS.forEach(function(u){ if(order.indexOf(u.id)===-1&&u.id!=="usa") order.push(u.id); });
+    order.push("usa");
+    UNITS.sort(function(a,b){ return order.indexOf(a.id)-order.indexOf(b.id); });
+    LESSONS=[]; ALLWORDS=[];
+    UNITS.forEach(function(u, ui){
+      var per=3, w=u.words, i;
+      for(i=0;i<w.length;i+=per){
+        var chunk=w.slice(i,i+per);
+        if(i>0) chunk=chunk.concat([w[i-1]]);
+        LESSONS.push({ui:ui, words:chunk, key:u.id+"-l"+(i/per|0)});
+      }
+      u.words.forEach(function(w2){ ALLWORDS.push(w2); });
+    });
+  }
 
   /* ============================================================ STATE */
   var KEY="janani.gili.v4", DAY=86400000;
@@ -512,7 +551,12 @@
   function load(){
     var s; try{ s=JSON.parse(localStorage.getItem(KEY)); }catch(e){ s=null; }
     if(!s||typeof s!=="object") s={};
-    s.done=s.done||{}; s.words=s.words||{}; s.xp=s.xp||0; s.streak=s.streak||0; s.lastDay=s.lastDay||null;
+    s.done=s.done||{}; s.words=s.words||{}; s.xp=s.xp||0;
+    s.profile=s.profile||null;
+    var LEGACY=["fw","alpha1","about","num","alpha2","phone","help","air","shop","health","home","want","q","verb","usa"];
+    var nd={}, dk, dm;
+    for(dk in s.done){ dm=dk.match(/^u(\d+)l(\d+)$/); nd[dm? (LEGACY[+dm[1]]||dk)+"-l"+dm[2] : dk]=s.done[dk]; }
+    s.done=nd; s.streak=s.streak||0; s.lastDay=s.lastDay||null;
     s.settings=s.settings||{fs:1,slow:true,relax:true,music:true,accentIn:true};
     if(typeof s.settings.relax==="undefined") s.settings.relax=true;
     if(typeof s.settings.music==="undefined") s.settings.music=true;
@@ -534,7 +578,7 @@
   /* ============================================================ DOM */
   function $(id){ return document.getElementById(id); }
   function esc(s){ return String(s).replace(/[&<>"]/g,function(m){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m];}); }
-  var screens={path:$("screenPath"),lesson:$("screenLesson"),done:$("screenDone"),guru:$("screenGuru")};
+  var screens={path:$("screenPath"),lesson:$("screenLesson"),done:$("screenDone"),guru:$("screenGuru"),setup:$("screenSetup")};
   function show(n){ for(var k in screens) screens[k].classList.toggle("hidden",k!==n); window.scrollTo(0,0); }
   function shuffle(a){ for(var i=a.length-1;i>0;i--){ var j=Math.floor(Math.random()*(i+1)),t=a[i];a[i]=a[j];a[j]=t; } return a; }
   function sample(arr,n,exclude){
@@ -664,6 +708,7 @@
   /* ============================================================ MAP RENDER */
   function renderPath(){
     renderHud();
+    $("greetTitle").textContent="ನಮಸ್ಕಾರ, "+profName()+" 🌼";
     var html="";
     UNITS.forEach(function(u,ui){
       var uLessons=LESSONS.filter(function(l){return l.ui===ui;});
@@ -973,6 +1018,7 @@
     if(curLessonKey!=="__review__" && !state.done[curLessonKey]){ state.done[curLessonKey]=true; }
     state.xp+=sessionXp;
     bumpStreak(); save();
+    $("doneTitle").textContent="ವಿಜಯ, "+profName()+"! 🐚";
     $("dXp").textContent="+"+sessionXp;
     $("dStreak").textContent=state.streak;
     Sfx.done();
@@ -1022,7 +1068,7 @@
     var key=(state.settings.guruKey||"").trim();
     if(key.length>20){
       guruMode="ai"; $("guruInRow").classList.remove("hidden");
-      guruBubble("Hello, Akkamma! Let us practice English.\nನಮಸ್ಕಾರ! ಇಂಗ್ಲಿಷ್ ಅಭ್ಯಾಸ ಮಾಡೋಣ. ಏನಾದರೂ ಹೇಳಿ ಅಥವಾ ಕೇಳಿ — 🎤 ಒತ್ತಿ ಮಾತಾಡಬಹುದು.","Hello Akkamma! Let us practice English.");
+      guruBubble("Hello, "+profName()+"! Let us practice English.\nನಮಸ್ಕಾರ! ಇಂಗ್ಲಿಷ್ ಅಭ್ಯಾಸ ಮಾಡೋಣ. ಏನಾದರೂ ಹೇಳಿ ಅಥವಾ ಕೇಳಿ — 🎤 ಒತ್ತಿ ಮಾತಾಡಬಹುದು.","Hello! Let us practice English.");
     } else {
       guruMode="script"; $("guruInRow").classList.add("hidden"); guruMenu();
     }
@@ -1053,7 +1099,7 @@
       box.appendChild(b);
     });
   }
-  var GURU_SYS='You are "Guru", a warm patient English tutor for Akkamma, a Kannada-speaking woman in her 50s learning beginner English to live with her son in the USA. Every reply MUST follow this exact format, nothing else: line 1: one short simple English sentence (A1 level, max 8 words). line 2: its Kannada meaning. line 3: the English pronunciation written in Kannada script. If her English had a mistake, your English sentence shows the corrected way to say it. When natural, end with one very simple follow-up question in the same 3-line format. Never write paragraphs. Never use words beyond beginner level.';
+  function guruSys(){ return 'You are "Guru", a warm patient English tutor for '+profName()+', a Kannada-speaking mother learning beginner English to live with her son in the USA. Every reply MUST follow this exact format, nothing else: line 1: one short simple English sentence (A1 level, max 8 words). line 2: its Kannada meaning. line 3: the English pronunciation written in Kannada script. If her English had a mistake, your English sentence shows the corrected way to say it. When natural, end with one very simple follow-up question in the same 3-line format. Never write paragraphs. Never use words beyond beginner level.'; }
   function guruSendText(){
     var inp=$("guruText"), txt=inp.value.trim();
     if(!txt||guruBusy) return;
@@ -1069,7 +1115,7 @@
         "anthropic-version":"2023-06-01",
         "anthropic-dangerous-direct-browser-access":"true"
       },
-      body:JSON.stringify({model:"claude-haiku-4-5-20251001",max_tokens:300,system:GURU_SYS,messages:chatHist.slice(-12)})
+      body:JSON.stringify({model:"claude-haiku-4-5-20251001",max_tokens:300,system:guruSys(),messages:chatHist.slice(-12)})
     }).then(function(r){ if(!r.ok) throw new Error("HTTP "+r.status); return r.json(); })
     .then(function(j){
       typing.remove();
@@ -1133,7 +1179,45 @@
     }
   };
 
-  applyFs(); applyTg(); renderPath(); show("path");
+  /* ============================================================ ONBOARDING */
+  var GOALS=[
+    {id:"air",   kn:"ವಿಮಾನ ಪ್ರಯಾಣ", en:"Travel"},
+    {id:"phone", kn:"ಫೋನ್ ಕರೆ", en:"Phone calls"},
+    {id:"health",kn:"ಆರೋಗ್ಯ", en:"Doctor"},
+    {id:"shop",  kn:"ಅಂಗಡಿ", en:"Shopping"},
+    {id:"home",  kn:"ಮನೆ", en:"Home"},
+    {id:"want",  kn:"ಕೇಳುವುದು", en:"Asking for things"}
+  ];
+  var setupSel=[];
+  function renderSetup(){
+    setupSel=(state.profile&&state.profile.goals)? state.profile.goals.slice() : [];
+    $("setName").value=(state.profile&&state.profile.name)||"";
+    var box=$("goalChips"); box.innerHTML="";
+    GOALS.forEach(function(g){
+      var b=document.createElement("button"); b.className="chip2 kn"+(setupSel.indexOf(g.id)>-1?" on":"");
+      b.textContent=g.kn+" · "+g.en;
+      b.onclick=function(){
+        var i=setupSel.indexOf(g.id);
+        if(i>-1) setupSel.splice(i,1); else setupSel.push(g.id);
+        b.classList.toggle("on", i===-1);
+      };
+      box.appendChild(b);
+    });
+  }
+  $("btnSetupGo").onclick=function(){
+    var nm=$("setName").value.trim()||"ಅಮ್ಮ";
+    state.profile={name:nm, goals:setupSel.slice()};
+    save();
+    initContent(); renderPath(); show("path");
+  };
+  $("btnProfile").onclick=function(){
+    $("sheetBg").classList.add("hidden");
+    renderSetup(); show("setup");
+  };
+
+  applyFs(); applyTg();
+  if(state.profile){ initContent(); renderPath(); show("path"); }
+  else { renderSetup(); show("setup"); }
 })();
 </script>
 <script>

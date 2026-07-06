@@ -1,7 +1,7 @@
 {
-  "name": "ಜನನಿ · Akkamma's Mahayatra — Learn English",
+  "name": "ಜನನಿ · Janani — English for Amma",
   "short_name": "ಜನನಿ Janani",
-  "description": "A Kannada-first English course: parvas, daily abhyasa, adaptive review.",
+  "description": "English for Kannada-speaking mothers: personalized parvas, daily abhyasa, adaptive review.",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",

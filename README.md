@@ -1,6 +1,6 @@
-# ಜನನಿ · Janani — Akkamma's Mahayatra
+# ಜನನಿ · Janani — English for Amma
 
-A Kannada-first English course built for one learner: my mother, moving from Karnataka to the U.S.
+A Kannada-first English course for mothers. Built originally for my own mother moving from Karnataka to the U.S. — now personalized for any learner: enter your name, choose what matters to you (travel, doctor, phone calls, shopping…), and the course reshapes itself around your goals and learns from every answer you give.
 
 **Live app:** https://jarvisss007.github.io/janani-english/
 
