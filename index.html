@@ -66,6 +66,9 @@
     0%{transform:translateY(-4vh) rotate(0deg)}
     100%{transform:translateY(108vh) rotate(340deg)}
   }
+  .bg-om{position:fixed;left:-16px;top:17%;width:170px;opacity:.09;z-index:0;pointer-events:none}
+  .bg-ganesha{position:fixed;right:-30px;top:30%;width:220px;opacity:.12;z-index:0;pointer-events:none;filter:drop-shadow(0 0 30px rgba(224,177,94,.25))}
+  .bg-gopuram{position:fixed;bottom:0;left:0;width:100%;height:110px;opacity:.65;z-index:0;pointer-events:none}
   @media (prefers-reduced-motion:reduce){
     .stars,.stars2,.petal,.cloud,.node .bubble,.mascot{animation:none!important}
     *{transition:none!important}
@@ -114,13 +117,15 @@
 
   .nodes{display:flex;flex-direction:column;align-items:center;gap:14px;padding:18px 0 6px;position:relative}
   .node{position:relative;display:flex;flex-direction:column;align-items:center}
-  .node .bubble{width:76px;height:70px;border-radius:50%;display:grid;place-items:center;font-size:1.9rem;border:none;color:#fff;position:relative}
+  .node .bubble{width:62px;height:62px;border-radius:18px;transform:rotate(45deg);display:grid;place-items:center;
+    font-size:1.65rem;border:2px solid rgba(255,243,214,.35);color:#fff;position:relative;margin:9px}
+  .node .bubble .ico{transform:rotate(-45deg);display:block}
   .node.active .bubble{background:radial-gradient(circle at 35% 30%,#FFE1A0,var(--gold) 60%,#E8A21F);
     box-shadow:0 7px 0 var(--gold-d),0 0 34px var(--gold-glow);animation:lantern 2.2s ease-in-out infinite}
   @keyframes lantern{0%,100%{box-shadow:0 7px 0 var(--gold-d),0 0 22px var(--gold-glow)}50%{box-shadow:0 7px 0 var(--gold-d),0 0 44px var(--gold-glow)}}
   .node.done .bubble{background:radial-gradient(circle at 35% 30%,#8FF0D8,var(--jade) 65%);box-shadow:0 7px 0 var(--jade-d),0 0 18px rgba(46,196,160,.35)}
   .node.locked .bubble{background:rgba(255,255,255,.1);box-shadow:0 7px 0 rgba(0,0,0,.28);color:rgba(255,255,255,.4);border:1px solid rgba(255,255,255,.12)}
-  .node .bubble:active{transform:translateY(4px)}
+  .node .bubble:active{transform:rotate(45deg) translateY(4px)}
   .nodes .node:nth-child(6n+2){margin-left:104px}
   .nodes .node:nth-child(6n+3){margin-left:158px}
   .nodes .node:nth-child(6n+4){margin-left:104px}
@@ -264,6 +269,31 @@
 <div class="cloud c1"><b></b><b></b><b></b></div>
 <div class="cloud c2"><b></b><b></b><b></b></div>
 <span class="petal">🌼</span><span class="petal">🌸</span><span class="petal">🌼</span><span class="petal">✨</span>
+
+<svg class="bg-om" viewBox="0 0 220 200" aria-hidden="true"><text x="10" y="150" font-size="140" font-weight="800" fill="#E0B15E">ಓಂ</text></svg>
+
+<svg class="bg-ganesha" viewBox="0 0 200 250" aria-hidden="true">
+  <g fill="#E0B15E">
+    <path d="M78,52 L100,16 L122,52 Z"/>
+    <ellipse cx="57" cy="86" rx="26" ry="34"/>
+    <ellipse cx="143" cy="86" rx="26" ry="34"/>
+    <circle cx="100" cy="84" r="40"/>
+    <path d="M100,112 C95,138 76,142 78,160 C80,176 100,176 103,163 C105,154 96,152 94,158" fill="none" stroke="#E0B15E" stroke-width="15" stroke-linecap="round"/>
+    <ellipse cx="100" cy="182" rx="55" ry="42"/>
+    <ellipse cx="100" cy="222" rx="68" ry="17"/>
+  </g>
+</svg>
+
+<svg class="bg-gopuram" viewBox="0 0 800 120" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+  <g fill="#140825">
+    <path d="M40,120 V66 h12 V50 h10 V36 h10 V24 h8 V14 h6 l4,-10 4,10 h6 V24 h8 V36 h10 V50 h10 V66 h12 V120 Z"/>
+    <path d="M340,120 V60 h14 V42 h12 V26 h10 V14 h8 l5,-12 5,12 h8 V26 h10 V42 h12 V60 h14 V120 Z"/>
+    <path d="M660,120 V70 h12 V54 h10 V40 h10 V28 h8 V18 h6 l4,-10 4,10 h6 V28 h8 V40 h10 V54 h10 V70 h12 V120 Z"/>
+    <rect x="0" y="98" width="800" height="22"/>
+    <circle cx="230" cy="94" r="16"/><rect x="214" y="94" width="32" height="26"/>
+    <circle cx="540" cy="94" r="16"/><rect x="524" y="94" width="32" height="26"/>
+  </g>
+</svg>
 
 <div class="app">
   <div class="hud">
@@ -855,7 +885,7 @@
         var ico=isDone?"🪔":(unlocked?"🏹":"🔒");
         var pop=(unlocked&&!isDone)?'<div class="startpop kn">ಇಂದಿನ ಗುರಿ · TODAY&#39;S AIM</div>':'';
         html+='<div class="node '+cls+'" data-key="'+l.key+'" data-lock="'+(unlocked?0:1)+'">'+
-          pop+'<button class="bubble" aria-label="Lesson">'+ico+'</button></div>';
+          pop+'<button class="bubble" aria-label="Lesson"><span class="ico">'+ico+'</span></button></div>';
       });
       html+='</div>';
     });
