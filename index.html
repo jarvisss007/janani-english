@@ -1,0 +1,959 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0D0A20">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon-192.png">
+<title>ಮಹಾಯಾತ್ರೆ · Akkamma's Mahayatra — Learn English</title>
+<style>
+  :root{
+    --sky1:#0D0A20; --sky2:#1B1136; --sky3:#3A1B47; --sky4:#6E2B3F; --horizon:#C97C3F;
+    --gold:#E0B15E; --gold-d:#A87A2E; --gold-glow:rgba(224,177,94,.45);
+    --jade:#2EC4A0; --jade-d:#1E9678; --jade-bg:#DFF7EF;
+    --coral:#FF6B6B; --coral-d:#D94F4F; --coral-bg:#FFE3E0;
+    --silk:#F9F1DE; --silk-2:#F0E3C4; --silk-line:#DECFA6;
+    --ink:#33261A; --ink-soft:#82705A; --plum-ink:#F3E8D2;
+    --violet:#C2603F; --violet-d:#9C4A2E;
+    --fs:1;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;margin:0;padding:0}
+  html{background:var(--sky1)}
+  body{
+    min-height:100vh; color:var(--plum-ink); font-weight:700;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans","Noto Sans Kannada",system-ui,sans-serif;
+    -webkit-font-smoothing:antialiased; overscroll-behavior-y:contain;
+    background:linear-gradient(180deg,var(--sky1) 0%,var(--sky2) 30%,var(--sky3) 62%,var(--sky4) 82%,var(--horizon) 105%);
+    background-attachment:fixed;
+  }
+  .kn{font-family:"Noto Sans Kannada","Noto Sans","Nirmala UI",sans-serif}
+  button{font-family:inherit;font-weight:800;cursor:pointer}
+  .hidden{display:none!important}
+  :focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+
+  /* ================= ATMOSPHERE ================= */
+  .stars,.stars2{position:fixed;inset:0;pointer-events:none;z-index:0}
+  .stars{background-image:
+    radial-gradient(1.5px 1.5px at 12% 18%,#fff9,transparent 60%),
+    radial-gradient(1px 1px at 34% 8%,#fff8,transparent 60%),
+    radial-gradient(2px 2px at 58% 22%,#ffd98f99,transparent 60%),
+    radial-gradient(1px 1px at 76% 12%,#fff7,transparent 60%),
+    radial-gradient(1.5px 1.5px at 88% 30%,#fff8,transparent 60%),
+    radial-gradient(1px 1px at 22% 38%,#fff6,transparent 60%),
+    radial-gradient(1.5px 1.5px at 66% 42%,#ffd98f80,transparent 60%),
+    radial-gradient(1px 1px at 44% 30%,#fff7,transparent 60%);
+    animation:twinkle 4.5s ease-in-out infinite alternate}
+  .stars2{background-image:
+    radial-gradient(1px 1px at 8% 55%,#fff5,transparent 60%),
+    radial-gradient(1.5px 1.5px at 30% 62%,#ffd98f66,transparent 60%),
+    radial-gradient(1px 1px at 52% 50%,#fff5,transparent 60%),
+    radial-gradient(1px 1px at 82% 58%,#fff6,transparent 60%),
+    radial-gradient(1.5px 1.5px at 94% 46%,#fff5,transparent 60%);
+    animation:twinkle 6s ease-in-out .8s infinite alternate}
+  @keyframes twinkle{from{opacity:.45}to{opacity:1}}
+  .cloud{position:fixed;pointer-events:none;z-index:0;filter:blur(2px);opacity:.16}
+  .cloud b{position:absolute;background:#fff;border-radius:999px}
+  .c1{top:16%;left:-140px;width:180px;height:40px;animation:drift 70s linear infinite}
+  .c2{top:44%;left:-220px;width:240px;height:50px;animation:drift 105s linear 18s infinite}
+  .cloud b:nth-child(1){inset:12px 0 0 0;border-radius:999px}
+  .cloud b:nth-child(2){top:0;left:22%;width:42%;height:70%}
+  .cloud b:nth-child(3){top:6px;left:55%;width:32%;height:60%}
+  @keyframes drift{to{transform:translateX(130vw)}}
+  .petal{position:fixed;top:-30px;z-index:1;pointer-events:none;font-size:15px;opacity:.7;animation:fall linear infinite}
+  .petal:nth-of-type(1){left:12%;animation-duration:16s;animation-delay:0s}
+  .petal:nth-of-type(2){left:38%;animation-duration:21s;animation-delay:5s;font-size:12px}
+  .petal:nth-of-type(3){left:64%;animation-duration:18s;animation-delay:9s}
+  .petal:nth-of-type(4){left:86%;animation-duration:24s;animation-delay:2s;font-size:11px}
+  @keyframes fall{
+    0%{transform:translateY(-4vh) rotate(0deg)}
+    100%{transform:translateY(108vh) rotate(340deg)}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .stars,.stars2,.petal,.cloud,.node .bubble,.mascot{animation:none!important}
+    *{transition:none!important}
+  }
+
+  .app{max-width:520px;margin:0 auto;min-height:100vh;display:flex;flex-direction:column;position:relative;z-index:2}
+
+  /* ================= 3D BUTTONS ================= */
+  .btn3d{border:none;border-radius:18px;color:#4A2F00;background:linear-gradient(180deg,#FFD98A,var(--gold));
+    box-shadow:0 5px 0 var(--gold-d),0 10px 26px rgba(0,0,0,.28); padding:16px; font-size:calc(1rem*var(--fs));
+    letter-spacing:.5px; transition:transform .05s, box-shadow .05s; text-transform:uppercase;}
+  .btn3d:active{transform:translateY(5px);box-shadow:0 0 0 var(--gold-d)}
+  .btn3d.jade{background:linear-gradient(180deg,#57E0BE,var(--jade));color:#053B2E;box-shadow:0 5px 0 var(--jade-d),0 10px 26px rgba(0,0,0,.28)}
+  .btn3d.jade:active{box-shadow:0 0 0 var(--jade-d)}
+  .btn3d.coral{background:linear-gradient(180deg,#FF8F8F,var(--coral));color:#4A0B0B;box-shadow:0 5px 0 var(--coral-d),0 10px 26px rgba(0,0,0,.28)}
+  .btn3d.coral:active{box-shadow:0 0 0 var(--coral-d)}
+  .btn3d:disabled{background:#5A4A73;color:#9D8BB5;box-shadow:0 5px 0 #453861;cursor:default}
+  .btn3d:disabled:active{transform:none}
+
+  /* ================= HUD ================= */
+  .hud{position:sticky;top:0;z-index:30;display:flex;align-items:center;gap:16px;padding:14px 18px;
+    background:linear-gradient(180deg,rgba(28,10,62,.92),rgba(28,10,62,.75));backdrop-filter:blur(8px);
+    border-bottom:1px solid rgba(255,194,75,.22)}
+  .hud .item{display:flex;align-items:center;gap:6px;font-size:calc(1.02rem*var(--fs));font-weight:900;color:#FFE9BD;text-shadow:0 0 14px var(--gold-glow)}
+  .hud .grow{flex:1}
+  .hud .gear{width:42px;height:42px;border-radius:12px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.08);font-size:1.25rem;display:grid;place-items:center;color:#fff}
+
+  .screen{flex:1;animation:fade .3s ease both}
+  @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1}}
+
+  /* ================= JOURNEY MAP ================= */
+  .path{padding:6px 0 80px}
+  .greet{text-align:center;padding:20px 22px 4px}
+  .greet h2{font-size:calc(1.6rem*var(--fs));font-weight:900;color:#FFF3D6;text-shadow:0 2px 18px rgba(255,194,75,.35);text-wrap:balance}
+  .greet p{color:#D9C4F0;font-size:calc(.84rem*var(--fs));margin-top:6px;font-weight:600}
+  .mascot{width:118px;height:118px;display:block;margin:8px auto 0;filter:drop-shadow(0 0 26px var(--gold-glow));animation:turn 48s linear infinite}
+  @keyframes turn{to{transform:rotate(360deg)}}
+
+  .chapter{margin:30px 16px 4px;border-radius:22px;padding:2px;background:linear-gradient(135deg,rgba(255,255,255,.35),rgba(255,255,255,.06));}
+  .chapter .in{border-radius:20px;padding:16px 18px;display:flex;align-items:center;gap:14px;
+    background:linear-gradient(135deg,rgba(255,255,255,.14),rgba(255,255,255,.04));backdrop-filter:blur(6px)}
+  .chapter .mark{font-size:2rem;flex:none;filter:drop-shadow(0 3px 8px rgba(0,0,0,.3))}
+  .chapter h3{font-size:calc(1.05rem*var(--fs));font-weight:900;color:#FFF3D6}
+  .chapter .u-en{font-size:calc(.68rem*var(--fs));opacity:.85;text-transform:uppercase;letter-spacing:1.2px;color:#E7D4FA;margin-top:2px}
+  .chapter .u-crowns{margin-left:auto;font-size:calc(.92rem*var(--fs));font-weight:900;color:var(--gold);white-space:nowrap;text-shadow:0 0 12px var(--gold-glow)}
+
+  .nodes{display:flex;flex-direction:column;align-items:center;gap:14px;padding:18px 0 6px;position:relative}
+  .node{position:relative;display:flex;flex-direction:column;align-items:center}
+  .node .bubble{width:76px;height:70px;border-radius:50%;display:grid;place-items:center;font-size:1.9rem;border:none;color:#fff;position:relative}
+  .node.active .bubble{background:radial-gradient(circle at 35% 30%,#FFE1A0,var(--gold) 60%,#E8A21F);
+    box-shadow:0 7px 0 var(--gold-d),0 0 34px var(--gold-glow);animation:lantern 2.2s ease-in-out infinite}
+  @keyframes lantern{0%,100%{box-shadow:0 7px 0 var(--gold-d),0 0 22px var(--gold-glow)}50%{box-shadow:0 7px 0 var(--gold-d),0 0 44px var(--gold-glow)}}
+  .node.done .bubble{background:radial-gradient(circle at 35% 30%,#8FF0D8,var(--jade) 65%);box-shadow:0 7px 0 var(--jade-d),0 0 18px rgba(46,196,160,.35)}
+  .node.locked .bubble{background:rgba(255,255,255,.1);box-shadow:0 7px 0 rgba(0,0,0,.28);color:rgba(255,255,255,.4);border:1px solid rgba(255,255,255,.12)}
+  .node .bubble:active{transform:translateY(4px)}
+  .nodes .node:nth-child(6n+2){margin-left:104px}
+  .nodes .node:nth-child(6n+3){margin-left:158px}
+  .nodes .node:nth-child(6n+4){margin-left:104px}
+  .nodes .node:nth-child(6n+6){margin-left:-104px}
+  .nodes .node:nth-child(6n+0){margin-left:-158px}
+  .startpop{position:absolute;top:-46px;left:50%;transform:translateX(-50%);background:var(--silk);border-radius:14px;
+    padding:7px 15px;font-size:calc(.68rem*var(--fs));color:#9A5B0A;font-weight:900;text-transform:uppercase;letter-spacing:.5px;
+    white-space:nowrap;box-shadow:0 4px 16px rgba(0,0,0,.35);z-index:2}
+  .startpop:after{content:"";position:absolute;bottom:-6px;left:50%;transform:translateX(-50%) rotate(45deg);width:12px;height:12px;background:var(--silk)}
+
+  .journey-end{text-align:center;padding:34px 20px 10px;color:#FFE9BD}
+  .journey-end .flag{font-size:2.6rem;filter:drop-shadow(0 0 18px var(--gold-glow))}
+  .journey-end p{font-size:calc(.86rem*var(--fs));margin-top:8px;color:#E7D4FA;font-weight:600}
+
+  /* ================= LESSON (silk card world) ================= */
+  .lesson-top{display:flex;align-items:center;gap:14px;padding:16px 18px 10px}
+  .lesson-top .quit{width:34px;height:34px;border:none;background:none;font-size:1.5rem;color:#C9B3E6;flex:none}
+  .lbar{flex:1;height:16px;background:rgba(255,255,255,.14);border-radius:999px;overflow:hidden;box-shadow:inset 0 2px 4px rgba(0,0,0,.25)}
+  .lbar>i{display:block;height:100%;border-radius:999px;width:0;transition:width .35s ease;
+    background:linear-gradient(90deg,var(--gold),#FFE1A0);box-shadow:0 0 12px var(--gold-glow)}
+  .hearts{display:flex;align-items:center;gap:4px;color:#FF9E9E;font-size:1.05rem;font-weight:900}
+
+  .exwrap{padding:8px 16px 20px;display:flex;flex-direction:column;min-height:58vh}
+  .excard{background:var(--silk);border-radius:26px;padding:22px 20px;color:var(--ink);
+    box-shadow:0 18px 44px rgba(0,0,0,.4), inset 0 0 0 1px rgba(255,255,255,.7);
+    display:flex;flex-direction:column;flex:1;position:relative;overflow:hidden}
+  .excard:before{content:"";position:absolute;inset:auto -30px -34px auto;width:130px;height:130px;opacity:.1;
+    background:radial-gradient(circle,transparent 28%,var(--gold) 30%,transparent 33%,transparent 40%,var(--gold) 42%,transparent 45%,transparent 55%,var(--gold) 57%,transparent 60%);border-radius:50%}
+  .ex-sub{font-size:calc(.74rem*var(--fs));color:#B08A4F;text-transform:uppercase;letter-spacing:1.4px;margin-bottom:16px;font-weight:900}
+  .speaker-row{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+  .spk{border:none;border-radius:18px;background:linear-gradient(180deg,#BC93FF,var(--violet));color:#fff;width:64px;height:64px;font-size:1.6rem;
+    box-shadow:0 5px 0 var(--violet-d);flex:none}
+  .spk:active{transform:translateY(5px);box-shadow:0 0 0 var(--violet-d)}
+  .spk.big{width:100%;height:82px;font-size:1.9rem;display:flex;align-items:center;justify-content:center;gap:12px}
+  .spk.big .txt{font-size:calc(.95rem*var(--fs));text-transform:uppercase;letter-spacing:1px}
+  .spk-word{font-size:calc(1.5rem*var(--fs));font-weight:900;color:var(--ink)}
+
+  .opts{display:flex;flex-direction:column;gap:12px;margin-top:4px}
+  .opt{border:2px solid var(--silk-line);border-bottom-width:4px;border-radius:18px;background:#fff;padding:16px 18px;text-align:left;
+    font-size:calc(1.12rem*var(--fs));color:var(--ink);display:flex;align-items:center;gap:12px;font-weight:800}
+  .opt:active{background:var(--silk-2)}
+  .opt.sel{border-color:var(--violet);background:#F3EBFF;color:var(--violet-d)}
+  .opt.good{border-color:var(--jade);background:var(--jade-bg);color:var(--jade-d)}
+  .opt.bad{border-color:var(--coral);background:var(--coral-bg);color:var(--coral-d)}
+  .opt .num{width:26px;height:26px;border-radius:9px;border:2px solid var(--silk-line);display:grid;place-items:center;font-size:.75rem;color:#C4A876;flex:none}
+
+  .answer-line{min-height:64px;border-bottom:2px dashed var(--silk-line);display:flex;flex-wrap:wrap;gap:8px;padding:10px 0;margin-bottom:8px;align-content:flex-start}
+  .bank{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px;min-height:60px}
+  .tile{border:2px solid var(--silk-line);border-bottom-width:4px;border-radius:14px;background:#fff;padding:11px 15px;font-size:calc(1.08rem*var(--fs));color:var(--ink);font-weight:800}
+  .tile:active{transform:translateY(2px)}
+  .tile.used{background:var(--silk-2);border-color:var(--silk-2);color:var(--silk-2);pointer-events:none}
+
+  .match-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:4px}
+  .mcol{display:flex;flex-direction:column;gap:12px}
+  .mbtn{border:2px solid var(--silk-line);border-bottom-width:4px;border-radius:18px;background:#fff;padding:16px 12px;
+    font-size:calc(1.02rem*var(--fs));color:var(--ink);min-height:58px;font-weight:800}
+  .mbtn.sel{border-color:var(--violet);background:#F3EBFF;color:var(--violet-d)}
+  .mbtn.gone{opacity:0;pointer-events:none;transition:opacity .25s}
+  .mbtn.err{border-color:var(--coral);background:var(--coral-bg)}
+
+  .repeat-card{text-align:center;padding:8px 0}
+  .repeat-card .big-en{font-size:calc(2rem*var(--fs));font-weight:900;margin:14px 0 6px;color:var(--ink)}
+  .repeat-card .pron{display:inline-block;background:#F3EBFF;color:var(--violet-d);border-radius:14px;padding:9px 16px;font-size:calc(1.15rem*var(--fs));margin-top:6px;font-weight:800}
+  .mic-note{color:var(--ink-soft);font-size:calc(.8rem*var(--fs));font-weight:700;margin-top:18px}
+
+  .exfoot{margin-top:auto;padding:16px 16px calc(20px + env(safe-area-inset-bottom));position:sticky;bottom:0;z-index:5}
+  .exfoot .inner{border-radius:22px;padding:16px;background:rgba(28,10,62,.88);backdrop-filter:blur(8px);box-shadow:0 -6px 30px rgba(0,0,0,.3)}
+  .exfoot.good .inner{background:linear-gradient(135deg,#0E4A3A,#156B52)}
+  .exfoot.bad .inner{background:linear-gradient(135deg,#5C1420,#7E2230)}
+  .fb-msg{display:flex;align-items:center;gap:12px;margin-bottom:14px;font-weight:900;color:#fff}
+  .fb-ico{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font-size:1.4rem;background:#fff;flex:none}
+  .fb-good .fb-ico{color:var(--jade-d)} .fb-bad .fb-ico{color:var(--coral-d)}
+  .fb-msg .sub{font-size:calc(.85rem*var(--fs));font-weight:800;opacity:.95;display:block;margin-top:2px}
+  .exfoot .btn3d{width:100%}
+
+  /* ================= CELEBRATION ================= */
+  .complete{text-align:center;padding:46px 24px;position:relative}
+  .complete .burst{font-size:4.6rem;animation:pop .55s cubic-bezier(.2,1.6,.4,1) both;filter:drop-shadow(0 0 24px var(--gold-glow))}
+  @keyframes pop{0%{transform:scale(.2);opacity:0}100%{transform:scale(1);opacity:1}}
+  .complete h2{font-size:calc(1.8rem*var(--fs));font-weight:900;margin:12px 0 4px;color:#FFF3D6;text-shadow:0 2px 20px var(--gold-glow)}
+  .complete .sub{color:#E7D4FA;font-weight:600;margin-bottom:26px;font-size:calc(.9rem*var(--fs))}
+  .confetti{position:absolute;top:6px;font-size:1.2rem;animation:cfall 1.8s ease-in both}
+  .confetti:nth-child(1){left:16%;animation-delay:.1s}
+  .confetti:nth-child(2){left:36%;animation-delay:.3s}
+  .confetti:nth-child(3){left:58%;animation-delay:.15s}
+  .confetti:nth-child(4){left:78%;animation-delay:.4s}
+  @keyframes cfall{0%{transform:translateY(-10px) rotate(0);opacity:0}20%{opacity:1}100%{transform:translateY(210px) rotate(300deg);opacity:0}}
+  .stat-cards{display:flex;gap:14px;justify-content:center;margin-bottom:30px}
+  .scard{flex:1;max-width:150px;border-radius:20px;padding:2px;background:linear-gradient(160deg,#FFE1A0,var(--gold));box-shadow:0 10px 26px rgba(0,0,0,.3)}
+  .scard.violet{background:linear-gradient(160deg,#D5BCFF,var(--violet))}
+  .scard .in{background:var(--silk);border-radius:18px;padding:14px 8px}
+  .scard .cap{font-size:calc(.64rem*var(--fs));text-transform:uppercase;letter-spacing:1px;color:#B08A4F;font-weight:900}
+  .scard.violet .cap{color:var(--violet-d)}
+  .scard .val{font-size:calc(1.6rem*var(--fs));font-weight:900;color:var(--ink);margin-top:2px}
+
+  /* ================= SETTINGS ================= */
+  .sheet-bg{position:fixed;inset:0;background:rgba(10,4,28,.6);z-index:60;display:flex;align-items:flex-end;justify-content:center;animation:fade .2s;backdrop-filter:blur(3px)}
+  .sheet{background:var(--silk);color:var(--ink);width:100%;max-width:520px;border-radius:26px 26px 0 0;padding:24px 20px calc(28px + env(safe-area-inset-bottom));box-shadow:0 -14px 44px rgba(0,0,0,.45)}
+  .sheet h2{font-size:calc(1.3rem*var(--fs));font-weight:900}
+  .sheet .sub{color:var(--ink-soft);font-size:calc(.78rem*var(--fs));margin:2px 0 16px;font-weight:700}
+  .srow{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 0;border-top:2px solid var(--silk-line)}
+  .srow .lab{font-weight:800}
+  .srow .lab .en{display:block;font-size:calc(.7rem*var(--fs));color:var(--ink-soft);font-weight:700}
+  .sizectl{display:flex;align-items:center;gap:6px}
+  .sizectl button{width:44px;height:44px;border-radius:12px;border:2px solid var(--silk-line);background:#fff;font-size:1.05rem;font-weight:900;color:var(--ink)}
+  .sizectl span{min-width:46px;text-align:center;font-weight:900}
+  .tg{width:60px;height:34px;border-radius:999px;border:none;background:#D9C7A8;position:relative;flex:none}
+  .tg.on{background:var(--jade)} .tg i{position:absolute;top:3px;left:3px;width:28px;height:28px;border-radius:50%;background:#fff;transition:left .18s;box-shadow:0 1px 3px rgba(0,0,0,.25)} .tg.on i{left:29px}
+  .sheet .reset{margin-top:16px;width:100%;background:#fff;border:2px solid #F2B8B8;color:var(--coral-d);border-radius:14px;padding:14px;font-weight:900}
+  .sheet .close{margin-top:10px;width:100%}
+</style>
+
+<div class="stars"></div><div class="stars2"></div>
+<div class="cloud c1"><b></b><b></b><b></b></div>
+<div class="cloud c2"><b></b><b></b><b></b></div>
+<span class="petal">🌼</span><span class="petal">🌸</span><span class="petal">🌼</span><span class="petal">✨</span>
+
+<div class="app">
+  <div class="hud">
+    <div class="item">🔥 <span id="hStreak">0</span></div>
+    <div class="item">👑 <span id="hCrown">0</span></div>
+    <div class="item">⭐ <span id="hXp">0</span></div>
+    <div class="grow"></div>
+    <button class="gear" id="btnGear" aria-label="Settings">⚙️</button>
+  </div>
+
+  <!-- ================= JOURNEY MAP ================= -->
+  <div class="screen path" id="screenPath">
+    <div class="greet">
+      <svg class="mascot" viewBox="0 0 130 130" aria-hidden="true">
+        <defs>
+          <radialGradient id="gW" cx=".4" cy=".35" r=".85">
+            <stop offset="0" stop-color="#F2D48A"/><stop offset="1" stop-color="#B8842E"/>
+          </radialGradient>
+        </defs>
+        <circle cx="65" cy="65" r="52" fill="none" stroke="url(#gW)" stroke-width="7"/>
+        <circle cx="65" cy="65" r="43" fill="none" stroke="#E0B15E" stroke-width="1.5" opacity=".55"/>
+        <g stroke="url(#gW)" stroke-width="5" stroke-linecap="round">
+          <line x1="65" y1="22" x2="65" y2="108"/>
+          <line x1="22" y1="65" x2="108" y2="65"/>
+          <line x1="34.6" y1="34.6" x2="95.4" y2="95.4"/>
+          <line x1="95.4" y1="34.6" x2="34.6" y2="95.4"/>
+        </g>
+        <circle cx="65" cy="65" r="13" fill="url(#gW)"/>
+        <circle cx="65" cy="65" r="5" fill="#7A5218"/>
+      </svg>
+      <h2 class="kn">ಅಕ್ಕಮ್ಮನ ಮಹಾಯಾತ್ರೆ 🛕 → 🗽</h2>
+      <p class="kn">ಅಭ್ಯಾಸದಿಂದ ಎಲ್ಲವೂ ಸಾಧ್ಯ</p>
+    </div>
+    <div style="padding:16px 16px 0">
+      <button class="btn3d hidden" id="btnReview" style="width:100%">🏹 ದಿನದ ಅಭ್ಯಾಸ · TODAY'S ABHYASA</button>
+    </div>
+    <div id="pathNodes"></div>
+    <div class="journey-end">
+      <p class="kn">ಪ್ರತಿ ದಿನ ಒಂದು ಪಾಠ ಸಾಕು<br>One lesson a day is enough.</p>
+    </div>
+  </div>
+
+  <!-- ================= LESSON ================= -->
+  <div class="screen hidden" id="screenLesson">
+    <div class="lesson-top">
+      <button class="quit" id="btnQuit" aria-label="Quit">✕</button>
+      <div class="lbar"><i id="lFill"></i></div>
+      <div class="hearts" id="heartBox">❤️ <span id="heartN">5</span></div>
+    </div>
+    <div class="exwrap"><div class="excard" id="exwrap"></div></div>
+    <div class="exfoot" id="exfoot"><div class="inner">
+      <div class="fb-msg hidden" id="fbMsg"></div>
+      <button class="btn3d" id="btnCheck" disabled>ಪರಿಶೀಲಿಸಿ · CHECK</button>
+    </div></div>
+  </div>
+
+  <!-- ================= CELEBRATION ================= -->
+  <div class="screen hidden" id="screenDone">
+    <div class="complete">
+      <span class="confetti">🌼</span><span class="confetti">✨</span><span class="confetti">🌸</span><span class="confetti">⭐</span>
+      <div class="burst">🐚</div>
+      <h2 class="kn">ವಿಜಯ, ಅಕ್ಕಮ್ಮ! 🐚</h2>
+      <div class="sub kn">ಇನ್ನೊಂದು ದೀಪ ಹತ್ತಿತು — ಶಂಖನಾದ! · Another deepa is lit — sound the conch!</div>
+      <div class="stat-cards">
+        <div class="scard"><div class="in"><div class="cap">XP ⭐</div><div class="val" id="dXp">0</div></div></div>
+        <div class="scard violet"><div class="in"><div class="cap">Streak 🔥</div><div class="val" id="dStreak">0</div></div></div>
+      </div>
+      <button class="btn3d jade" id="btnDoneNext" style="width:100%;max-width:340px;margin:0 auto;display:block">ಮುಂದುವರಿಸಿ · CONTINUE</button>
+    </div>
+  </div>
+</div>
+
+<div class="sheet-bg hidden" id="sheetBg">
+  <div class="sheet">
+    <h2 class="kn">ಸೆಟ್ಟಿಂಗ್ಸ್</h2><div class="sub">Settings</div>
+    <div class="srow"><div class="lab kn">ಅಕ್ಷರದ ಗಾತ್ರ<span class="en">Text size</span></div>
+      <div class="sizectl"><button id="fsDown">A−</button><span id="fsVal">100%</span><button id="fsUp">A+</button></div></div>
+    <div class="srow"><div class="lab kn">ನಿಧಾನವಾಗಿ ಹೇಳಿ<span class="en">Speak slowly</span></div>
+      <button class="tg on" id="tgSlow" role="switch"><i></i></button></div>
+    <div class="srow"><div class="lab kn">ಸಂಗೀತ 🎵<span class="en">Background music</span></div>
+      <button class="tg on" id="tgMusic" role="switch"><i></i></button></div>
+    <div class="srow"><div class="lab kn">ಭಾರತೀಯ ಧ್ವನಿ 🇮🇳<span class="en">Indian voice (off = American)</span></div>
+      <button class="tg on" id="tgAccent" role="switch"><i></i></button></div>
+    <div class="srow"><div class="lab kn">ಆರಾಮ ಮೋಡ್ (♾ ಹೃದಯ)<span class="en">Relaxed mode — never run out of hearts</span></div>
+      <button class="tg on" id="tgRelax" role="switch"><i></i></button></div>
+    <button class="reset kn" id="btnReset">ಪ್ರಗತಿಯನ್ನು ಅಳಿಸಿ · Reset all progress</button>
+    <button class="btn3d close kn" id="btnCloseSheet">ಮುಚ್ಚಿ · CLOSE</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  /* ============================================================
+     CONTENT — the journey, chapter by chapter.
+     en=English, kn=Kannada meaning, pr=pronunciation in Kannada script.
+     A native speaker should sanity-check the Kannada.
+     ============================================================ */
+  var UNITS = [
+    {t:"ಮೊದಲ ಮಾತು", e:"First words", mark:"🛕", words:[
+      {en:"Hello, how are you", kn:"ನಮಸ್ಕಾರ, ಹೇಗಿದ್ದೀರಾ", pr:"ಹಲೋ, ಹೌ ಆರ್ ಯೂ"},
+      {en:"I am fine, thank you", kn:"ನಾನು ಚೆನ್ನಾಗಿದ್ದೇನೆ, ಧನ್ಯವಾದ", pr:"ಐ ಆಮ್ ಫೈನ್, ಥ್ಯಾಂಕ್ ಯೂ"},
+      {en:"Good morning", kn:"ಶುಭೋದಯ", pr:"ಗುಡ್ ಮಾರ್ನಿಂಗ್"},
+      {en:"Please", kn:"ದಯವಿಟ್ಟು", pr:"ಪ್ಲೀಸ್"},
+      {en:"Excuse me", kn:"ಸ್ವಲ್ಪ ಕೇಳಿ", pr:"ಎಕ್ಸ್‌ಕ್ಯೂಸ್ ಮಿ"},
+      {en:"Nice to meet you", kn:"ನಿಮ್ಮನ್ನು ಭೇಟಿಯಾಗಿ ಸಂತೋಷ", pr:"ನೈಸ್ ಟು ಮೀಟ್ ಯೂ"}
+    ]},
+    {t:"ನನ್ನ ಬಗ್ಗೆ", e:"About me", mark:"🏡", words:[
+      {en:"My name is Akkamma", kn:"ನನ್ನ ಹೆಸರು ಅಕ್ಕಮ್ಮ", pr:"ಮೈ ನೇಮ್ ಈಸ್ ಅಕ್ಕಮ್ಮ"},
+      {en:"I am from India", kn:"ನಾನು ಭಾರತದಿಂದ ಬಂದವಳು", pr:"ಐ ಆಮ್ ಫ್ರಮ್ ಇಂಡಿಯಾ"},
+      {en:"I speak Kannada", kn:"ನಾನು ಕನ್ನಡ ಮಾತಾಡ್ತೇನೆ", pr:"ಐ ಸ್ಪೀಕ್ ಕನ್ನಡ"},
+      {en:"I am learning English", kn:"ನಾನು ಇಂಗ್ಲಿಷ್ ಕಲಿಯುತ್ತಿದ್ದೇನೆ", pr:"ಐ ಆಮ್ ಲರ್ನಿಂಗ್ ಇಂಗ್ಲಿಷ್"},
+      {en:"This is my son", kn:"ಇವನು ನನ್ನ ಮಗ", pr:"ದಿಸ್ ಈಸ್ ಮೈ ಸನ್"},
+      {en:"I live with my son", kn:"ನಾನು ನನ್ನ ಮಗನ ಜೊತೆ ಇರುತ್ತೇನೆ", pr:"ಐ ಲಿವ್ ವಿತ್ ಮೈ ಸನ್"}
+    ]},
+    {t:"ಸಂಖ್ಯೆ ಮತ್ತು ಸಮಯ", e:"Numbers & time", mark:"🕰️", words:[
+      {en:"two", kn:"ಎರಡು", pr:"ಟೂ"},
+      {en:"five", kn:"ಐದು", pr:"ಫೈವ್"},
+      {en:"ten", kn:"ಹತ್ತು", pr:"ಟೆನ್"},
+      {en:"One coffee, please", kn:"ಒಂದು ಕಾಫಿ, ದಯವಿಟ್ಟು", pr:"ಒನ್ ಕಾಫಿ, ಪ್ಲೀಸ್"},
+      {en:"What time is it", kn:"ಈಗ ಎಷ್ಟು ಗಂಟೆ", pr:"ವಾಟ್ ಟೈಮ್ ಈಸ್ ಇಟ್"},
+      {en:"It is five o'clock", kn:"ಈಗ ಐದು ಗಂಟೆ", pr:"ಇಟ್ ಈಸ್ ಫೈವ್ ಒಕ್ಲಾಕ್"},
+      {en:"today", kn:"ಇವತ್ತು", pr:"ಟುಡೇ"},
+      {en:"tomorrow", kn:"ನಾಳೆ", pr:"ಟುಮಾರೊ"},
+      {en:"I will come tomorrow", kn:"ನಾನು ನಾಳೆ ಬರುತ್ತೇನೆ", pr:"ಐ ವಿಲ್ ಕಮ್ ಟುಮಾರೊ"}
+    ]},
+    {t:"ಫೋನ್ ಕರೆ", e:"Phone & video call", mark:"📱", words:[
+      {en:"Can you hear me", kn:"ನನ್ನ ಧ್ವನಿ ಕೇಳಿಸ್ತಿದೆಯಾ", pr:"ಕ್ಯಾನ್ ಯೂ ಹಿಯರ್ ಮಿ"},
+      {en:"I can see you", kn:"ನೀನು ಕಾಣಿಸ್ತಿದ್ದೀಯ", pr:"ಐ ಕ್ಯಾನ್ ಸೀ ಯೂ"},
+      {en:"Did you eat", kn:"ಊಟ ಆಯ್ತಾ", pr:"ಡಿಡ್ ಯೂ ಈಟ್"},
+      {en:"Call me tomorrow", kn:"ನಾಳೆ ಫೋನ್ ಮಾಡು", pr:"ಕಾಲ್ ಮಿ ಟುಮಾರೊ"},
+      {en:"I will call you back", kn:"ನಾನು ವಾಪಸ್ ಫೋನ್ ಮಾಡ್ತೇನೆ", pr:"ಐ ವಿಲ್ ಕಾಲ್ ಯೂ ಬ್ಯಾಕ್"},
+      {en:"The phone is not working", kn:"ಫೋನ್ ಕೆಲಸ ಮಾಡ್ತಿಲ್ಲ", pr:"ದ ಫೋನ್ ಈಸ್ ನಾಟ್ ವರ್ಕಿಂಗ್"}
+    ]},
+    {t:"ಸಹಾಯ ಕೇಳಿ", e:"Getting help", mark:"🙏", words:[
+      {en:"Can you help me, please", kn:"ದಯವಿಟ್ಟು ನನಗೆ ಸಹಾಯ ಮಾಡ್ತೀರಾ", pr:"ಕ್ಯಾನ್ ಯೂ ಹೆಲ್ಪ್ ಮಿ, ಪ್ಲೀಸ್"},
+      {en:"I do not understand", kn:"ನನಗೆ ಅರ್ಥ ಆಗ್ತಿಲ್ಲ", pr:"ಐ ಡು ನಾಟ್ ಅಂಡರ್‌ಸ್ಟ್ಯಾಂಡ್"},
+      {en:"Please speak slowly", kn:"ದಯವಿಟ್ಟು ನಿಧಾನವಾಗಿ ಮಾತಾಡಿ", pr:"ಪ್ಲೀಸ್ ಸ್ಪೀಕ್ ಸ್ಲೋಲಿ"},
+      {en:"Please say that again", kn:"ದಯವಿಟ್ಟು ಇನ್ನೊಮ್ಮೆ ಹೇಳಿ", pr:"ಪ್ಲೀಸ್ ಸೇ ದಟ್ ಅಗೇನ್"},
+      {en:"I speak only a little English", kn:"ನನಗೆ ಸ್ವಲ್ಪ ಮಾತ್ರ ಇಂಗ್ಲಿಷ್ ಬರುತ್ತೆ", pr:"ಐ ಸ್ಪೀಕ್ ಓನ್ಲಿ ಎ ಲಿಟಲ್ ಇಂಗ್ಲಿಷ್"},
+      {en:"Where is the bathroom", kn:"ಶೌಚಾಲಯ ಎಲ್ಲಿದೆ", pr:"ವೇರ್ ಈಸ್ ದ ಬಾತ್‌ರೂಮ್"},
+      {en:"I am lost", kn:"ನಾನು ದಾರಿ ತಪ್ಪಿದ್ದೇನೆ", pr:"ಐ ಆಮ್ ಲಾಸ್ಟ್"}
+    ]},
+    {t:"ವಿಮಾನ ಪ್ರಯಾಣ", e:"Airport & travel", mark:"✈️", words:[
+      {en:"Passport", kn:"ಪಾಸ್‌ಪೋರ್ಟ್", pr:"ಪಾಸ್‌ಪೋರ್ಟ್"},
+      {en:"Here is my passport", kn:"ಇದು ನನ್ನ ಪಾಸ್‌ಪೋರ್ಟ್", pr:"ಹಿಯರ್ ಈಸ್ ಮೈ ಪಾಸ್‌ಪೋರ್ಟ್"},
+      {en:"I am visiting my son", kn:"ನನ್ನ ಮಗನನ್ನು ನೋಡಲು ಬಂದಿದ್ದೇನೆ", pr:"ಐ ಆಮ್ ವಿಸಿಟಿಂಗ್ ಮೈ ಸನ್"},
+      {en:"I need a wheelchair", kn:"ನನಗೆ ವೀಲ್‌ಚೇರ್ ಬೇಕು", pr:"ಐ ನೀಡ್ ಎ ವೀಲ್‌ಚೇರ್"},
+      {en:"Where is gate ten", kn:"ಗೇಟ್ ಹತ್ತು ಎಲ್ಲಿದೆ", pr:"ವೇರ್ ಈಸ್ ಗೇಟ್ ಟೆನ್"},
+      {en:"Window seat, please", kn:"ಕಿಟಕಿ ಪಕ್ಕದ ಸೀಟು ಕೊಡಿ", pr:"ವಿಂಡೋ ಸೀಟ್, ಪ್ಲೀಸ್"},
+      {en:"My bag is missing", kn:"ನನ್ನ ಬ್ಯಾಗ್ ಕಾಣ್ತಿಲ್ಲ", pr:"ಮೈ ಬ್ಯಾಗ್ ಈಸ್ ಮಿಸ್ಸಿಂಗ್"},
+      {en:"Please call my son", kn:"ದಯವಿಟ್ಟು ನನ್ನ ಮಗನಿಗೆ ಫೋನ್ ಮಾಡಿ", pr:"ಪ್ಲೀಸ್ ಕಾಲ್ ಮೈ ಸನ್"}
+    ]},
+    {t:"ಅಂಗಡಿ ಮತ್ತು ಹಣ", e:"Shopping & money", mark:"🛒", words:[
+      {en:"How much is this", kn:"ಇದು ಎಷ್ಟು", pr:"ಹೌ ಮಚ್ ಈಸ್ ದಿಸ್"},
+      {en:"That is too expensive", kn:"ಅದು ತುಂಬಾ ದುಬಾರಿ", pr:"ದಟ್ ಈಸ್ ಟೂ ಎಕ್ಸ್‌ಪೆನ್ಸಿವ್"},
+      {en:"Where is the milk", kn:"ಹಾಲು ಎಲ್ಲಿದೆ", pr:"ವೇರ್ ಈಸ್ ದ ಮಿಲ್ಕ್"},
+      {en:"Do you have rice", kn:"ಅಕ್ಕಿ ಇದೆಯಾ", pr:"ಡು ಯೂ ಹ್ಯಾವ್ ರೈಸ್"},
+      {en:"I will pay by card", kn:"ನಾನು ಕಾರ್ಡ್‌ನಲ್ಲಿ ಕೊಡ್ತೇನೆ", pr:"ಐ ವಿಲ್ ಪೇ ಬೈ ಕಾರ್ಡ್"},
+      {en:"Can I get a bag", kn:"ಒಂದು ಚೀಲ ಕೊಡ್ತೀರಾ", pr:"ಕ್ಯಾನ್ ಐ ಗೆಟ್ ಎ ಬ್ಯಾಗ್"}
+    ]},
+    {t:"ಆರೋಗ್ಯ", e:"Doctor & health", mark:"🩺", words:[
+      {en:"Doctor", kn:"ವೈದ್ಯರು", pr:"ಡಾಕ್ಟರ್"},
+      {en:"Medicine", kn:"ಔಷಧಿ", pr:"ಮೆಡಿಸಿನ್"},
+      {en:"I need a doctor", kn:"ನನಗೆ ವೈದ್ಯರು ಬೇಕು", pr:"ಐ ನೀಡ್ ಎ ಡಾಕ್ಟರ್"},
+      {en:"I have pain here", kn:"ಇಲ್ಲಿ ನೋವಿದೆ", pr:"ಐ ಹ್ಯಾವ್ ಪೇನ್ ಹಿಯರ್"},
+      {en:"I have diabetes", kn:"ನನಗೆ ಸಕ್ಕರೆ ಕಾಯಿಲೆ ಇದೆ", pr:"ಐ ಹ್ಯಾವ್ ಡಯಾಬಿಟೀಸ್"},
+      {en:"I take medicine every day", kn:"ನಾನು ಪ್ರತಿ ದಿನ ಔಷಧಿ ತಗೊಳ್ತೇನೆ", pr:"ಐ ಟೇಕ್ ಮೆಡಿಸಿನ್ ಎವ್ರಿ ಡೇ"},
+      {en:"Where is the pharmacy", kn:"ಔಷಧಿ ಅಂಗಡಿ ಎಲ್ಲಿದೆ", pr:"ವೇರ್ ಈಸ್ ದ ಫಾರ್ಮಸಿ"},
+      {en:"It is an emergency", kn:"ಇದು ತುರ್ತು ಪರಿಸ್ಥಿತಿ", pr:"ಇಟ್ ಈಸ್ ಆನ್ ಇಮರ್ಜೆನ್ಸಿ"}
+    ]},
+    {t:"ಮನೆಯಲ್ಲಿ", e:"At home", mark:"🏠", words:[
+      {en:"I am cooking dinner", kn:"ನಾನು ಅಡುಗೆ ಮಾಡ್ತಿದ್ದೇನೆ", pr:"ಐ ಆಮ್ ಕುಕಿಂಗ್ ಡಿನ್ನರ್"},
+      {en:"Come, eat food", kn:"ಬಾ, ಊಟ ಮಾಡು", pr:"ಕಮ್, ಈಟ್ ಫುಡ್"},
+      {en:"The food is very tasty", kn:"ಊಟ ತುಂಬಾ ರುಚಿಯಾಗಿದೆ", pr:"ದ ಫುಡ್ ಈಸ್ ವೆರಿ ಟೇಸ್ಟಿ"},
+      {en:"I am going for a walk", kn:"ನಾನು ವಾಕಿಂಗ್ ಹೋಗ್ತಿದ್ದೇನೆ", pr:"ಐ ಆಮ್ ಗೋಯಿಂಗ್ ಫಾರ್ ಎ ವಾಕ್"},
+      {en:"It is cold outside", kn:"ಹೊರಗೆ ಚಳಿ ಇದೆ", pr:"ಇಟ್ ಈಸ್ ಕೋಲ್ಡ್ ಔಟ್‌ಸೈಡ್"},
+      {en:"Close the door, please", kn:"ದಯವಿಟ್ಟು ಬಾಗಿಲು ಮುಚ್ಚಿ", pr:"ಕ್ಲೋಸ್ ದ ಡೋರ್, ಪ್ಲೀಸ್"}
+    ]},
+    {t:"ಅಮೆರಿಕದ ದಿನಗಳು", e:"Life in America", mark:"🗽", words:[
+      {en:"The weather is nice today", kn:"ಇವತ್ತು ಹವಾ ಚೆನ್ನಾಗಿದೆ", pr:"ದ ವೆದರ್ ಈಸ್ ನೈಸ್ ಟುಡೇ"},
+      {en:"I am very happy here", kn:"ನಾನು ಇಲ್ಲಿ ತುಂಬಾ ಖುಷಿಯಾಗಿದ್ದೇನೆ", pr:"ಐ ಆಮ್ ವೆರಿ ಹ್ಯಾಪಿ ಹಿಯರ್"},
+      {en:"Have a nice day", kn:"ಶುಭ ದಿನವಾಗಲಿ", pr:"ಹ್ಯಾವ್ ಎ ನೈಸ್ ಡೇ"},
+      {en:"Good night, see you tomorrow", kn:"ಶುಭ ರಾತ್ರಿ, ನಾಳೆ ಸಿಗೋಣ", pr:"ಗುಡ್ ನೈಟ್, ಸೀ ಯೂ ಟುಮಾರೊ"},
+      {en:"I miss you", kn:"ನಿನ್ನ ನೆನಪು ಆಗ್ತಿದೆ", pr:"ಐ ಮಿಸ್ ಯೂ"},
+      {en:"I love you, my son", kn:"ನಾನು ನಿನ್ನನ್ನು ಪ್ರೀತಿಸ್ತೇನೆ, ಮಗನೇ", pr:"ಐ ಲವ್ ಯೂ, ಮೈ ಸನ್"},
+      {en:"God bless you", kn:"ದೇವರು ಒಳ್ಳೆಯದು ಮಾಡಲಿ", pr:"ಗಾಡ್ ಬ್ಲೆಸ್ ಯೂ"}
+    ]}
+  ];
+
+  /* English alphabet — reading letters is the long-term unlock */
+  (function(){
+    var names={A:"ಎ",B:"ಬಿ",C:"ಸಿ",D:"ಡಿ",E:"ಇ",F:"ಎಫ್",G:"ಜಿ",H:"ಎಚ್",I:"ಐ",J:"ಜೆ",K:"ಕೆ",L:"ಎಲ್",M:"ಎಂ",N:"ಎನ್",O:"ಓ",P:"ಪಿ",Q:"ಕ್ಯೂ",R:"ಆರ್",S:"ಎಸ್",T:"ಟಿ",U:"ಯು",V:"ವಿ",W:"ಡಬ್ಲ್ಯು",X:"ಎಕ್ಸ್",Y:"ವೈ",Z:"ಜ಼ೀ"};
+    function letterWords(s){ return s.split("").map(function(L){ return {en:L, kn:names[L], pr:names[L], _alpha:true}; }); }
+    UNITS.splice(1,0,{t:"ಇಂಗ್ಲಿಷ್ ಅಕ್ಷರಗಳು ೧", e:"Letters A–M", mark:"🔤", alpha:true, words:letterWords("ABCDEFGHIJKLM")});
+    UNITS.splice(4,0,{t:"ಇಂಗ್ಲಿಷ್ ಅಕ್ಷರಗಳು ೨", e:"Letters N–Z", mark:"🔡", alpha:true, words:letterWords("NOPQRSTUVWXYZ")});
+  })();
+
+  var LESSONS = [];
+  UNITS.forEach(function(u, ui){
+    var per=3, w=u.words, i;
+    for(i=0;i<w.length;i+=per){
+      var chunk=w.slice(i,i+per);
+      if(i>0) chunk=chunk.concat([w[i-1]]);
+      LESSONS.push({ui:ui, words:chunk, key:"u"+ui+"l"+(i/per|0)});
+    }
+  });
+  var ALLWORDS=[];
+  UNITS.forEach(function(u){ u.words.forEach(function(w){ ALLWORDS.push(w); }); });
+
+  /* ============================================================ STATE */
+  var KEY="janani.gili.v4", DAY=86400000;
+  var state=load();
+  function load(){
+    var s; try{ s=JSON.parse(localStorage.getItem(KEY)); }catch(e){ s=null; }
+    if(!s||typeof s!=="object") s={};
+    s.done=s.done||{}; s.words=s.words||{}; s.xp=s.xp||0; s.streak=s.streak||0; s.lastDay=s.lastDay||null;
+    s.settings=s.settings||{fs:1,slow:true,relax:true,music:true,accentIn:true};
+    if(typeof s.settings.relax==="undefined") s.settings.relax=true;
+    if(typeof s.settings.music==="undefined") s.settings.music=true;
+    if(typeof s.settings.accentIn==="undefined") s.settings.accentIn=true;
+    return s;
+  }
+  function save(){ try{ localStorage.setItem(KEY, JSON.stringify(state)); }catch(e){} }
+  function todayStr(){ var d=new Date(); return d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate(); }
+  function bumpStreak(){
+    var t=todayStr(); if(state.lastDay===t) return;
+    var y=new Date(); y.setTime(y.getTime()-DAY);
+    var yStr=y.getFullYear()+"-"+(y.getMonth()+1)+"-"+y.getDate();
+    state.streak = state.lastDay===yStr ? state.streak+1 : 1;
+    state.lastDay=t; save();
+  }
+  function crownsInUnit(ui){ return LESSONS.filter(function(l){return l.ui===ui && state.done[l.key];}).length; }
+  function totalCrowns(){ var n=0; for(var k in state.done) if(state.done[k]) n++; return n; }
+
+  /* ============================================================ DOM */
+  function $(id){ return document.getElementById(id); }
+  function esc(s){ return String(s).replace(/[&<>"]/g,function(m){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m];}); }
+  var screens={path:$("screenPath"),lesson:$("screenLesson"),done:$("screenDone")};
+  function show(n){ for(var k in screens) screens[k].classList.toggle("hidden",k!==n); window.scrollTo(0,0); }
+  function shuffle(a){ for(var i=a.length-1;i>0;i--){ var j=Math.floor(Math.random()*(i+1)),t=a[i];a[i]=a[j];a[j]=t; } return a; }
+  function sample(arr,n,exclude){
+    var pool=arr.filter(function(x){return x!==exclude && x.en!==(exclude&&exclude.en);});
+    return shuffle(pool.slice()).slice(0,n);
+  }
+  function renderHud(){ $("hStreak").textContent=state.streak; $("hXp").textContent=state.xp; $("hCrown").textContent=totalCrowns(); }
+
+  /* ============================================================ SPEECH */
+  var voices=[];
+  function loadVoices(){ try{voices=speechSynthesis.getVoices()||[];}catch(e){voices=[];} }
+  if("speechSynthesis" in window){ loadVoices(); speechSynthesis.onvoiceschanged=loadVoices; }
+  function scoreVoice(v){
+    var s=0, n=(v.name||"").toLowerCase(), lg=(v.lang||"").toLowerCase();
+    if(/natural|neural|premium|enhanced/.test(n)) s+=20;          // best phone voices
+    if(state.settings.accentIn){ if(lg==="en-in") s+=14; if(/india/.test(n)) s+=10; }
+    else { if(lg==="en-us") s+=14; }
+    if(/google/.test(n)) s+=6;
+    if(/samantha|karen|moira|serena|veena|rishi/.test(n)) s+=5;   // good Apple voices (Veena/Rishi = Indian English)
+    if(/^en(-|_|$)/.test(lg)) s+=3;
+    if(/compact|espeak|robot/.test(n)) s-=10;
+    return s;
+  }
+  function pickVoice(){
+    if(!voices.length) loadVoices();
+    var en=voices.filter(function(v){ return /^en(-|_|$)/i.test(v.lang||""); });
+    if(!en.length) return voices[0]||null;
+    en.sort(function(a,b){ return scoreVoice(b)-scoreVoice(a); });
+    return en[0];
+  }
+  function speak(text){
+    if(!("speechSynthesis" in window)) return;
+    try{
+      speechSynthesis.cancel();
+      var u=new SpeechSynthesisUtterance(text);
+      var v=pickVoice(); if(v){ u.voice=v; u.lang=v.lang; } else { u.lang="en-US"; }
+      u.rate = state.settings.slow ? 0.78 : 0.95;
+      u.pitch = 1.04;   // slightly warmer than default
+      speechSynthesis.speak(u);
+    }catch(e){}
+  }
+
+  /* ============================================================ SOUND — suprabhata-style ambience + chimes */
+  var AC=null, Music={master:null,nodes:[],timer:null,on:false};
+  function ac(){
+    if(!AC){ var C=window.AudioContext||window.webkitAudioContext; if(!C) return null; AC=new C(); }
+    if(AC.state==="suspended"){ try{AC.resume();}catch(e){} }
+    return AC;
+  }
+  /* Tanpura-style drone: Sa–Pa–Sa (A2, E3, A3) breathing slowly, with soft
+     veena-like plucks from the Mohana (major pentatonic) scale on top. */
+  function startMusic(){
+    var ctx=ac(); if(!ctx || Music.on) return;
+    Music.on=true;
+    var master=ctx.createGain(); master.gain.value=0.0; master.connect(ctx.destination);
+    master.gain.linearRampToValueAtTime(0.05, ctx.currentTime+2.5);
+    var lp=ctx.createBiquadFilter(); lp.type="lowpass"; lp.frequency.value=1500; lp.connect(master);
+    Music.master=master; Music.nodes=[lp];
+    // whisper-quiet warm pad underneath — barely there
+    [[110,.09],[220,.045]].forEach(function(f){
+      var o=ctx.createOscillator(), g=ctx.createGain();
+      o.type="sine"; o.frequency.value=f[0]; g.gain.value=f[1];
+      o.connect(g); g.connect(lp); o.start();
+      Music.nodes.push(o,g);
+    });
+    // sparse bansuri-like flute phrases with gentle vibrato
+    var scale=[440,493.88,554.37,659.25,739.99]; // A major pentatonic
+    function phrase(){
+      if(!Music.on) return;
+      var t=ctx.currentTime+0.1;
+      var n=2+Math.floor(Math.random()*3);
+      var idx=Math.floor(Math.random()*scale.length);
+      for(var i=0;i<n;i++){
+        idx=Math.max(0,Math.min(scale.length-1, idx+(Math.random()<0.5?-1:1)));
+        var f=scale[idx], dur=0.7+Math.random()*0.7;
+        var o=ctx.createOscillator(), g=ctx.createGain();
+        o.type="triangle"; o.frequency.value=f;
+        var vib=ctx.createOscillator(), vg=ctx.createGain();
+        vib.type="sine"; vib.frequency.value=4.5; vg.gain.value=3.5;
+        vib.connect(vg); vg.connect(o.frequency);
+        g.gain.setValueAtTime(0.0001,t);
+        g.gain.linearRampToValueAtTime(0.05,t+0.18);
+        g.gain.linearRampToValueAtTime(0.045,t+Math.max(0.2,dur-0.25));
+        g.gain.linearRampToValueAtTime(0.0001,t+dur);
+        o.connect(g); g.connect(lp);
+        o.start(t); vib.start(t); o.stop(t+dur+0.05); vib.stop(t+dur+0.05);
+        Music.nodes.push(o,g,vib,vg);
+        t+=dur+0.08;
+      }
+      Music.timer=setTimeout(phrase, 7000+Math.random()*6000);
+    }
+    Music.timer=setTimeout(phrase, 2200);
+  }
+  function stopMusic(){
+    Music.on=false;
+    if(Music.timer){ clearTimeout(Music.timer); Music.timer=null; }
+    if(Music.master && AC){
+      try{ Music.master.gain.linearRampToValueAtTime(0.0, AC.currentTime+0.8); }catch(e){}
+      var m=Music.master, ns=Music.nodes;
+      setTimeout(function(){ try{ ns.forEach(function(n){ if(n.stop)n.stop(); if(n.disconnect)n.disconnect(); }); m.disconnect(); }catch(e){} }, 900);
+    }
+    Music.master=null; Music.nodes=[];
+  }
+  function note(freq,t0,dur,gain,type){
+    var ctx=ac(); if(!ctx) return;
+    var t=ctx.currentTime+(t0||0);
+    var o=ctx.createOscillator(), g=ctx.createGain();
+    o.type=type||"triangle"; o.frequency.value=freq;
+    g.gain.setValueAtTime(0.0001,t);
+    g.gain.exponentialRampToValueAtTime(gain||0.12,t+0.02);
+    g.gain.exponentialRampToValueAtTime(0.0001,t+(dur||0.3));
+    o.connect(g); g.connect(ctx.destination);
+    o.start(t); o.stop(t+(dur||0.3)+0.05);
+  }
+  var Sfx={
+    tap:  function(){ note(880,0,0.08,0.04,"sine"); },
+    good: function(){ note(659.25,0,0.15,0.1); note(880,0.12,0.3,0.12); },        // E5 → A5, the classic "ding-ding"
+    bad:  function(){ note(196,0,0.35,0.09,"sine"); },                            // soft low G, kind not harsh
+    done: function(){ [440,554.37,659.25,880].forEach(function(f,i){ note(f,i*0.13,0.35,0.13); }); }
+  };
+  /* browsers require a user gesture before audio — start on first tap */
+  document.addEventListener("pointerdown", function firstTap(){
+    document.removeEventListener("pointerdown", firstTap);
+    if(state.settings.music) startMusic();
+  });
+
+  /* ============================================================ MAP RENDER */
+  function renderPath(){
+    renderHud();
+    var html="";
+    UNITS.forEach(function(u,ui){
+      var uLessons=LESSONS.filter(function(l){return l.ui===ui;});
+      var got=crownsInUnit(ui), tot=uLessons.length;
+      html+='<div class="chapter"><div class="in">'+
+        '<div class="mark">'+u.mark+'</div>'+
+        '<div><h3 class="kn">'+esc(u.t)+'</h3><div class="u-en">ಪರ್ವ '+(ui+1)+' · Parva '+(ui+1)+' · '+esc(u.e)+'</div></div>'+
+        '<div class="u-crowns">👑 '+got+'/'+tot+'</div></div></div>';
+      html+='<div class="nodes">';
+      uLessons.forEach(function(l){
+        var isDone=!!state.done[l.key];
+        var unlocked=isUnlocked(l);
+        var cls=isDone?"done":(unlocked?"active":"locked");
+        var ico=isDone?"🪔":(unlocked?"🏹":"🔒");
+        var pop=(unlocked&&!isDone)?'<div class="startpop kn">ಇಂದಿನ ಗುರಿ · TODAY&#39;S AIM</div>':'';
+        html+='<div class="node '+cls+'" data-key="'+l.key+'" data-lock="'+(unlocked?0:1)+'">'+
+          pop+'<button class="bubble" aria-label="Lesson">'+ico+'</button></div>';
+      });
+      html+='</div>';
+    });
+    $("pathNodes").innerHTML=html;
+    $("btnReview").classList.toggle("hidden", weakWords().length<4);
+    Array.prototype.forEach.call($("pathNodes").querySelectorAll(".node"),function(n){
+      n.querySelector(".bubble").addEventListener("click",function(){
+        if(n.getAttribute("data-lock")==="1"){ wobble(n); return; }
+        startLesson(n.getAttribute("data-key"));
+      });
+    });
+  }
+  function weakWords(){
+    var now=Date.now();
+    return ALLWORDS.filter(function(w){ return state.words[w.en]; })
+      .sort(function(a,b){
+        var A=state.words[a.en], B=state.words[b.en];
+        function sc(st){ return st.w*3 - st.r + (now-st.t)/86400000; }
+        return sc(B)-sc(A);
+      });
+  }
+  function wobble(n){ n.style.transition="transform .1s"; n.style.transform="translateX(-6px)";
+    setTimeout(function(){n.style.transform="translateX(6px)";},80);
+    setTimeout(function(){n.style.transform="";},160); }
+  function isUnlocked(lesson){
+    var idx=LESSONS.indexOf(lesson);
+    if(idx===0) return true;
+    if(state.done[lesson.key]) return true;
+    return !!state.done[LESSONS[idx-1].key];
+  }
+
+  /* ============================================================ EXERCISES */
+  function isPhrase(w){ return w.en.trim().indexOf(" ")>-1; }
+  function normalize(s){ return s.toLowerCase().replace(/[^a-z0-9 ]/g,"").replace(/\s+/g," ").trim(); }
+
+  function buildLessonQueue(lesson){
+    var ex=[], words=lesson.words, seen={}, uniq=[];
+    var pool = UNITS[lesson.ui].alpha ? UNITS[lesson.ui].words : ALLWORDS.filter(function(x){return !x._alpha;});
+    words.forEach(function(w){ if(!seen[w.en]){seen[w.en]=1;uniq.push(w);} });
+    uniq.forEach(function(w){
+      var opts=sample(pool,3,w).map(function(o){return o.kn;});
+      opts.push(w.kn); shuffle(opts);
+      ex.push({t:"choose", w:w, prompt:w.en, speakEn:w.en, options:opts, answer:w.kn, kind:"kn"});
+    });
+    shuffle(uniq.slice()).forEach(function(w){
+      if(isPhrase(w)){ ex.push(makeBuild(w)); }
+      else{
+        var opts=sample(pool,3,w).map(function(o){return o.en;});
+        opts.push(w.en); shuffle(opts);
+        ex.push({t:"listen", w:w, speakEn:w.en, options:opts, answer:w.en, kind:"en"});
+      }
+    });
+    var phrase=uniq.filter(isPhrase)[0]||uniq[0];
+    ex.push({t:"repeat", w:phrase, speakEn:phrase.en});
+    if(uniq.length>=3){ ex.push({t:"match", pairs:uniq.slice(0,5)}); }
+    return ex;
+  }
+  function makeBuild(w){
+    var tokens=w.en.split(/\s+/);
+    var distr=[]; var pool=shuffle(ALLWORDS.filter(function(x){return !x._alpha;}));
+    for(var i=0;i<pool.length && distr.length<3;i++){
+      var t=pool[i].en.split(/\s+/)[0];
+      if(tokens.indexOf(t)===-1 && distr.indexOf(t)===-1) distr.push(t);
+    }
+    var bank=shuffle(tokens.concat(distr));
+    return {t:"build", w:w, prompt:w.kn, pron:w.pr, speakEn:w.en, tokens:tokens, bank:bank, answer:w.en};
+  }
+
+  /* ============================================================ LESSON RUNTIME */
+  var Q=[], qi=0, initN=0, hearts=5, curEx=null, checked=false, sessionXp=0, curLessonKey=null, curSel=null;
+
+  function startLesson(key){
+    var lesson=LESSONS.filter(function(l){return l.key===key;})[0]; if(!lesson)return;
+    curLessonKey=key; Q=buildLessonQueue(lesson); qi=0; initN=Q.length;
+    hearts=5; sessionXp=0;
+    $("heartBox").classList.toggle("hidden", !!state.settings.relax);
+    $("heartN").textContent=hearts;
+    show("lesson"); renderEx();
+  }
+  function startReview(){
+    var words=weakWords().slice(0,8);
+    if(words.length<1) return;
+    Q=[];
+    shuffle(words).forEach(function(w){
+      if(isPhrase(w)){ Q.push(makeBuild(w)); }
+      else {
+        var dpool = w._alpha ? ALLWORDS.filter(function(x){return x._alpha;}) : ALLWORDS.filter(function(x){return !x._alpha;});
+        var opts=sample(dpool,3,w).map(function(o){return o.kn;});
+        opts.push(w.kn); shuffle(opts);
+        Q.push({t:"choose", w:w, prompt:w.en, speakEn:w.en, options:opts, answer:w.kn, kind:"kn"});
+      }
+    });
+    curLessonKey="__review__"; qi=0; initN=Q.length; hearts=5; sessionXp=0;
+    $("heartBox").classList.toggle("hidden", !!state.settings.relax);
+    $("heartN").textContent=hearts;
+    show("lesson"); renderEx();
+  }
+  function updBar(){ var done=Math.min(qi,initN); $("lFill").style.width=(initN?(done/initN*100):0)+"%"; }
+
+  function renderEx(){
+    checked=false;
+    $("exfoot").className="exfoot"; $("fbMsg").classList.add("hidden");
+    var b=$("btnCheck"); b.className="btn3d"; b.disabled=true;
+    b.textContent="ಪರಿಶೀಲಿಸಿ · CHECK"; b.onclick=onCheck; b.classList.remove("hidden");
+    updBar();
+    if(qi>=Q.length){ finishLesson(); return; }
+    curEx=Q[qi];
+    var wrap=$("exwrap");
+    if(curEx.t==="choose")  return renderChoose(wrap);
+    if(curEx.t==="listen")  return renderListen(wrap);
+    if(curEx.t==="build")   return renderBuild(wrap);
+    if(curEx.t==="match")   return renderMatch(wrap);
+    if(curEx.t==="repeat")  return renderRepeat(wrap);
+  }
+
+  function renderChoose(wrap){
+    var e=curEx;
+    wrap.innerHTML='<div class="ex-sub kn">ಸರಿಯಾದ ಅರ್ಥ ಆರಿಸಿ · Choose the meaning</div>'+
+      '<div class="speaker-row"><button class="spk" id="exSpk">🔊</button><div class="spk-word">'+esc(e.prompt)+'</div></div>'+
+      '<div class="opts" id="opts"></div>';
+    fillOptions(e.options, e.kind);
+    $("exSpk").onclick=function(){ speak(e.speakEn); };
+    speak(e.speakEn);
+  }
+  function renderListen(wrap){
+    var e=curEx;
+    wrap.innerHTML='<div class="ex-sub kn">ಕೇಳಿ, ಸರಿಯಾದದ್ದನ್ನು ಆರಿಸಿ · Tap what you hear</div>'+
+      '<button class="spk big" id="exSpk">🔊 <span class="txt">Listen</span></button>'+
+      '<div class="opts" id="opts" style="margin-top:20px"></div>';
+    fillOptions(e.options, e.kind);
+    $("exSpk").onclick=function(){ speak(e.speakEn); };
+    speak(e.speakEn);
+  }
+  function fillOptions(options, kind){
+    var box=$("opts");
+    box.innerHTML=options.map(function(o,i){
+      return '<button class="opt'+(kind==="kn"?" kn":"")+'" data-v="'+esc(o)+'"><span class="num">'+(i+1)+'</span><span>'+esc(o)+'</span></button>';
+    }).join("");
+    Array.prototype.forEach.call(box.querySelectorAll(".opt"),function(btn){
+      btn.addEventListener("click",function(){
+        if(checked) return;
+        Array.prototype.forEach.call(box.querySelectorAll(".opt"),function(x){x.classList.remove("sel");});
+        btn.classList.add("sel");
+        Sfx.tap();
+        curSel=btn.getAttribute("data-v");
+        $("btnCheck").disabled=false;
+        if(kind==="en") speak(curSel);
+      });
+    });
+    curSel=null;
+  }
+
+  var placed=[];
+  function renderBuild(wrap){
+    var e=curEx; placed=[];
+    wrap.innerHTML='<div class="ex-sub kn">ವಾಕ್ಯ ಜೋಡಿಸಿ · Build this in English</div>'+
+      '<div class="speaker-row"><button class="spk" id="exSpk">🔊</button><div class="spk-word kn">'+esc(e.prompt)+'</div></div>'+
+      '<div class="answer-line" id="ansLine"></div>'+
+      '<div class="bank" id="bank"></div>';
+    var bank=$("bank");
+    bank.innerHTML=e.bank.map(function(tok,i){ return '<button class="tile" data-i="'+i+'">'+esc(tok)+'</button>'; }).join("");
+    Array.prototype.forEach.call(bank.querySelectorAll(".tile"),function(t){
+      t.addEventListener("click",function(){
+        if(checked||t.classList.contains("used")) return;
+        t.classList.add("used");
+        var tok=e.bank[+t.getAttribute("data-i")];
+        speak(tok);
+        placed.push({tok:tok, src:t});
+        drawPlaced(); $("btnCheck").disabled=placed.length===0;
+      });
+    });
+    $("exSpk").onclick=function(){ speak(e.speakEn); };
+  }
+  function drawPlaced(){
+    var line=$("ansLine");
+    line.innerHTML=placed.map(function(p,i){ return '<button class="tile" data-p="'+i+'">'+esc(p.tok)+'</button>'; }).join("");
+    Array.prototype.forEach.call(line.querySelectorAll(".tile"),function(t){
+      t.addEventListener("click",function(){
+        if(checked) return;
+        var i=+t.getAttribute("data-p"); var p=placed[i];
+        p.src.classList.remove("used"); placed.splice(i,1); drawPlaced();
+        $("btnCheck").disabled=placed.length===0;
+      });
+    });
+  }
+
+  var matchSel=null, matchLeft=0;
+  function renderMatch(wrap){
+    var pairs=curEx.pairs; matchSel=null; matchLeft=pairs.length;
+    var left=shuffle(pairs.map(function(p,i){return {v:p.en,i:i,side:"L"};}));
+    var right=shuffle(pairs.map(function(p,i){return {v:p.kn,i:i,side:"R"};}));
+    wrap.innerHTML='<div class="ex-sub kn">ಜೋಡಿ ಹೊಂದಿಸಿ · Match the pairs</div>'+
+      '<div class="match-grid"><div class="mcol" id="mL"></div><div class="mcol" id="mR"></div></div>';
+    function col(items,id,kn){
+      $(id).innerHTML=items.map(function(it){ return '<button class="mbtn'+(kn?" kn":"")+'" data-i="'+it.i+'" data-side="'+it.side+'">'+esc(it.v)+'</button>'; }).join("");
+    }
+    col(left,"mL",false); col(right,"mR",true);
+    $("btnCheck").classList.add("hidden");
+    Array.prototype.forEach.call(wrap.querySelectorAll(".mbtn"),function(btn){
+      btn.addEventListener("click",function(){ onMatchTap(btn); });
+    });
+  }
+  function onMatchTap(btn){
+    if(btn.classList.contains("gone")) return;
+    if(btn.getAttribute("data-side")==="L"){ speak(btn.textContent); }
+    if(!matchSel){ clearMatchSel(); btn.classList.add("sel"); matchSel=btn; return; }
+    if(matchSel===btn){ btn.classList.remove("sel"); matchSel=null; return; }
+    if(matchSel.getAttribute("data-side")===btn.getAttribute("data-side")){
+      clearMatchSel(); btn.classList.add("sel"); matchSel=btn; return;
+    }
+    if(matchSel.getAttribute("data-i")===btn.getAttribute("data-i")){
+      matchSel.classList.add("gone"); btn.classList.add("gone");
+      matchSel.classList.remove("sel"); matchSel=null; matchLeft--;
+      if(matchLeft<=0){ setTimeout(function(){ markResult(true); },260); }
+    } else {
+      var a=matchSel, bb=btn; a.classList.add("err"); bb.classList.add("err");
+      setTimeout(function(){ a.classList.remove("err","sel"); bb.classList.remove("err"); },420);
+      matchSel=null;
+    }
+  }
+  function clearMatchSel(){ if(matchSel){matchSel.classList.remove("sel");matchSel=null;} }
+
+  function renderRepeat(wrap){
+    var e=curEx;
+    wrap.innerHTML='<div class="ex-sub kn">ಜೋರಾಗಿ ಹೇಳಿ · Say it aloud</div>'+
+      '<div class="repeat-card"><button class="spk big" id="exSpk">🔊 <span class="txt">Listen</span></button>'+
+      '<div class="big-en">'+esc(e.w.en)+'</div>'+
+      '<div class="pron kn">'+esc(e.w.pr)+'</div>'+
+      '<div class="mic-note kn">ಮಂತ್ರದಂತೆ ಮೂರು ಸಲ ಹೇಳಿ 🪷 · Say it three times, like a mantra</div></div>';
+    $("exSpk").onclick=function(){ speak(e.speakEn); };
+    speak(e.speakEn);
+    var b=$("btnCheck"); b.disabled=false; b.textContent="ಹೇಳಿದೆ · I SAID IT"; b.className="btn3d jade";
+    b.onclick=function(){ sessionXp+=2; qi++; renderEx(); };
+  }
+
+  /* ============================================================ CHECK */
+  function onCheck(){
+    if(curEx.t==="build"){
+      var got=normalize(placed.map(function(p){return p.tok;}).join(" "));
+      markResult(got===normalize(curEx.answer));
+    } else if(curEx.t==="choose"||curEx.t==="listen"){
+      if(!curSel) return;
+      var box=$("opts");
+      Array.prototype.forEach.call(box.querySelectorAll(".opt"),function(x){
+        var v=x.getAttribute("data-v");
+        if(v===curEx.answer) x.classList.add("good");
+        else if(v===curSel) x.classList.add("bad");
+      });
+      markResult(curSel===curEx.answer);
+    }
+  }
+  function markResult(ok){
+    checked=true;
+    var wd=curEx.w;
+    if(wd){
+      var st=state.words[wd.en]||(state.words[wd.en]={r:0,w:0,t:0});
+      if(ok) st.r++; else st.w++;
+      st.t=Date.now(); save();
+    }
+    if(ok){
+      sessionXp+=3;
+      Sfx.good();
+      speak(curEx.w?curEx.w.en:(curEx.answer||""));
+      feedback(true);
+    } else {
+      if(!state.settings.relax){ hearts=Math.max(0,hearts-1); $("heartN").textContent=hearts; }
+      Sfx.bad();
+      Q.push(Object.assign({}, curEx));
+      feedback(false);
+    }
+  }
+  function feedback(ok){
+    var foot=$("exfoot"), msg=$("fbMsg");
+    foot.className="exfoot "+(ok?"good":"bad");
+    msg.className="fb-msg "+(ok?"fb-good":"fb-bad");
+    var ans=curEx.answer||(curEx.w&&curEx.w.en)||"";
+    if(ok){ msg.innerHTML='<div class="fb-ico">✔</div><div class="kn">ಸರಿ ಉತ್ತರ ✓ · Correct</div>'; }
+    else { msg.innerHTML='<div class="fb-ico">✕</div><div class="kn">ಸರಿ ಉತ್ತರ:<span class="sub">'+esc(ans)+'</span></div>'; }
+    msg.classList.remove("hidden");
+    var b=$("btnCheck"); b.disabled=false; b.classList.remove("hidden");
+    b.className="btn3d"+(ok?" jade":" coral");
+    b.textContent = ok ? "ಮುಂದೆ · CONTINUE" : "ಅರ್ಥ ಆಯ್ತು · GOT IT";
+    b.onclick=function(){
+      if(!state.settings.relax && hearts<=0){ hearts=5; $("heartN").textContent=hearts; }
+      qi++; renderEx();
+    };
+  }
+
+  function finishLesson(){
+    if(curLessonKey!=="__review__" && !state.done[curLessonKey]){ state.done[curLessonKey]=true; }
+    state.xp+=sessionXp;
+    bumpStreak(); save();
+    $("dXp").textContent="+"+sessionXp;
+    $("dStreak").textContent=state.streak;
+    Sfx.done();
+    show("done"); renderHud();
+    try{ if(navigator.vibrate) navigator.vibrate(60); }catch(e){}
+  }
+
+  /* ============================================================ WIRING */
+  $("btnQuit").onclick=function(){ if(confirm("ಪಾಠ ನಿಲ್ಲಿಸಬೇಕೆ? · Quit this lesson?")){ renderPath(); show("path"); } };
+  $("btnDoneNext").onclick=function(){ renderPath(); show("path"); };
+  $("btnReview").onclick=function(){ startReview(); };
+  $("btnGear").onclick=function(){ $("sheetBg").classList.remove("hidden"); };
+  $("btnCloseSheet").onclick=function(){ $("sheetBg").classList.add("hidden"); };
+  $("sheetBg").addEventListener("click",function(e){ if(e.target===$("sheetBg")) $("sheetBg").classList.add("hidden"); });
+  function applyFs(){ document.documentElement.style.setProperty("--fs",state.settings.fs); $("fsVal").textContent=Math.round(state.settings.fs*100)+"%"; }
+  function applyTg(){
+    $("tgSlow").classList.toggle("on",!!state.settings.slow);
+    $("tgRelax").classList.toggle("on",!!state.settings.relax);
+    $("tgMusic").classList.toggle("on",!!state.settings.music);
+    $("tgAccent").classList.toggle("on",!!state.settings.accentIn);
+  }
+  $("fsUp").onclick=function(){ state.settings.fs=Math.min(1.5,+(state.settings.fs+0.1).toFixed(2)); save(); applyFs(); };
+  $("fsDown").onclick=function(){ state.settings.fs=Math.max(0.9,+(state.settings.fs-0.1).toFixed(2)); save(); applyFs(); };
+  $("tgSlow").onclick=function(){ state.settings.slow=!state.settings.slow; save(); applyTg(); };
+  $("tgRelax").onclick=function(){ state.settings.relax=!state.settings.relax; save(); applyTg(); };
+  $("tgMusic").onclick=function(){ state.settings.music=!state.settings.music; save(); applyTg(); if(state.settings.music) startMusic(); else stopMusic(); };
+  $("tgAccent").onclick=function(){ state.settings.accentIn=!state.settings.accentIn; save(); applyTg(); speak("Hello, how are you"); };
+  $("btnReset").onclick=function(){
+    if(confirm("ಅಕ್ಕಮ್ಮನ ಎಲ್ಲಾ ಪ್ರಗತಿಯನ್ನು ಅಳಿಸಬೇಕೆ? · Reset all progress?")){
+      state={done:{},xp:0,streak:0,lastDay:null,words:{},settings:state.settings}; save();
+      renderPath(); $("sheetBg").classList.add("hidden");
+    }
+  };
+
+  applyFs(); applyTg(); renderPath(); show("path");
+})();
+</script>
+<script>
+/* offline install — no-op where service workers are unavailable */
+if("serviceWorker" in navigator && (location.protocol==="https:"||location.hostname==="localhost")){
+  try{ navigator.serviceWorker.register("./sw.js").catch(function(){}); }catch(e){}
+}
+</script>
