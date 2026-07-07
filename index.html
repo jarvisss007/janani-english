@@ -193,6 +193,8 @@
   .repeat-card .big-en{font-size:calc(2rem*var(--fs));font-weight:900;margin:14px 0 6px;color:var(--ink)}
   .repeat-card .pron{display:inline-block;background:#F3EBFF;color:var(--violet-d);border-radius:14px;padding:9px 16px;font-size:calc(1.15rem*var(--fs));margin-top:6px;font-weight:800}
   .mic-note{color:var(--ink-soft);font-size:calc(.8rem*var(--fs));font-weight:700;margin-top:18px}
+  .rep-status{margin-top:14px;font-size:calc(.85rem*var(--fs));color:var(--ink-soft);font-weight:700;line-height:1.7;min-height:44px}
+  .rep-status.good{color:var(--jade-d)}
 
   .exfoot{margin-top:auto;padding:16px 16px calc(20px + env(safe-area-inset-bottom));position:sticky;bottom:0;z-index:5}
   .exfoot .inner{border-radius:22px;padding:16px;background:rgba(28,10,62,.88);backdrop-filter:blur(8px);box-shadow:0 -6px 30px rgba(0,0,0,.3)}
@@ -1289,15 +1291,60 @@
   }
   function clearMatchSel(){ if(matchSel){matchSel.classList.remove("sel");matchSel=null;} }
 
+  function listenOnce(onResult,onEnd){
+    var SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+    if(!SR) return false;
+    try{
+      var rec=new SR();
+      rec.lang=state.settings.accentIn?"en-IN":"en-US";
+      rec.interimResults=false; rec.maxAlternatives=3;
+      rec.onresult=function(ev){
+        var best="", i;
+        for(i=0;i<ev.results[0].length;i++){ best+=(i?"|":"")+ev.results[0][i].transcript; }
+        onResult(ev.results[0][0].transcript, best);
+      };
+      rec.onend=function(){ if(onEnd) onEnd(); };
+      rec.onerror=function(){ if(onEnd) onEnd(); };
+      rec.start();
+      return true;
+    }catch(e){ return false; }
+  }
   function renderRepeat(wrap){
     var e=curEx;
     wrap.innerHTML='<div class="ex-sub kn">ಜೋರಾಗಿ ಹೇಳಿ · Say it aloud</div>'+
       '<div class="repeat-card"><button class="spk big" id="exSpk">🔊 <span class="txt">Listen</span></button>'+
       '<div class="big-en">'+esc(e.w.en)+'</div>'+
       '<div class="pron kn">'+esc(e.w.pr)+'</div>'+
-      '<div class="mic-note kn">ಮಂತ್ರದಂತೆ ಮೂರು ಸಲ ಹೇಳಿ 🪷 · Say it three times, like a mantra</div></div>';
+      '<button class="spk" id="repMic" style="margin-top:16px;width:76px;height:76px;font-size:1.9rem;border-radius:50%" aria-label="Speak">🎤</button>'+
+      '<div class="rep-status kn" id="repStatus">🎤 ಒತ್ತಿ, ವಾಕ್ಯ ಹೇಳಿ — ಫೋನ್ ಅರ್ಥ ಮಾಡಿಕೊಳ್ಳುತ್ತದಾ ನೋಡೋಣ<br>Press the mic and say it — see if the phone understands you</div></div>';
     $("exSpk").onclick=function(){ speak(e.speakEn); };
     speak(e.speakEn);
+    var SRok=!!(window.SpeechRecognition||window.webkitSpeechRecognition);
+    if(!SRok){
+      $("repMic").style.display="none";
+      $("repStatus").innerHTML="ಮಂತ್ರದಂತೆ ಮೂರು ಸಲ ಹೇಳಿ 🪷 · Say it three times, like a mantra";
+    }
+    $("repMic").onclick=function(){
+      try{ speechSynthesis.cancel(); }catch(err){}
+      $("repStatus").className="rep-status kn";
+      $("repStatus").innerHTML="👂 ಕೇಳುತ್ತಿದ್ದೇನೆ… ಈಗ ಹೇಳಿ · Listening — say it now";
+      $("repMic").style.background="var(--coral)";
+      var ok=listenOnce(function(t){
+        $("repMic").style.background="";
+        var said=normalize(t), target=normalize(e.w.en);
+        var st=said.split(" "), tt=target.split(" ");
+        var hit=tt.filter(function(w2){ return st.indexOf(w2)>-1; }).length;
+        if(said===target || hit/tt.length>=0.7){
+          Sfx.good(); sessionXp+=4;
+          $("repStatus").className="rep-status kn good";
+          $("repStatus").innerHTML="✅ ಫೋನ್‌ಗೆ ಅರ್ಥ ಆಯ್ತು! · The phone understood you:<br>“"+esc(t)+"”";
+          setTimeout(function(){ qi++; renderEx(); },1700);
+        } else {
+          $("repStatus").innerHTML="ಫೋನ್ ಕೇಳಿದ್ದು: “"+esc(t)+"”<br>ಇನ್ನೊಮ್ಮೆ ನಿಧಾನವಾಗಿ ಪ್ರಯತ್ನಿಸಿ 🎤 · Not quite — try once more, slowly";
+        }
+      }, function(){ $("repMic").style.background=""; });
+      if(!ok){ $("repStatus").innerHTML="ಮೈಕ್ ಲಭ್ಯವಿಲ್ಲ — ಜೋರಾಗಿ ಮೂರು ಸಲ ಹೇಳಿ ಸಾಕು"; }
+    };
     var b=$("btnCheck"); b.disabled=false; b.textContent="ಹೇಳಿದೆ · I SAID IT"; b.className="btn3d jade";
     b.onclick=function(){ sessionXp+=2; qi++; renderEx(); };
   }
