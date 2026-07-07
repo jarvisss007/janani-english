@@ -77,15 +77,15 @@
   .app{max-width:520px;margin:0 auto;min-height:100vh;display:flex;flex-direction:column;position:relative;z-index:2}
 
   /* ================= 3D BUTTONS ================= */
-  .btn3d{border:none;border-radius:18px;color:#4A2F00;background:linear-gradient(180deg,#FFD98A,var(--gold));
-    box-shadow:0 5px 0 var(--gold-d),0 10px 26px rgba(0,0,0,.28); padding:16px; font-size:calc(1rem*var(--fs));
-    letter-spacing:.5px; transition:transform .05s, box-shadow .05s; text-transform:uppercase;}
-  .btn3d:active{transform:translateY(5px);box-shadow:0 0 0 var(--gold-d)}
-  .btn3d.jade{background:linear-gradient(180deg,#57E0BE,var(--jade));color:#053B2E;box-shadow:0 5px 0 var(--jade-d),0 10px 26px rgba(0,0,0,.28)}
-  .btn3d.jade:active{box-shadow:0 0 0 var(--jade-d)}
-  .btn3d.coral{background:linear-gradient(180deg,#FF8F8F,var(--coral));color:#4A0B0B;box-shadow:0 5px 0 var(--coral-d),0 10px 26px rgba(0,0,0,.28)}
-  .btn3d.coral:active{box-shadow:0 0 0 var(--coral-d)}
-  .btn3d:disabled{background:#5A4A73;color:#9D8BB5;box-shadow:0 5px 0 #453861;cursor:default}
+  .btn3d{border:1.5px solid rgba(255,243,214,.5);border-radius:14px;color:#3A2504;
+    background:linear-gradient(160deg,#F2CE7E,var(--gold) 60%,#C89238);
+    box-shadow:0 6px 20px rgba(224,177,94,.28), inset 0 1px 0 rgba(255,255,255,.5);
+    padding:16px;font-size:calc(1rem*var(--fs));letter-spacing:.8px;transition:transform .08s;text-transform:uppercase}
+  .btn3d:active{transform:scale(.98)}
+  .btn3d.jade{background:linear-gradient(160deg,#4ED9B4,var(--jade) 60%,#17765C);color:#04281E;border-color:rgba(220,255,242,.45);box-shadow:0 6px 20px rgba(46,196,160,.25)}
+  .btn3d.coral{background:linear-gradient(160deg,#FF9C93,var(--coral) 60%,#8F3A26);color:#3D0E05;border-color:rgba(255,225,220,.45);box-shadow:0 6px 20px rgba(194,96,63,.25)}
+  .btn3d.ghost{background:rgba(255,255,255,.08);color:#F3E8D2;border-color:rgba(255,255,255,.25);box-shadow:none}
+  .btn3d:disabled{background:#4A3D63;color:#9D8BB5;border-color:#5A4A73;box-shadow:none;cursor:default}
   .btn3d:disabled:active{transform:none}
 
   /* ================= HUD ================= */
@@ -143,7 +143,7 @@
   /* ================= LESSON (silk card world) ================= */
   .lesson-top{display:flex;align-items:center;gap:14px;padding:16px 18px 10px}
   .lesson-top .quit{width:34px;height:34px;border:none;background:none;font-size:1.5rem;color:#C9B3E6;flex:none}
-  .lbar{flex:1;height:16px;background:rgba(255,255,255,.14);border-radius:999px;overflow:hidden;box-shadow:inset 0 2px 4px rgba(0,0,0,.25)}
+  .lbar{flex:1;height:7px;background:rgba(255,255,255,.14);border-radius:999px;overflow:hidden}
   .lbar>i{display:block;height:100%;border-radius:999px;width:0;transition:width .35s ease;
     background:linear-gradient(90deg,var(--gold),#FFE1A0);box-shadow:0 0 12px var(--gold-glow)}
   .hearts{display:flex;align-items:center;gap:4px;color:#FF9E9E;font-size:1.05rem;font-weight:900}
@@ -241,6 +241,33 @@
     font-size:calc(1.02rem*var(--fs));box-shadow:0 8px 22px rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.14)}
   .level-band .lb-en{display:block;font-size:calc(.66rem*var(--fs));letter-spacing:1.3px;text-transform:uppercase;opacity:.85;margin-top:4px;font-weight:800}
 
+  /* ================= TEMPLE-DOOR COURTYARD ================= */
+  .hero{width:100%;border:1.5px solid rgba(255,243,214,.55);border-radius:18px;padding:16px;cursor:pointer;
+    background:linear-gradient(160deg,#F2CE7E,#E0B15E 55%,#B9852F);color:#3A2504;display:flex;flex-direction:column;gap:3px;
+    box-shadow:0 10px 30px rgba(224,177,94,.35);text-align:left;margin-bottom:12px;font-family:inherit}
+  .hero .h-kn{font-size:calc(1.12rem*var(--fs));font-weight:900}
+  .hero .h-en{font-size:calc(.7rem*var(--fs));font-weight:800;text-transform:uppercase;letter-spacing:.8px;opacity:.8}
+  .hero:active{transform:scale(.985)}
+  .doors{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:14px 16px 8px}
+  .door{position:relative;border:1.5px solid rgba(224,177,94,.4);background:linear-gradient(180deg,rgba(255,255,255,.10),rgba(255,255,255,.03));
+    border-radius:80px 80px 16px 16px;padding:24px 10px 14px;text-align:center;color:#F3E8D2;cursor:pointer;
+    display:flex;flex-direction:column;align-items:center;gap:6px;font-family:inherit}
+  .door:active{transform:scale(.97)}
+  .door .d-mark{font-size:2rem;filter:drop-shadow(0 3px 8px rgba(0,0,0,.35))}
+  .door .d-t{font-weight:900;font-size:calc(.92rem*var(--fs));line-height:1.25}
+  .door .d-e{font-size:calc(.6rem*var(--fs));text-transform:uppercase;letter-spacing:.7px;opacity:.7;font-weight:800}
+  .door .d-p{font-size:calc(.8rem*var(--fs));font-weight:900;color:var(--gold);margin-top:2px}
+  .door.done{border-color:var(--gold);background:linear-gradient(180deg,rgba(224,177,94,.24),rgba(224,177,94,.08));box-shadow:0 0 24px rgba(224,177,94,.22)}
+  .door.active{border-color:rgba(255,243,214,.75);box-shadow:0 0 26px rgba(224,177,94,.4)}
+  .door.locked{opacity:.42}
+  .mala{display:flex;flex-wrap:wrap;gap:12px;padding:12px 0 4px}
+  .diya{width:70px;height:76px;border:2px solid var(--silk-line);border-radius:50% 50% 42% 42%;background:#fff;
+    font-size:1.5rem;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;font-weight:900;color:var(--ink);font-family:inherit;cursor:pointer}
+  .diya span{font-size:.68rem;color:var(--ink-soft)}
+  .diya.lit{background:linear-gradient(180deg,#FFF3D6,#F2CE7E);border-color:var(--gold-d)}
+  .diya.next{border-color:var(--gold);box-shadow:0 0 18px rgba(224,177,94,.55)}
+  .diya.off{opacity:.45;cursor:default}
+
   /* ================= SETUP ================= */
   .setup-card{margin:10px 16px 30px;background:var(--silk);border-radius:24px;padding:22px 18px;color:var(--ink);box-shadow:0 18px 44px rgba(0,0,0,.4)}
   .setup-card label{font-weight:900;display:block;margin:16px 0 8px;font-size:calc(1.02rem*var(--fs))}
@@ -328,6 +355,7 @@
       <p class="kn">ನಿಮ್ಮ ಮಹಾಯಾತ್ರೆ 🛕 → 🗽 — ಅಭ್ಯಾಸದಿಂದ ಎಲ್ಲವೂ ಸಾಧ್ಯ</p>
     </div>
     <div style="padding:16px 16px 0">
+      <button class="hero hidden kn" id="heroGo"></button>
       <button class="btn3d hidden" id="btnReview" style="width:100%">🏹 ದಿನದ ಅಭ್ಯಾಸ · TODAY'S ABHYASA</button>
       <button class="btn3d jade" id="btnGuru" style="width:100%;margin-top:12px">🪶 ಗುರು ಜೊತೆ ಮಾತು · PRACTICE CONVERSATION</button>
     </div>
@@ -396,6 +424,14 @@
       </div>
       <button class="btn3d jade" id="btnDoneNext" style="width:100%;max-width:340px;margin:0 auto;display:block">ಮುಂದುವರಿಸಿ · CONTINUE</button>
     </div>
+  </div>
+</div>
+
+<div class="sheet-bg hidden" id="parvaBg">
+  <div class="sheet">
+    <h2 class="kn" id="pvTitle"></h2><div class="sub" id="pvSub"></div>
+    <div class="mala" id="pvLessons"></div>
+    <button class="btn3d close kn" id="pvClose" style="width:100%;margin-top:14px">ಮುಚ್ಚಿ · CLOSE</button>
   </div>
 </div>
 
@@ -864,39 +900,55 @@
   function renderPath(){
     renderHud();
     $("greetTitle").textContent="ನಮಸ್ಕಾರ, "+profName()+" 🌼";
+    var next=null,i;
+    for(i=0;i<LESSONS.length;i++){ if(!state.done[LESSONS[i].key]){ next=LESSONS[i]; break; } }
+    var hero=$("heroGo");
+    if(next){
+      var nu=UNITS[next.ui];
+      hero.classList.remove("hidden");
+      hero.innerHTML='<span class="h-kn kn">🪔 ಇಂದಿನ ಪಾಠ · '+esc(nu.t)+'</span>'+
+        '<span class="h-en">Continue · Parva '+(next.ui+1)+' — '+esc(nu.e)+'</span>';
+      hero.onclick=function(){ startLesson(next.key); };
+    } else { hero.classList.add("hidden"); }
     var html="", prevLvl=0;
     UNITS.forEach(function(u,ui){
+      var uLessons=LESSONS.filter(function(l){return l.ui===ui;});
+      var got=uLessons.filter(function(l){return state.done[l.key];}).length;
       if(u.lvl!==prevLvl){
+        if(prevLvl) html+='</div>';
         var LM=LEVELMETA[u.lvl]||LEVELMETA[1];
-        html+='<div class="level-band kn" style="background:'+LM.bg+'">'+esc(LM.kn)+'<span class="lb-en">'+esc(LM.en)+'</span></div>';
+        html+='<div class="level-band kn" style="background:'+LM.bg+'">'+esc(LM.kn)+'<span class="lb-en">'+esc(LM.en)+'</span></div><div class="doors">';
         prevLvl=u.lvl;
       }
-      var uLessons=LESSONS.filter(function(l){return l.ui===ui;});
-      var got=crownsInUnit(ui), tot=uLessons.length;
-      html+='<div class="chapter"><div class="in">'+
-        '<div class="mark">'+u.mark+'</div>'+
-        '<div><h3 class="kn">'+esc(u.t)+'</h3><div class="u-en">ಪರ್ವ '+(ui+1)+' · Parva '+(ui+1)+' · '+esc(u.e)+'</div></div>'+
-        '<div class="u-crowns">👑 '+got+'/'+tot+'</div></div></div>';
-      html+='<div class="nodes">';
-      uLessons.forEach(function(l){
-        var isDone=!!state.done[l.key];
-        var unlocked=isUnlocked(l);
-        var cls=isDone?"done":(unlocked?"active":"locked");
-        var ico=isDone?"🪔":(unlocked?"🏹":"🔒");
-        var pop=(unlocked&&!isDone)?'<div class="startpop kn">ಇಂದಿನ ಗುರಿ · TODAY&#39;S AIM</div>':'';
-        html+='<div class="node '+cls+'" data-key="'+l.key+'" data-lock="'+(unlocked?0:1)+'">'+
-          pop+'<button class="bubble" aria-label="Lesson"><span class="ico">'+ico+'</span></button></div>';
-      });
-      html+='</div>';
+      var reach=isUnlocked(uLessons[0])||got>0;
+      var cls = got===uLessons.length ? "door done" : (reach ? "door active" : "door locked");
+      html+='<button class="'+cls+'" data-ui="'+ui+'">'+
+        '<span class="d-mark">'+u.mark+'</span>'+
+        '<span class="d-t kn">'+esc(u.t)+'</span>'+
+        '<span class="d-e">Parva '+(ui+1)+' · '+esc(u.e)+'</span>'+
+        '<span class="d-p">🪔 '+got+'/'+uLessons.length+'</span></button>';
     });
+    if(prevLvl) html+='</div>';
     $("pathNodes").innerHTML=html;
     $("btnReview").classList.toggle("hidden", weakWords().length<4);
-    Array.prototype.forEach.call($("pathNodes").querySelectorAll(".node"),function(n){
-      n.querySelector(".bubble").addEventListener("click",function(){
-        if(n.getAttribute("data-lock")==="1"){ wobble(n); return; }
-        startLesson(n.getAttribute("data-key"));
-      });
+    Array.prototype.forEach.call($("pathNodes").querySelectorAll(".door"),function(d){
+      d.addEventListener("click",function(){ openParva(+d.getAttribute("data-ui")); });
     });
+  }
+  function openParva(ui){
+    var u=UNITS[ui], uL=LESSONS.filter(function(l){return l.ui===ui;});
+    $("pvTitle").textContent=u.mark+" "+u.t;
+    $("pvSub").textContent="Parva "+(ui+1)+" · "+u.e+" — ಪಾಠ ಆರಿಸಿ · choose a lesson";
+    var box=$("pvLessons"); box.innerHTML="";
+    uL.forEach(function(l,ix){
+      var done=!!state.done[l.key], un=isUnlocked(l);
+      var b=document.createElement("button");
+      b.className="diya "+(done?"lit":(un?"next":"off"));
+      b.innerHTML=(done?"🪔":(un?"⭐":"🔒"))+"<span>"+(ix+1)+"</span>";
+      if(un){ b.onclick=function(){ $("parvaBg").classList.add("hidden"); startLesson(l.key); }; }
+      box.appendChild(b);
+    });
+    $("parvaBg").classList.remove("hidden");
   }
   function weakWords(){
     var now=Date.now();
@@ -907,9 +959,6 @@
         return sc(B)-sc(A);
       });
   }
-  function wobble(n){ n.style.transition="transform .1s"; n.style.transform="translateX(-6px)";
-    setTimeout(function(){n.style.transform="translateX(6px)";},80);
-    setTimeout(function(){n.style.transform="";},160); }
   function isUnlocked(lesson){
     var idx=LESSONS.indexOf(lesson);
     if(idx===0) return true;
@@ -1370,6 +1419,8 @@
     save();
     initContent(); renderPath(); show("path");
   };
+  $("pvClose").onclick=function(){ $("parvaBg").classList.add("hidden"); };
+  $("parvaBg").addEventListener("click",function(e){ if(e.target===$("parvaBg")) $("parvaBg").classList.add("hidden"); });
   $("btnProfile").onclick=function(){
     $("sheetBg").classList.add("hidden");
     renderSetup(); show("setup");
