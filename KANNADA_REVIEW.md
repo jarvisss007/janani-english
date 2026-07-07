@@ -14,6 +14,12 @@ Check (a) the Kannada meaning is natural spoken Kannada, (b) the pronunciation c
 | 4 | Please | ದಯವಿಟ್ಟು | ಪ್ಲೀಸ್ | |
 | 5 | Excuse me | ಸ್ವಲ್ಪ ಕೇಳಿ | ಎಕ್ಸ್‌ಕ್ಯೂಸ್ ಮಿ | |
 | 6 | Nice to meet you | ನಿಮ್ಮನ್ನು ಭೇಟಿಯಾಗಿ ಸಂತೋಷ | ನೈಸ್ ಟು ಮೀಟ್ ಯೂ | |
+| 7 | Good evening | ಶುಭ ಸಂಜೆ | ಗುಡ್ ಈವ್ನಿಂಗ್ | |
+| 8 | Good night | ಶುಭ ರಾತ್ರಿ | ಗುಡ್ ನೈಟ್ | |
+| 9 | You are welcome | ಇದಕ್ಕೇನಂತೆ | ಯೂ ಆರ್ ವೆಲ್ಕಮ್ | |
+| 10 | See you later | ಆಮೇಲೆ ಸಿಗೋಣ | ಸೀ ಯೂ ಲೇಟರ್ | |
+| 11 | No problem | ತೊಂದರೆ ಇಲ್ಲ | ನೋ ಪ್ರಾಬ್ಲಮ್ | |
+| 12 | Please come in | ದಯವಿಟ್ಟು ಒಳಗೆ ಬನ್ನಿ | ಪ್ಲೀಸ್ ಕಮ್ ಇನ್ | |
 
 ## 🏡 ನನ್ನ ಬಗ್ಗೆ — About me
 
@@ -25,6 +31,12 @@ Check (a) the Kannada meaning is natural spoken Kannada, (b) the pronunciation c
 | 4 | I am learning English | ನಾನು ಇಂಗ್ಲಿಷ್ ಕಲಿಯುತ್ತಿದ್ದೇನೆ | ಐ ಆಮ್ ಲರ್ನಿಂಗ್ ಇಂಗ್ಲಿಷ್ | |
 | 5 | This is my son | ಇವನು ನನ್ನ ಮಗ | ದಿಸ್ ಈಸ್ ಮೈ ಸನ್ | |
 | 6 | I live with my son | ನಾನು ನನ್ನ ಮಗನ ಜೊತೆ ಇರುತ್ತೇನೆ | ಐ ಲಿವ್ ವಿತ್ ಮೈ ಸನ್ | |
+| 7 | I am a mother | ನಾನು ಒಬ್ಬ ತಾಯಿ | ಐ ಆಮ್ ಎ ಮದರ್ | |
+| 8 | I have two children | ನನಗೆ ಇಬ್ಬರು ಮಕ್ಕಳು | ಐ ಹ್ಯಾವ್ ಟೂ ಚಿಲ್ಡ್ರನ್ | |
+| 9 | This is my daughter | ಇವಳು ನನ್ನ ಮಗಳು | ದಿಸ್ ಈಸ್ ಮೈ ಡಾಟರ್ | |
+| 10 | This is my husband | ಇವರು ನನ್ನ ಗಂಡ | ದಿಸ್ ಈಸ್ ಮೈ ಹಸ್ಬೆಂಡ್ | |
+| 11 | I am from Karnataka | ನಾನು ಕರ್ನಾಟಕದವಳು | ಐ ಆಮ್ ಫ್ರಮ್ ಕರ್ನಾಟಕ | |
+| 12 | I am learning slowly | ನಾನು ನಿಧಾನವಾಗಿ ಕಲಿಯುತ್ತಿದ್ದೇನೆ | ಐ ಆಮ್ ಲರ್ನಿಂಗ್ ಸ್ಲೋಲಿ | |
 
 ## 🕰️ ಸಂಖ್ಯೆ ಮತ್ತು ಸಮಯ — Numbers & time
 
@@ -39,6 +51,14 @@ Check (a) the Kannada meaning is natural spoken Kannada, (b) the pronunciation c
 | 7 | today | ಇವತ್ತು | ಟುಡೇ | |
 | 8 | tomorrow | ನಾಳೆ | ಟುಮಾರೊ | |
 | 9 | I will come tomorrow | ನಾನು ನಾಳೆ ಬರುತ್ತೇನೆ | ಐ ವಿಲ್ ಕಮ್ ಟುಮಾರೊ | |
+| 10 | one | ಒಂದು | ಒನ್ | |
+| 11 | three | ಮೂರು | ತ್ರೀ | |
+| 12 | four | ನಾಲ್ಕು | ಫೋರ್ | |
+| 13 | twenty | ಇಪ್ಪತ್ತು | ಟ್ವೆಂಟಿ | |
+| 14 | hundred | ನೂರು | ಹಂಡ್ರೆಡ್ | |
+| 15 | What day is today | ಇವತ್ತು ಯಾವ ದಿನ | ವಾಟ್ ಡೇ ಈಸ್ ಟುಡೇ | |
+| 16 | Sunday | ಭಾನುವಾರ | ಸಂಡೇ | |
+| 17 | Monday | ಸೋಮವಾರ | ಮಂಡೇ | |
 
 ## 📱 ಫೋನ್ ಕರೆ — Phone & video call
 
@@ -50,6 +70,12 @@ Check (a) the Kannada meaning is natural spoken Kannada, (b) the pronunciation c
 | 4 | Call me tomorrow | ನಾಳೆ ಫೋನ್ ಮಾಡು | ಕಾಲ್ ಮಿ ಟುಮಾರೊ | |
 | 5 | I will call you back | ನಾನು ವಾಪಸ್ ಫೋನ್ ಮಾಡ್ತೇನೆ | ಐ ವಿಲ್ ಕಾಲ್ ಯೂ ಬ್ಯಾಕ್ | |
 | 6 | The phone is not working | ಫೋನ್ ಕೆಲಸ ಮಾಡ್ತಿಲ್ಲ | ದ ಫೋನ್ ಈಸ್ ನಾಟ್ ವರ್ಕಿಂಗ್ | |
+| 7 | Hello, who is speaking | ಹಲೋ, ಯಾರು ಮಾತಾಡ್ತಿರೋದು | ಹಲೋ, ಹೂ ಈಸ್ ಸ್ಪೀಕಿಂಗ್ | |
+| 8 | One minute, please | ಒಂದು ನಿಮಿಷ, ದಯವಿಟ್ಟು | ಒನ್ ಮಿನಿಟ್, ಪ್ಲೀಸ್ | |
+| 9 | I cannot hear you | ನಿನ್ನ ಧ್ವನಿ ಕೇಳಿಸ್ತಿಲ್ಲ | ಐ ಕ್ಯಾನಾಟ್ ಹಿಯರ್ ಯೂ | |
+| 10 | Speak loudly | ಜೋರಾಗಿ ಮಾತಾಡು | ಸ್ಪೀಕ್ ಲೌಡ್ಲಿ | |
+| 11 | The video is not working | ವೀಡಿಯೊ ಬರ್ತಿಲ್ಲ | ದ ವೀಡಿಯೊ ಈಸ್ ನಾಟ್ ವರ್ಕಿಂಗ್ | |
+| 12 | Send me the photo | ಫೋಟೋ ಕಳಿಸು | ಸೆಂಡ್ ಮಿ ದ ಫೋಟೋ | |
 
 ## 🙏 ಸಹಾಯ ಕೇಳಿ — Getting help
 
@@ -62,6 +88,12 @@ Check (a) the Kannada meaning is natural spoken Kannada, (b) the pronunciation c
 | 5 | I speak only a little English | ನನಗೆ ಸ್ವಲ್ಪ ಮಾತ್ರ ಇಂಗ್ಲಿಷ್ ಬರುತ್ತೆ | ಐ ಸ್ಪೀಕ್ ಓನ್ಲಿ ಎ ಲಿಟಲ್ ಇಂಗ್ಲಿಷ್ | |
 | 6 | Where is the bathroom | ಶೌಚಾಲಯ ಎಲ್ಲಿದೆ | ವೇರ್ ಈಸ್ ದ ಬಾತ್‌ರೂಮ್ | |
 | 7 | I am lost | ನಾನು ದಾರಿ ತಪ್ಪಿದ್ದೇನೆ | ಐ ಆಮ್ ಲಾಸ್ಟ್ | |
+| 8 | Where is the exit | ಹೊರ ದಾರಿ ಎಲ್ಲಿದೆ | ವೇರ್ ಈಸ್ ದ ಎಕ್ಸಿಟ್ | |
+| 9 | Where is the lift | ಲಿಫ್ಟ್ ಎಲ್ಲಿದೆ | ವೇರ್ ಈಸ್ ದ ಲಿಫ್ಟ್ | |
+| 10 | Call the police | ಪೊಲೀಸರನ್ನು ಕರೆಯಿರಿ | ಕಾಲ್ ದ ಪೊಲೀಸ್ | |
+| 11 | I forgot | ನಾನು ಮರೆತುಬಿಟ್ಟೆ | ಐ ಫರ್ಗಾಟ್ | |
+| 12 | Write your number here | ನಿಮ್ಮ ನಂಬರ್ ಇಲ್ಲಿ ಬರೆಯಿರಿ | ರೈಟ್ ಯುವರ್ ನಂಬರ್ ಹಿಯರ್ | |
+| 13 | Slowly, please | ನಿಧಾನವಾಗಿ, ದಯವಿಟ್ಟು | ಸ್ಲೋಲಿ, ಪ್ಲೀಸ್ | |
 
 ## ✈️ ವಿಮಾನ ಪ್ರಯಾಣ — Airport & travel
 
@@ -75,6 +107,12 @@ Check (a) the Kannada meaning is natural spoken Kannada, (b) the pronunciation c
 | 6 | Window seat, please | ಕಿಟಕಿ ಪಕ್ಕದ ಸೀಟು ಕೊಡಿ | ವಿಂಡೋ ಸೀಟ್, ಪ್ಲೀಸ್ | |
 | 7 | My bag is missing | ನನ್ನ ಬ್ಯಾಗ್ ಕಾಣ್ತಿಲ್ಲ | ಮೈ ಬ್ಯಾಗ್ ಈಸ್ ಮಿಸ್ಸಿಂಗ್ | |
 | 8 | Please call my son | ದಯವಿಟ್ಟು ನನ್ನ ಮಗನಿಗೆ ಫೋನ್ ಮಾಡಿ | ಪ್ಲೀಸ್ ಕಾಲ್ ಮೈ ಸನ್ | |
+| 9 | Boarding pass | ಬೋರ್ಡಿಂಗ್ ಪಾಸ್ | ಬೋರ್ಡಿಂಗ್ ಪಾಸ್ | |
+| 10 | Where is the security check | ಸೆಕ್ಯುರಿಟಿ ಚೆಕ್ ಎಲ್ಲಿದೆ | ವೇರ್ ಈಸ್ ದ ಸೆಕ್ಯುರಿಟಿ ಚೆಕ್ | |
+| 11 | My flight is at nine | ನನ್ನ ವಿಮಾನ ಒಂಬತ್ತು ಗಂಟೆಗೆ | ಮೈ ಫ್ಲೈಟ್ ಈಸ್ ಅಟ್ ನೈನ್ | |
+| 12 | Is this the line for immigration | ಇದು ಇಮಿಗ್ರೇಷನ್ ಸಾಲಾ | ಈಸ್ ದಿಸ್ ದ ಲೈನ್ ಫಾರ್ ಇಮಿಗ್ರೇಶನ್ | |
+| 13 | I have nothing to declare | ಘೋಷಿಸಲು ಏನೂ ಇಲ್ಲ | ಐ ಹ್ಯಾವ್ ನಥಿಂಗ್ ಟು ಡಿಕ್ಲೇರ್ | |
+| 14 | Water, please | ನೀರು ಕೊಡಿ | ವಾಟರ್, ಪ್ಲೀಸ್ | |
 
 ## 🛒 ಅಂಗಡಿ ಮತ್ತು ಹಣ — Shopping & money
 
@@ -86,6 +124,12 @@ Check (a) the Kannada meaning is natural spoken Kannada, (b) the pronunciation c
 | 4 | Do you have rice | ಅಕ್ಕಿ ಇದೆಯಾ | ಡು ಯೂ ಹ್ಯಾವ್ ರೈಸ್ | |
 | 5 | I will pay by card | ನಾನು ಕಾರ್ಡ್‌ನಲ್ಲಿ ಕೊಡ್ತೇನೆ | ಐ ವಿಲ್ ಪೇ ಬೈ ಕಾರ್ಡ್ | |
 | 6 | Can I get a bag | ಒಂದು ಚೀಲ ಕೊಡ್ತೀರಾ | ಕ್ಯಾನ್ ಐ ಗೆಟ್ ಎ ಬ್ಯಾಗ್ | |
+| 7 | Where are the vegetables | ತರಕಾರಿ ಎಲ್ಲಿದೆ | ವೇರ್ ಆರ್ ದ ವೆಜಿಟಬಲ್ಸ್ | |
+| 8 | I want fresh fruits | ನನಗೆ ತಾಜಾ ಹಣ್ಣು ಬೇಕು | ಐ ವಾಂಟ್ ಫ್ರೆಶ್ ಫ್ರೂಟ್ಸ್ | |
+| 9 | Give me one kilo | ಒಂದು ಕೆಜಿ ಕೊಡಿ | ಗಿವ್ ಮಿ ಒನ್ ಕಿಲೋ | |
+| 10 | Where do I pay | ಎಲ್ಲಿ ಹಣ ಕೊಡಬೇಕು | ವೇರ್ ಡು ಐ ಪೇ | |
+| 11 | This is too heavy | ಇದು ತುಂಬಾ ಭಾರ | ದಿಸ್ ಈಸ್ ಟೂ ಹೆವಿ | |
+| 12 | I am just looking | ಸುಮ್ಮನೆ ನೋಡ್ತಿದ್ದೇನೆ | ಐ ಆಮ್ ಜಸ್ಟ್ ಲುಕಿಂಗ್ | |
 
 ## 🩺 ಆರೋಗ್ಯ — Doctor & health
 
@@ -99,6 +143,12 @@ Check (a) the Kannada meaning is natural spoken Kannada, (b) the pronunciation c
 | 6 | I take medicine every day | ನಾನು ಪ್ರತಿ ದಿನ ಔಷಧಿ ತಗೊಳ್ತೇನೆ | ಐ ಟೇಕ್ ಮೆಡಿಸಿನ್ ಎವ್ರಿ ಡೇ | |
 | 7 | Where is the pharmacy | ಔಷಧಿ ಅಂಗಡಿ ಎಲ್ಲಿದೆ | ವೇರ್ ಈಸ್ ದ ಫಾರ್ಮಸಿ | |
 | 8 | It is an emergency | ಇದು ತುರ್ತು ಪರಿಸ್ಥಿತಿ | ಇಟ್ ಈಸ್ ಆನ್ ಇಮರ್ಜೆನ್ಸಿ | |
+| 9 | I have fever | ನನಗೆ ಜ್ವರ ಇದೆ | ಐ ಹ್ಯಾವ್ ಫೀವರ್ | |
+| 10 | I have a cough | ನನಗೆ ಕೆಮ್ಮು ಇದೆ | ಐ ಹ್ಯಾವ್ ಎ ಕಾಫ್ | |
+| 11 | I feel dizzy | ತಲೆ ಸುತ್ತುತ್ತಿದೆ | ಐ ಫೀಲ್ ಡಿಜ್ಜಿ | |
+| 12 | My stomach hurts | ಹೊಟ್ಟೆ ನೋವು ಇದೆ | ಮೈ ಸ್ಟಮಕ್ ಹರ್ಟ್ಸ್ | |
+| 13 | I cannot sleep | ನಿದ್ದೆ ಬರ್ತಿಲ್ಲ | ಐ ಕ್ಯಾನಾಟ್ ಸ್ಲೀಪ್ | |
+| 14 | Call an ambulance | ಆಂಬ್ಯುಲೆನ್ಸ್ ಕರೆಯಿರಿ | ಕಾಲ್ ಆನ್ ಆಂಬ್ಯುಲೆನ್ಸ್ | |
 
 ## 🏠 ಮನೆಯಲ್ಲಿ — At home
 
@@ -110,6 +160,12 @@ Check (a) the Kannada meaning is natural spoken Kannada, (b) the pronunciation c
 | 4 | I am going for a walk | ನಾನು ವಾಕಿಂಗ್ ಹೋಗ್ತಿದ್ದೇನೆ | ಐ ಆಮ್ ಗೋಯಿಂಗ್ ಫಾರ್ ಎ ವಾಕ್ | |
 | 5 | It is cold outside | ಹೊರಗೆ ಚಳಿ ಇದೆ | ಇಟ್ ಈಸ್ ಕೋಲ್ಡ್ ಔಟ್‌ಸೈಡ್ | |
 | 6 | Close the door, please | ದಯವಿಟ್ಟು ಬಾಗಿಲು ಮುಚ್ಚಿ | ಕ್ಲೋಸ್ ದ ಡೋರ್, ಪ್ಲೀಸ್ | |
+| 7 | The tea is ready | ಟೀ ರೆಡಿ ಆಗಿದೆ | ದ ಟೀ ಈಸ್ ರೆಡಿ | |
+| 8 | I am washing clothes | ಬಟ್ಟೆ ಒಗೆಯುತ್ತಿದ್ದೇನೆ | ಐ ಆಮ್ ವಾಷಿಂಗ್ ಕ್ಲೋದ್ಸ್ | |
+| 9 | Switch on the light | ಲೈಟ್ ಹಾಕು | ಸ್ವಿಚ್ ಆನ್ ದ ಲೈಟ್ | |
+| 10 | Switch off the fan | ಫ್ಯಾನ್ ಆರಿಸು | ಸ್ವಿಚ್ ಆಫ್ ದ ಫ್ಯಾನ್ | |
+| 11 | I will take rest | ನಾನು ವಿಶ್ರಾಂತಿ ತಗೋತೀನಿ | ಐ ವಿಲ್ ಟೇಕ್ ರೆಸ್ಟ್ | |
+| 12 | Lock the door | ಬಾಗಿಲಿಗೆ ಬೀಗ ಹಾಕು | ಲಾಕ್ ದ ಡೋರ್ | |
 
 ## 🍚 ಬೇಕು — ಹೇಳುವ ರೀತಿ — Saying what you need
 
@@ -121,6 +177,12 @@ Check (a) the Kannada meaning is natural spoken Kannada, (b) the pronunciation c
 | 4 | I need medicine | ನನಗೆ ಔಷಧಿ ಬೇಕು | ಐ ನೀಡ್ ಮೆಡಿಸಿನ್ | |
 | 5 | I do not want this | ನನಗೆ ಇದು ಬೇಡ | ಐ ಡು ನಾಟ್ ವಾಂಟ್ ದಿಸ್ | |
 | 6 | I like tea | ನನಗೆ ಟೀ ಇಷ್ಟ | ಐ ಲೈಕ್ ಟೀ | |
+| 7 | I want hot water | ನನಗೆ ಬಿಸಿ ನೀರು ಬೇಕು | ಐ ವಾಂಟ್ ಹಾಟ್ ವಾಟರ್ | |
+| 8 | I need a spoon | ನನಗೆ ಚಮಚ ಬೇಕು | ಐ ನೀಡ್ ಎ ಸ್ಪೂನ್ | |
+| 9 | I want to sit | ನನಗೆ ಕೂರಬೇಕು | ಐ ವಾಂಟ್ ಟು ಸಿಟ್ | |
+| 10 | I want to go home | ನನಗೆ ಮನೆಗೆ ಹೋಗಬೇಕು | ಐ ವಾಂಟ್ ಟು ಗೋ ಹೋಮ್ | |
+| 11 | I need rest | ನನಗೆ ವಿಶ್ರಾಂತಿ ಬೇಕು | ಐ ನೀಡ್ ರೆಸ್ಟ್ | |
+| 12 | Do you want tea | ನಿಮಗೆ ಟೀ ಬೇಕಾ | ಡು ಯೂ ವಾಂಟ್ ಟೀ | |
 
 ## ❓ ಪ್ರಶ್ನೆಗಳು — Asking questions
 
@@ -131,6 +193,11 @@ Check (a) the Kannada meaning is natural spoken Kannada, (b) the pronunciation c
 | 3 | When will you come | ನೀನು ಯಾವಾಗ ಬರ್ತೀಯ | ವೆನ್ ವಿಲ್ ಯೂ ಕಮ್ | |
 | 4 | Who is this | ಇವರು ಯಾರು | ಹೂ ಈಸ್ ದಿಸ್ | |
 | 5 | Can I sit here | ಇಲ್ಲಿ ಕೂರಬಹುದಾ | ಕ್ಯಾನ್ ಐ ಸಿಟ್ ಹಿಯರ್ | |
+| 6 | How much time | ಎಷ್ಟು ಸಮಯ | ಹೌ ಮಚ್ ಟೈಮ್ | |
+| 7 | Where are you going | ಎಲ್ಲಿಗೆ ಹೋಗ್ತಿದ್ದೀಯ | ವೇರ್ ಆರ್ ಯೂ ಗೋಯಿಂಗ್ | |
+| 8 | What happened | ಏನಾಯ್ತು | ವಾಟ್ ಹ್ಯಾಪೆಂಡ್ | |
+| 9 | Whose is this | ಇದು ಯಾರದು | ಹೂಸ್ ಈಸ್ ದಿಸ್ | |
+| 10 | How do you know | ನಿಮಗೆ ಹೇಗೆ ಗೊತ್ತು | ಹೌ ಡು ಯೂ ನೋ | |
 
 ## 🚶 ದಿನದ ಕ್ರಿಯೆಗಳು — Everyday verbs
 
@@ -142,6 +209,12 @@ Check (a) the Kannada meaning is natural spoken Kannada, (b) the pronunciation c
 | 4 | I will take this | ನಾನು ಇದನ್ನು ತಗೊಳ್ತೇನೆ | ಐ ವಿಲ್ ಟೇಕ್ ದಿಸ್ | |
 | 5 | I am eating | ನಾನು ಊಟ ಮಾಡ್ತಿದ್ದೇನೆ | ಐ ಆಮ್ ಈಟಿಂಗ್ | |
 | 6 | I am going to sleep | ನಾನು ಮಲಗ್ತೇನೆ | ಐ ಆಮ್ ಗೋಯಿಂಗ್ ಟು ಸ್ಲೀಪ್ | |
+| 7 | Sit here | ಇಲ್ಲಿ ಕೂರು | ಸಿಟ್ ಹಿಯರ್ | |
+| 8 | Look at this | ಇದನ್ನು ನೋಡು | ಲುಕ್ ಅಟ್ ದಿಸ್ | |
+| 9 | Listen to me | ನನ್ನ ಮಾತು ಕೇಳು | ಲಿಸನ್ ಟು ಮಿ | |
+| 10 | Bring the water | ನೀರು ತಗೊಂಡು ಬಾ | ಬ್ರಿಂಗ್ ದ ವಾಟರ್ | |
+| 11 | Wait here | ಇಲ್ಲಿ ಕಾಯಿರಿ | ವೇಟ್ ಹಿಯರ್ | |
+| 12 | Open the window | ಕಿಟಕಿ ತೆಗೆ | ಓಪನ್ ದ ವಿಂಡೋ | |
 
 ## 🗽 ಅಮೆರಿಕದ ದಿನಗಳು — Life in America
 
@@ -154,6 +227,11 @@ Check (a) the Kannada meaning is natural spoken Kannada, (b) the pronunciation c
 | 5 | I miss you | ನಿನ್ನ ನೆನಪು ಆಗ್ತಿದೆ | ಐ ಮಿಸ್ ಯೂ | |
 | 6 | I love you, my son | ನಾನು ನಿನ್ನನ್ನು ಪ್ರೀತಿಸ್ತೇನೆ, ಮಗನೇ | ಐ ಲವ್ ಯೂ, ಮೈ ಸನ್ | |
 | 7 | God bless you | ದೇವರು ಒಳ್ಳೆಯದು ಮಾಡಲಿ | ಗಾಡ್ ಬ್ಲೆಸ್ ಯೂ | |
+| 8 | I like this country | ಈ ದೇಶ ನನಗೆ ಇಷ್ಟ | ಐ ಲೈಕ್ ದಿಸ್ ಕಂಟ್ರಿ | |
+| 9 | The park is very clean | ಪಾರ್ಕ್ ತುಂಬಾ ಸ್ವಚ್ಛವಾಗಿದೆ | ದ ಪಾರ್ಕ್ ಈಸ್ ವೆರಿ ಕ್ಲೀನ್ | |
+| 10 | Snow is falling | ಹಿಮ ಬೀಳ್ತಿದೆ | ಸ್ನೋ ಈಸ್ ಫಾಲಿಂಗ್ | |
+| 11 | I talked to my neighbor | ನೆರೆಮನೆಯವರ ಜೊತೆ ಮಾತಾಡಿದೆ | ಐ ಟಾಕ್ಡ್ ಟು ಮೈ ನೇಬರ್ | |
+| 12 | We will go out on Sunday | ಭಾನುವಾರ ಹೊರಗೆ ಹೋಗೋಣ | ವಿ ವಿಲ್ ಗೋ ಔಟ್ ಆನ್ ಸಂಡೇ | |
 
 ## 🕰️ ನಿನ್ನೆ ಆದದ್ದು — Talking about yesterday (Level 2)
 
@@ -333,4 +411,4 @@ Check (a) the Kannada meaning is natural spoken Kannada, (b) the pronunciation c
 | I miss you | ನಿನ್ನ ನೆನಪು ಆಗ್ತಿದೆ | |
 
 ---
-_26 parvas · 164 course items · 29 dialog lines. Generated from index.html._
+_26 parvas · 242 course items · 29 dialog lines._
