@@ -1,6 +1,6 @@
 # ಕನ್ನಡ ಪರಿಶೀಲನೆ · Kannada Review Checklist
 
-For a native Kannada speaker: read each row, mark ✅ if natural, or write the better phrasing.
+(Level 1 already reviewed ✅ — new rows are Levels 2–4 additions from this sprint.)
 
 
 ## 🛕 ಮೊದಲ ಮಾತು — First words
@@ -244,6 +244,12 @@ For a native Kannada speaker: read each row, mark ✅ if natural, or write the b
 | 4 | I was very tired | ನನಗೆ ತುಂಬಾ ಸುಸ್ತಾಗಿತ್ತು | ಐ ವಾಸ್ ವೆರಿ ಟೈರ್ಡ್ | |
 | 5 | I did not sleep well | ನನಗೆ ಸರಿಯಾಗಿ ನಿದ್ದೆ ಬರಲಿಲ್ಲ | ಐ ಡಿಡ್ ನಾಟ್ ಸ್ಲೀಪ್ ವೆಲ್ | |
 | 6 | We talked for one hour | ನಾವು ಒಂದು ಗಂಟೆ ಮಾತಾಡಿದೆವು | ವಿ ಟಾಕ್ಡ್ ಫಾರ್ ಒನ್ ಅವರ್ | |
+| 7 | Yesterday I called my son | ನಿನ್ನೆ ಮಗನಿಗೆ ಫೋನ್ ಮಾಡಿದೆ | ಯೆಸ್ಟರ್ಡೇ ಐ ಕಾಲ್ಡ್ ಮೈ ಸನ್ | |
+| 8 | We went to the temple | ನಾವು ದೇವಸ್ಥಾನಕ್ಕೆ ಹೋಗಿದ್ದೆವು | ವಿ ವೆಂಟ್ ಟು ದ ಟೆಂಪಲ್ | |
+| 9 | I cooked rice and sambar | ನಾನು ಅನ್ನ ಸಾಂಬಾರ್ ಮಾಡಿದೆ | ಐ ಕುಕ್ಡ್ ರೈಸ್ ಆಂಡ್ ಸಾಂಬಾರ್ | |
+| 10 | It rained yesterday | ನಿನ್ನೆ ಮಳೆ ಬಂತು | ಇಟ್ ರೇನ್ಡ್ ಯೆಸ್ಟರ್ಡೇ | |
+| 11 | I slept early | ನಾನು ಬೇಗ ಮಲಗಿದೆ | ಐ ಸ್ಲೆಪ್ಟ್ ಅರ್ಲಿ | |
+| 12 | I bought vegetables | ನಾನು ತರಕಾರಿ ತಂದೆ | ಐ ಬಾಟ್ ವೆಜಿಟಬಲ್ಸ್ | |
 
 ## 📅 ನಾಳೆಯ ಮಾತು — Plans & future (Level 2)
 
@@ -255,6 +261,11 @@ For a native Kannada speaker: read each row, mark ✅ if natural, or write the b
 | 4 | I will wait for you | ನಾನು ನಿನಗಾಗಿ ಕಾಯುತ್ತೇನೆ | ಐ ವಿಲ್ ವೇಟ್ ಫಾರ್ ಯೂ | |
 | 5 | It will rain today | ಇವತ್ತು ಮಳೆ ಬರುತ್ತೆ | ಇಟ್ ವಿಲ್ ರೇನ್ ಟುಡೇ | |
 | 6 | I will learn more English | ನಾನು ಇನ್ನಷ್ಟು ಇಂಗ್ಲಿಷ್ ಕಲಿಯುತ್ತೇನೆ | ಐ ವಿಲ್ ಲರ್ನ್ ಮೋರ್ ಇಂಗ್ಲಿಷ್ | |
+| 7 | Tomorrow we will go to the park | ನಾಳೆ ಪಾರ್ಕಿಗೆ ಹೋಗೋಣ | ಟುಮಾರೊ ವಿ ವಿಲ್ ಗೋ ಟು ದ ಪಾರ್ಕ್ | |
+| 8 | My son will come home at six | ಮಗ ಆರು ಗಂಟೆಗೆ ಮನೆಗೆ ಬರ್ತಾನೆ | ಮೈ ಸನ್ ವಿಲ್ ಕಮ್ ಹೋಮ್ ಅಟ್ ಸಿಕ್ಸ್ | |
+| 9 | I will make coffee for you | ನಿನಗೆ ಕಾಫಿ ಮಾಡ್ತೀನಿ | ಐ ವಿಲ್ ಮೇಕ್ ಕಾಫಿ ಫಾರ್ ಯೂ | |
+| 10 | I will call the doctor tomorrow | ನಾಳೆ ಡಾಕ್ಟರ್‌ಗೆ ಫೋನ್ ಮಾಡ್ತೀನಿ | ಐ ವಿಲ್ ಕಾಲ್ ದ ಡಾಕ್ಟರ್ ಟುಮಾರೊ | |
+| 11 | We will see | ನೋಡೋಣ | ವಿ ವಿಲ್ ಸೀ | |
 
 ## 🚌 ದಾರಿ ಕೇಳುವುದು — Directions & transport (Level 2)
 
@@ -266,6 +277,11 @@ For a native Kannada speaker: read each row, mark ✅ if natural, or write the b
 | 4 | Stop here, please | ದಯವಿಟ್ಟು ಇಲ್ಲಿ ನಿಲ್ಲಿಸಿ | ಸ್ಟಾಪ್ ಹಿಯರ್, ಪ್ಲೀಸ್ | |
 | 5 | How do I go to the park | ಪಾರ್ಕಿಗೆ ಹೇಗೆ ಹೋಗಬೇಕು | ಹೌ ಡು ಐ ಗೋ ಟು ದ ಪಾರ್ಕ್ | |
 | 6 | Which bus goes to the market | ಯಾವ ಬಸ್ ಮಾರುಕಟ್ಟೆಗೆ ಹೋಗುತ್ತೆ | ವಿಚ್ ಬಸ್ ಗೋಸ್ ಟು ದ ಮಾರ್ಕೆಟ್ | |
+| 7 | Where is the bus stop | ಬಸ್ ನಿಲ್ದಾಣ ಎಲ್ಲಿದೆ | ವೇರ್ ಈಸ್ ದ ಬಸ್ ಸ್ಟಾಪ್ | |
+| 8 | Is it far from here | ಇಲ್ಲಿಂದ ದೂರನಾ | ಈಸ್ ಇಟ್ ಫಾರ್ ಫ್ರಮ್ ಹಿಯರ್ | |
+| 9 | It is near | ಹತ್ತಿರ ಇದೆ | ಇಟ್ ಈಸ್ ನಿಯರ್ | |
+| 10 | Cross the road carefully | ರಸ್ತೆ ಹುಷಾರಾಗಿ ದಾಟಿ | ಕ್ರಾಸ್ ದ ರೋಡ್ ಕೇರ್‌ಫುಲಿ | |
+| 11 | Take me to this address | ಈ ವಿಳಾಸಕ್ಕೆ ಕರೆದುಕೊಂಡು ಹೋಗಿ | ಟೇಕ್ ಮಿ ಟು ದಿಸ್ ಅಡ್ರೆಸ್ | |
 
 ## 💬 ಭಾವನೆಗಳು — Feelings & opinions (Level 2)
 
@@ -277,6 +293,11 @@ For a native Kannada speaker: read each row, mark ✅ if natural, or write the b
 | 4 | I do not like this | ನನಗೆ ಇದು ಇಷ್ಟ ಇಲ್ಲ | ಐ ಡು ನಾಟ್ ಲೈಕ್ ದಿಸ್ | |
 | 5 | This is beautiful | ಇದು ಸುಂದರವಾಗಿದೆ | ದಿಸ್ ಈಸ್ ಬ್ಯೂಟಿಫುಲ್ | |
 | 6 | I think it is good | ಇದು ಒಳ್ಳೆಯದು ಅಂತ ನನಗೆ ಅನಿಸುತ್ತೆ | ಐ ಥಿಂಕ್ ಇಟ್ ಈಸ್ ಗುಡ್ | |
+| 7 | I am feeling better now | ಈಗ ಸ್ವಲ್ಪ ಚೆನ್ನಾಗಿದೆ | ಐ ಆಮ್ ಫೀಲಿಂಗ್ ಬೆಟರ್ ನೌ | |
+| 8 | I miss my home | ಊರಿನ ನೆನಪು ಆಗ್ತಿದೆ | ಐ ಮಿಸ್ ಮೈ ಹೋಮ್ | |
+| 9 | Do not worry | ಚಿಂತೆ ಮಾಡಬೇಡ | ಡು ನಾಟ್ ವರಿ | |
+| 10 | I am proud of you | ನಿನ್ನ ಬಗ್ಗೆ ಹೆಮ್ಮೆ ಇದೆ | ಐ ಆಮ್ ಪ್ರೌಡ್ ಆಫ್ ಯೂ | |
+| 11 | This makes me happy | ಇದರಿಂದ ಖುಷಿ ಆಗುತ್ತೆ | ದಿಸ್ ಮೇಕ್ಸ್ ಮಿ ಹ್ಯಾಪಿ | |
 
 ## 📞 ಅಪಾಯಿಂಟ್‌ಮೆಂಟ್ — Appointments & requests (Level 2)
 
@@ -288,6 +309,11 @@ For a native Kannada speaker: read each row, mark ✅ if natural, or write the b
 | 4 | Can you come at five | ಐದು ಗಂಟೆಗೆ ಬರ್ತೀರಾ | ಕ್ಯಾನ್ ಯೂ ಕಮ್ ಅಟ್ ಫೈವ್ | |
 | 5 | I will be late | ನಾನು ತಡವಾಗಿ ಬರುತ್ತೇನೆ | ಐ ವಿಲ್ ಬಿ ಲೇಟ್ | |
 | 6 | Please wait five minutes | ದಯವಿಟ್ಟು ಐದು ನಿಮಿಷ ಕಾಯಿರಿ | ಪ್ಲೀಸ್ ವೇಟ್ ಫೈವ್ ಮಿನಿಟ್ಸ್ | |
+| 7 | The appointment is on Monday | ಅಪಾಯಿಂಟ್‌ಮೆಂಟ್ ಸೋಮವಾರ ಇದೆ | ದಿ ಅಪಾಯಿಂಟ್‌ಮೆಂಟ್ ಈಸ್ ಆನ್ ಮಂಡೇ | |
+| 8 | Can you change the time | ಸಮಯ ಬದಲಾಯಿಸಬಹುದಾ | ಕ್ಯಾನ್ ಯೂ ಚೇಂಜ್ ದ ಟೈಮ್ | |
+| 9 | Sorry, I cannot come today | ಕ್ಷಮಿಸಿ, ಇವತ್ತು ಬರೋಕೆ ಆಗಲ್ಲ | ಸಾರಿ, ಐ ಕ್ಯಾನಾಟ್ ಕಮ್ ಟುಡೇ | |
+| 10 | I will confirm and tell you | ಖಚಿತಪಡಿಸಿ ಹೇಳ್ತೀನಿ | ಐ ವಿಲ್ ಕನ್ಫರ್ಮ್ ಆಂಡ್ ಟೆಲ್ ಯೂ | |
+| 11 | Please come on time | ಸಮಯಕ್ಕೆ ಸರಿಯಾಗಿ ಬನ್ನಿ | ಪ್ಲೀಸ್ ಕಮ್ ಆನ್ ಟೈಮ್ | |
 
 ## 🍵 ಲೋಕಾಭಿರಾಮ — Small talk (Level 2)
 
@@ -299,6 +325,11 @@ For a native Kannada speaker: read each row, mark ✅ if natural, or write the b
 | 4 | We are from India | ನಾವು ಭಾರತದವರು | ವಿ ಆರ್ ಫ್ರಮ್ ಇಂಡಿಯಾ | |
 | 5 | Do you like tea or coffee | ನಿಮಗೆ ಟೀ ಇಷ್ಟನಾ ಕಾಫಿ ಇಷ್ಟನಾ | ಡು ಯೂ ಲೈಕ್ ಟೀ ಆರ್ ಕಾಫಿ | |
 | 6 | See you next week | ಮುಂದಿನ ವಾರ ಸಿಗೋಣ | ಸೀ ಯೂ ನೆಕ್ಸ್ಟ್ ವೀಕ್ | |
+| 7 | Your baby is so cute | ನಿಮ್ಮ ಮಗು ತುಂಬಾ ಮುದ್ದಾಗಿದೆ | ಯುವರ್ ಬೇಬಿ ಈಸ್ ಸೋ ಕ್ಯೂಟ್ | |
+| 8 | Something smells good | ಒಳ್ಳೆ ವಾಸನೆ ಬರ್ತಿದೆ | ಸಮ್ಥಿಂಗ್ ಸ್ಮೆಲ್ಸ್ ಗುಡ್ | |
+| 9 | We are neighbors | ನಾವು ನೆರೆಹೊರೆಯವರು | ವಿ ಆರ್ ನೇಬರ್ಸ್ | |
+| 10 | Come home sometime | ಯಾವಾಗಲಾದರೂ ಮನೆಗೆ ಬನ್ನಿ | ಕಮ್ ಹೋಮ್ ಸಮ್‌ಟೈಮ್ | |
+| 11 | Happy birthday | ಹುಟ್ಟುಹಬ್ಬದ ಶುಭಾಶಯ | ಹ್ಯಾಪಿ ಬರ್ತ್‌ಡೇ | |
 
 ## 📖 ಅನುಭವದ ಮಾತು — Talking about experiences (Level 3)
 
@@ -310,6 +341,11 @@ For a native Kannada speaker: read each row, mark ✅ if natural, or write the b
 | 4 | I used to cook for many people | ಮೊದಲು ನಾನು ತುಂಬಾ ಜನರಿಗೆ ಅಡುಗೆ ಮಾಡುತ್ತಿದ್ದೆ | ಐ ಯೂಸ್ಡ್ ಟು ಕುಕ್ ಫಾರ್ ಮೆನಿ ಪೀಪಲ್ | |
 | 5 | I have been to Delhi once | ನಾನು ಒಮ್ಮೆ ದೆಹಲಿಗೆ ಹೋಗಿದ್ದೇನೆ | ಐ ಹ್ಯಾವ್ ಬೀನ್ ಟು ಡೆಲ್ಲಿ ಒನ್ಸ್ | |
 | 6 | I have learned many new things | ನಾನು ತುಂಬಾ ಹೊಸ ವಿಷಯ ಕಲಿತಿದ್ದೇನೆ | ಐ ಹ್ಯಾವ್ ಲರ್ನ್ಡ್ ಮೆನಿ ನ್ಯೂ ಥಿಂಗ್ಸ್ | |
+| 7 | I have been here for two months | ಎರಡು ತಿಂಗಳಿಂದ ಇಲ್ಲಿ ಇದ್ದೇನೆ | ಐ ಹ್ಯಾವ್ ಬೀನ್ ಹಿಯರ್ ಫಾರ್ ಟೂ ಮಂತ್ಸ್ | |
+| 8 | I have already eaten | ಆಗಲೇ ಊಟ ಆಯ್ತು | ಐ ಹ್ಯಾವ್ ಆಲ್ರೆಡಿ ಈಟನ್ | |
+| 9 | Have you seen my glasses | ನನ್ನ ಕನ್ನಡಕ ನೋಡಿದ್ದೀಯಾ | ಹ್ಯಾವ್ ಯೂ ಸೀನ್ ಮೈ ಗ್ಲಾಸಸ್ | |
+| 10 | I have never used this machine | ಈ ಮೆಷಿನ್ ಎಂದೂ ಬಳಸಿಲ್ಲ | ಐ ಹ್ಯಾವ್ ನೆವರ್ ಯೂಸ್ಡ್ ದಿಸ್ ಮೆಷಿನ್ | |
+| 11 | Life has changed a lot | ಜೀವನ ತುಂಬಾ ಬದಲಾಗಿದೆ | ಲೈಫ್ ಹ್ಯಾಸ್ ಚೇಂಜ್ಡ್ ಎ ಲಾಟ್ | |
 
 ## 🗣️ ಅಭಿಪ್ರಾಯ ಮತ್ತು ಕಾರಣ — Opinions & reasons (Level 3)
 
@@ -321,6 +357,11 @@ For a native Kannada speaker: read each row, mark ✅ if natural, or write the b
 | 4 | I do not agree, sorry | ಕ್ಷಮಿಸಿ, ನನಗೆ ಒಪ್ಪಿಗೆ ಇಲ್ಲ | ಐ ಡು ನಾಟ್ ಅಗ್ರೀ, ಸಾರಿ | |
 | 5 | It is too expensive because it is small | ಚಿಕ್ಕದಾಗಿದ್ದರೂ ತುಂಬಾ ದುಬಾರಿ | ಇಟ್ ಈಸ್ ಟೂ ಎಕ್ಸ್‌ಪೆನ್ಸಿವ್ ಬಿಕಾಸ್ ಇಟ್ ಈಸ್ ಸ್ಮಾಲ್ | |
 | 6 | Can you explain it again, please | ದಯವಿಟ್ಟು ಇನ್ನೊಮ್ಮೆ ವಿವರಿಸ್ತೀರಾ | ಕ್ಯಾನ್ ಯೂ ಎಕ್ಸ್‌ಪ್ಲೇನ್ ಇಟ್ ಅಗೇನ್, ಪ್ಲೀಸ್ | |
+| 7 | That is a good idea | ಒಳ್ಳೆಯ ಯೋಚನೆ | ದಟ್ ಈಸ್ ಎ ಗುಡ್ ಐಡಿಯಾ | |
+| 8 | I think it will rain | ಮಳೆ ಬರುತ್ತೆ ಅನಿಸುತ್ತೆ | ಐ ಥಿಂಕ್ ಇಟ್ ವಿಲ್ ರೇನ್ | |
+| 9 | I am not sure | ನನಗೆ ಖಚಿತ ಇಲ್ಲ | ಐ ಆಮ್ ನಾಟ್ ಶೂರ್ | |
+| 10 | You are right | ನೀನು ಹೇಳಿದ್ದು ಸರಿ | ಯೂ ಆರ್ ರೈಟ್ | |
+| 11 | Maybe later | ಆಮೇಲೆ ನೋಡೋಣ | ಮೇಬಿ ಲೇಟರ್ | |
 
 ## 🔧 ಸಮಸ್ಯೆ ಪರಿಹಾರ — Solving problems (Level 3)
 
@@ -332,6 +373,11 @@ For a native Kannada speaker: read each row, mark ✅ if natural, or write the b
 | 4 | Can you repair this | ಇದನ್ನು ಸರಿಪಡಿಸ್ತೀರಾ | ಕ್ಯಾನ್ ಯೂ ರಿಪೇರ್ ದಿಸ್ | |
 | 5 | When will it be ready | ಯಾವಾಗ ಸಿದ್ಧ ಆಗುತ್ತೆ | ವೆನ್ ವಿಲ್ ಇಟ್ ಬಿ ರೆಡಿ | |
 | 6 | Thank you for your help | ನಿಮ್ಮ ಸಹಾಯಕ್ಕೆ ಧನ್ಯವಾದ | ಥ್ಯಾಂಕ್ ಯೂ ಫಾರ್ ಯುವರ್ ಹೆಲ್ಪ್ | |
+| 7 | The water is not coming | ನೀರು ಬರ್ತಿಲ್ಲ | ದ ವಾಟರ್ ಈಸ್ ನಾಟ್ ಕಮಿಂಗ್ | |
+| 8 | The door is not opening | ಬಾಗಿಲು ತೆಗೆಯುತ್ತಿಲ್ಲ | ದ ಡೋರ್ ಈಸ್ ನಾಟ್ ಓಪನಿಂಗ್ | |
+| 9 | Please check this once | ಒಮ್ಮೆ ಇದನ್ನು ಪರಿಶೀಲಿಸಿ | ಪ್ಲೀಸ್ ಚೆಕ್ ದಿಸ್ ಒನ್ಸ್ | |
+| 10 | It is working now, thank you | ಈಗ ಕೆಲಸ ಮಾಡ್ತಿದೆ, ಧನ್ಯವಾದ | ಇಟ್ ಈಸ್ ವರ್ಕಿಂಗ್ ನೌ, ಥ್ಯಾಂಕ್ ಯೂ | |
+| 11 | I locked myself out | ಬೀಗ ಹಾಕಿ ಹೊರಗೆ ಉಳಿದಿದ್ದೇನೆ | ಐ ಲಾಕ್ಡ್ ಮೈಸೆಲ್ಫ್ ಔಟ್ | |
 
 ## 🩺 ಆರೋಗ್ಯ — ವಿವರವಾಗಿ — Health in detail (Level 3)
 
@@ -343,6 +389,11 @@ For a native Kannada speaker: read each row, mark ✅ if natural, or write the b
 | 4 | My blood pressure is high | ನನ್ನ ಬಿಪಿ ಜಾಸ್ತಿ ಇದೆ | ಮೈ ಬ್ಲಡ್ ಪ್ರೆಶರ್ ಈಸ್ ಹೈ | |
 | 5 | Do I need a blood test | ರಕ್ತ ಪರೀಕ್ಷೆ ಬೇಕಾ | ಡು ಐ ನೀಡ್ ಎ ಬ್ಲಡ್ ಟೆಸ್ಟ್ | |
 | 6 | How many times a day should I take this | ದಿನಕ್ಕೆ ಎಷ್ಟು ಸಲ ಇದನ್ನು ತಗೊಳ್ಳಬೇಕು | ಹೌ ಮೆನಿ ಟೈಮ್ಸ್ ಎ ಡೇ ಶುಡ್ ಐ ಟೇಕ್ ದಿಸ್ | |
+| 7 | The medicine is finished | ಔಷಧಿ ಮುಗಿದಿದೆ | ದ ಮೆಡಿಸಿನ್ ಈಸ್ ಫಿನಿಶ್ಡ್ | |
+| 8 | I need a refill | ಇನ್ನೊಂದು ಪ್ಯಾಕ್ ಬೇಕು | ಐ ನೀಡ್ ಎ ರೀಫಿಲ್ | |
+| 9 | I feel weak | ಸುಸ್ತು ಅನಿಸ್ತಿದೆ | ಐ ಫೀಲ್ ವೀಕ್ | |
+| 10 | My sugar is under control | ಸಕ್ಕರೆ ಹತೋಟಿಯಲ್ಲಿದೆ | ಮೈ ಶುಗರ್ ಈಸ್ ಅಂಡರ್ ಕಂಟ್ರೋಲ್ | |
+| 11 | When should I come again | ಮತ್ತೆ ಯಾವಾಗ ಬರಬೇಕು | ವೆನ್ ಶುಡ್ ಐ ಕಮ್ ಅಗೇನ್ | |
 
 ## 💭 ಆಳವಾದ ಮಾತು — Deeper conversation (Level 4)
 
@@ -354,6 +405,11 @@ For a native Kannada speaker: read each row, mark ✅ if natural, or write the b
 | 4 | Let me think about it | ಸ್ವಲ್ಪ ಯೋಚಿಸುತ್ತೇನೆ | ಲೆಟ್ ಮಿ ಥಿಂಕ್ ಅಬೌಟ್ ಇಟ್ | |
 | 5 | What do you mean exactly | ನೀವು ಹೇಳುವುದರ ಅರ್ಥ ಏನು | ವಾಟ್ ಡು ಯೂ ಮೀನ್ ಎಕ್ಸಾಕ್ಟ್ಲಿ | |
 | 6 | That makes sense to me | ಅದು ನನಗೆ ಸರಿ ಅನಿಸುತ್ತೆ | ದಟ್ ಮೇಕ್ಸ್ ಸೆನ್ಸ್ ಟು ಮಿ | |
+| 7 | Tell me more about it | ಇನ್ನಷ್ಟು ಹೇಳು | ಟೆಲ್ ಮಿ ಮೋರ್ ಅಬೌಟ್ ಇಟ್ | |
+| 8 | I understand what you mean | ನೀನು ಹೇಳಿದ್ದು ಅರ್ಥ ಆಯ್ತು | ಐ ಅಂಡರ್‌ಸ್ಟ್ಯಾಂಡ್ ವಾಟ್ ಯೂ ಮೀನ್ | |
+| 9 | That is very interesting | ಅದು ತುಂಬಾ ಆಸಕ್ತಿಕರ | ದಟ್ ಈಸ್ ವೆರಿ ಇಂಟರೆಸ್ಟಿಂಗ್ | |
+| 10 | In my time, things were different | ನಮ್ಮ ಕಾಲದಲ್ಲಿ ಬೇರೆ ರೀತಿ ಇತ್ತು | ಇನ್ ಮೈ ಟೈಮ್, ಥಿಂಗ್ಸ್ ವರ್ ಡಿಫರೆಂಟ್ | |
+| 11 | Everything happens for good | ಎಲ್ಲವೂ ಒಳ್ಳೆಯದಕ್ಕೇ ಆಗುತ್ತೆ | ಎವ್ರಿಥಿಂಗ್ ಹ್ಯಾಪನ್ಸ್ ಫಾರ್ ಗುಡ್ | |
 
 ## 🎯 ಸಾಮಾನ್ಯ ನುಡಿಗಟ್ಟುಗಳು — Common expressions (Level 4)
 
@@ -365,6 +421,11 @@ For a native Kannada speaker: read each row, mark ✅ if natural, or write the b
 | 4 | By the way, how is your son | ಅಂದಹಾಗೆ, ನಿಮ್ಮ ಮಗ ಹೇಗಿದ್ದಾನೆ | ಬೈ ದ ವೇ, ಹೌ ಈಸ್ ಯುವರ್ ಸನ್ | |
 | 5 | To be honest, I am tired | ನಿಜ ಹೇಳಬೇಕೆಂದರೆ, ನನಗೆ ಸುಸ್ತಾಗಿದೆ | ಟು ಬಿ ಆನೆಸ್ಟ್, ಐ ಆಮ್ ಟೈರ್ಡ್ | |
 | 6 | It is worth trying | ಪ್ರಯತ್ನಿಸುವುದು ಒಳ್ಳೆಯದು | ಇಟ್ ಈಸ್ ವರ್ತ್ ಟ್ರೈಯಿಂಗ್ | |
+| 7 | Take your time | ನಿಧಾನವಾಗಿ ಮಾಡು | ಟೇಕ್ ಯುವರ್ ಟೈಮ್ | |
+| 8 | Long time no see | ತುಂಬಾ ದಿನ ಆಯ್ತು ನೋಡಿ | ಲಾಂಗ್ ಟೈಮ್ ನೋ ಸೀ | |
+| 9 | It is a piece of cake | ಅದು ತುಂಬಾ ಸುಲಭ | ಇಟ್ ಈಸ್ ಎ ಪೀಸ್ ಆಫ್ ಕೇಕ್ | |
+| 10 | Better late than never | ತಡವಾದರೂ ಪರವಾಗಿಲ್ಲ | ಬೆಟರ್ ಲೇಟ್ ದ್ಯಾನ್ ನೆವರ್ | |
+| 11 | Have a safe journey | ಒಳ್ಳೆಯ ಪ್ರಯಾಣವಾಗಲಿ | ಹ್ಯಾವ್ ಎ ಸೇಫ್ ಜರ್ನಿ | |
 
 ## 🏘️ ಸಮುದಾಯ ಜೀವನ — Community life (Level 4)
 
@@ -376,6 +437,11 @@ For a native Kannada speaker: read each row, mark ✅ if natural, or write the b
 | 4 | The community center is very helpful | ಸಮುದಾಯ ಕೇಂದ್ರ ತುಂಬಾ ಸಹಾಯಕವಾಗಿದೆ | ದ ಕಮ್ಯೂನಿಟಿ ಸೆಂಟರ್ ಈಸ್ ವೆರಿ ಹೆಲ್ಪ್‌ಫುಲ್ | |
 | 5 | I made a new friend today | ಇವತ್ತು ಹೊಸ ಗೆಳತಿ ಸಿಕ್ಕಿದಳು | ಐ ಮೇಡ್ ಎ ನ್ಯೂ ಫ್ರೆಂಡ್ ಟುಡೇ | |
 | 6 | Everyone was very kind to us | ಎಲ್ಲರೂ ನಮಗೆ ತುಂಬಾ ಒಳ್ಳೆಯವರಾಗಿದ್ದರು | ಎವ್ರಿಒನ್ ವಾಸ್ ವೆರಿ ಕೈಂಡ್ ಟು ಅಸ್ | |
+| 7 | I go for a walk every morning | ಪ್ರತಿ ಬೆಳಿಗ್ಗೆ ವಾಕಿಂಗ್ ಹೋಗ್ತೀನಿ | ಐ ಗೋ ಫಾರ್ ಎ ವಾಕ್ ಎವ್ರಿ ಮಾರ್ನಿಂಗ್ | |
+| 8 | The library is free for everyone | ಗ್ರಂಥಾಲಯ ಎಲ್ಲರಿಗೂ ಉಚಿತ | ದ ಲೈಬ್ರರಿ ಈಸ್ ಫ್ರೀ ಫಾರ್ ಎವ್ರಿಒನ್ | |
+| 9 | We share food with neighbors | ನೆರೆಹೊರೆಯವರ ಜೊತೆ ಊಟ ಹಂಚಿಕೊಳ್ತೇವೆ | ವಿ ಶೇರ್ ಫುಡ್ ವಿತ್ ನೇಬರ್ಸ್ | |
+| 10 | This city is very safe | ಈ ನಗರ ತುಂಬಾ ಸುರಕ್ಷಿತ | ದಿಸ್ ಸಿಟಿ ಈಸ್ ವೆರಿ ಸೇಫ್ | |
+| 11 | I feel at home here now | ಈಗ ಇದೂ ನನ್ನ ಮನೆ ಅನಿಸುತ್ತೆ | ಐ ಫೀಲ್ ಅಟ್ ಹೋಮ್ ಹಿಯರ್ ನೌ | |
 
 ## 🪶 Guru ಸಂಭಾಷಣೆಗಳು
 
@@ -412,4 +478,4 @@ For a native Kannada speaker: read each row, mark ✅ if natural, or write the b
 | I miss you | ನಿನ್ನ ನೆನಪು ಆಗ್ತಿದೆ | |
 
 ---
-_26 parvas · 244 items · 29 dialog lines._
+_26 parvas · 310 items · 29 dialog lines._
