@@ -3,6 +3,7 @@
 <meta name="theme-color" content="#0D0A20">
 <link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="icon-192.png">
+<meta name="google" content="notranslate">
 <title>ಜನನಿ · Janani — English for Amma</title>
 <style>
   :root{
@@ -463,6 +464,10 @@
     <div class="srow"><div class="lab kn">ಆರಾಮ ಮೋಡ್ (♾ ಹೃದಯ)<span class="en">Relaxed mode — never run out of hearts</span></div>
       <button class="tg on" id="tgRelax" role="switch"><i></i></button></div>
     <div class="srow" style="flex-direction:column;align-items:stretch;gap:8px">
+      <div class="lab kn">ಧ್ವನಿ ಆಯ್ಕೆ<span class="en">Voice — pick the one that sounds best; it will speak a sample</span></div>
+      <div class="keyrow"><select id="voiceSel" style="width:100%;padding:12px;border-radius:12px;border:2px solid var(--silk-line);font-family:inherit;font-weight:700;background:#fff;color:var(--ink)"></select></div>
+    </div>
+    <div class="srow" style="flex-direction:column;align-items:stretch;gap:8px">
       <div class="lab kn">AI ಗುರು (ಐಚ್ಛಿಕ)<span class="en">Claude API key — turns Guru into a live AI tutor. Stays only on this phone.</span></div>
       <div class="keyrow"><input id="guruKey" type="password" placeholder="sk-ant-…" autocomplete="off"></div>
     </div>
@@ -761,6 +766,7 @@
     if(typeof s.settings.relax==="undefined") s.settings.relax=true;
     if(typeof s.settings.music==="undefined") s.settings.music=true;
     if(typeof s.settings.accentIn==="undefined") s.settings.accentIn=true;
+    if(typeof s.settings.voiceName==="undefined") s.settings.voiceName=null;
     return s;
   }
   function save(){ try{ localStorage.setItem(KEY, JSON.stringify(state)); }catch(e){} }
@@ -804,6 +810,10 @@
   }
   function pickVoice(){
     if(!voices.length) loadVoices();
+    if(state.settings.voiceName){
+      var chosen=voices.filter(function(v){ return v.name===state.settings.voiceName; })[0];
+      if(chosen) return chosen;
+    }
     var en=voices.filter(function(v){ return /^en(-|_|$)/i.test(v.lang||""); });
     if(!en.length) return voices[0]||null;
     en.sort(function(a,b){ return scoreVoice(b)-scoreVoice(a); });
@@ -1398,7 +1408,7 @@
   $("guruKey").value=state.settings.guruKey||"";
   $("guruKey").addEventListener("change",function(){ state.settings.guruKey=$("guruKey").value.trim(); save(); });
   setupMic();
-  $("btnGear").onclick=function(){ $("sheetBg").classList.remove("hidden"); };
+  $("btnGear").onclick=function(){ fillVoiceSel(); $("sheetBg").classList.remove("hidden"); };
   $("btnCloseSheet").onclick=function(){ $("sheetBg").classList.add("hidden"); };
   $("sheetBg").addEventListener("click",function(e){ if(e.target===$("sheetBg")) $("sheetBg").classList.add("hidden"); });
   function applyFs(){ document.documentElement.style.setProperty("--fs",state.settings.fs); $("fsVal").textContent=Math.round(state.settings.fs*100)+"%"; }
@@ -1414,6 +1424,18 @@
   $("tgRelax").onclick=function(){ state.settings.relax=!state.settings.relax; save(); applyTg(); };
   $("tgMusic").onclick=function(){ state.settings.music=!state.settings.music; save(); applyTg(); if(state.settings.music) startMusic(); else stopMusic(); };
   $("tgAccent").onclick=function(){ state.settings.accentIn=!state.settings.accentIn; save(); applyTg(); speak("Hello, how are you"); };
+  function fillVoiceSel(){
+    var sel=$("voiceSel"); if(!sel) return;
+    if(!voices.length) loadVoices();
+    var en=voices.filter(function(v){ return /^en(-|_|$)/i.test(v.lang||""); });
+    sel.innerHTML='<option value="">ಸ್ವಯಂಚಾಲಿತ · Automatic</option>'+en.map(function(v){
+      return '<option value="'+esc(v.name)+'"'+(state.settings.voiceName===v.name?" selected":"")+'>'+esc(v.name)+" ("+v.lang+")</option>";
+    }).join("");
+  }
+  $("voiceSel").addEventListener("change",function(){
+    state.settings.voiceName=$("voiceSel").value||null; save();
+    speak("Hello, how are you? Good morning.");
+  });
   $("btnReset").onclick=function(){
     if(confirm("ಅಕ್ಕಮ್ಮನ ಎಲ್ಲಾ ಪ್ರಗತಿಯನ್ನು ಅಳಿಸಬೇಕೆ? · Reset all progress?")){
       state={done:{},xp:0,streak:0,lastDay:null,words:{},settings:state.settings}; save();
