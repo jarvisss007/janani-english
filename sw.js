@@ -1,5 +1,5 @@
 /* Janani — offline cache */
-var CACHE = "janani-v8";
+var CACHE = "janani-v9";
 var ASSETS = ["./", "./index.html", "./manifest.json", "./icon-192.png", "./icon-512.png"];
 
 self.addEventListener("install", function (e) {

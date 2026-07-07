@@ -1474,6 +1474,7 @@
   if(state.profile){ initContent(); renderPath(); show("path"); }
   else { renderSetup(); show("setup"); }
   if(location.hash==="#demo-guru" && state.profile){ guruOpen(); }
+  if((location.hash==="#demo-parva"||location.search==="?shot=parva") && state.profile){ openParva(1); }
 })();
 </script>
 <script>
