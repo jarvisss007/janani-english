@@ -1,7 +1,6 @@
 # ಕನ್ನಡ ಪರಿಶೀಲನೆ · Kannada Review Checklist
 
 For a native Kannada speaker: read each row, mark ✅ if natural, or write the better phrasing.
-Check (a) the Kannada meaning is natural spoken Kannada, (b) the pronunciation column sounds like the English when read aloud.
 
 
 ## 🛕 ಮೊದಲ ಮಾತು — First words
@@ -10,16 +9,18 @@ Check (a) the Kannada meaning is natural spoken Kannada, (b) the pronunciation c
 |---|---|---|---|---|
 | 1 | Hello, how are you | ನಮಸ್ಕಾರ, ಹೇಗಿದ್ದೀರಾ | ಹಲೋ, ಹೌ ಆರ್ ಯೂ | |
 | 2 | I am fine, thank you | ನಾನು ಚೆನ್ನಾಗಿದ್ದೇನೆ, ಧನ್ಯವಾದ | ಐ ಆಮ್ ಫೈನ್, ಥ್ಯಾಂಕ್ ಯೂ | |
-| 3 | Good morning | ಶುಭೋದಯ | ಗುಡ್ ಮಾರ್ನಿಂಗ್ | |
-| 4 | Please | ದಯವಿಟ್ಟು | ಪ್ಲೀಸ್ | |
-| 5 | Excuse me | ಸ್ವಲ್ಪ ಕೇಳಿ | ಎಕ್ಸ್‌ಕ್ಯೂಸ್ ಮಿ | |
-| 6 | Nice to meet you | ನಿಮ್ಮನ್ನು ಭೇಟಿಯಾಗಿ ಸಂತೋಷ | ನೈಸ್ ಟು ಮೀಟ್ ಯೂ | |
-| 7 | Good evening | ಶುಭ ಸಂಜೆ | ಗುಡ್ ಈವ್ನಿಂಗ್ | |
-| 8 | Good night | ಶುಭ ರಾತ್ರಿ | ಗುಡ್ ನೈಟ್ | |
+| 3 | What is your name | ನಿಮ್ಮ ಹೆಸರೇನು | ವಾಟ್ ಈಸ್ ಯುವರ್ ನೇಮ್ | |
+| 4 | Excuse me | ಸ್ವಲ್ಪ ಕೇಳಿ | ಎಕ್ಸ್‌ಕ್ಯೂಸ್ ಮಿ | |
+| 5 | Please help me | ದಯವಿಟ್ಟು ಸಹಾಯ ಮಾಡಿ | ಪ್ಲೀಸ್ ಹೆಲ್ಪ್ ಮಿ | |
+| 6 | No problem | ತೊಂದರೆ ಇಲ್ಲ | ನೋ ಪ್ರಾಬ್ಲಮ್ | |
+| 7 | Good morning | ಶುಭೋದಯ | ಗುಡ್ ಮಾರ್ನಿಂಗ್ | |
+| 8 | Nice to meet you | ನಿಮ್ಮನ್ನು ಭೇಟಿಯಾಗಿ ಸಂತೋಷ | ನೈಸ್ ಟು ಮೀಟ್ ಯೂ | |
 | 9 | You are welcome | ಇದಕ್ಕೇನಂತೆ | ಯೂ ಆರ್ ವೆಲ್ಕಮ್ | |
-| 10 | See you later | ಆಮೇಲೆ ಸಿಗೋಣ | ಸೀ ಯೂ ಲೇಟರ್ | |
-| 11 | No problem | ತೊಂದರೆ ಇಲ್ಲ | ನೋ ಪ್ರಾಬ್ಲಮ್ | |
-| 12 | Please come in | ದಯವಿಟ್ಟು ಒಳಗೆ ಬನ್ನಿ | ಪ್ಲೀಸ್ ಕಮ್ ಇನ್ | |
+| 10 | Good evening | ಶುಭ ಸಂಜೆ | ಗುಡ್ ಈವ್ನಿಂಗ್ | |
+| 11 | See you later | ಆಮೇಲೆ ಸಿಗೋಣ | ಸೀ ಯೂ ಲೇಟರ್ | |
+| 12 | Good night | ಶುಭ ರಾತ್ರಿ | ಗುಡ್ ನೈಟ್ | |
+| 13 | Please come in | ದಯವಿಟ್ಟು ಒಳಗೆ ಬನ್ನಿ | ಪ್ಲೀಸ್ ಕಮ್ ಇನ್ | |
+| 14 | Please | ದಯವಿಟ್ಟು | ಪ್ಲೀಸ್ | |
 
 ## 🏡 ನನ್ನ ಬಗ್ಗೆ — About me
 
@@ -42,23 +43,23 @@ Check (a) the Kannada meaning is natural spoken Kannada, (b) the pronunciation c
 
 | # | English | ಕನ್ನಡ ಅರ್ಥ | ಉಚ್ಚಾರಣೆ | OK? |
 |---|---|---|---|---|
-| 1 | two | ಎರಡು | ಟೂ | |
-| 2 | five | ಐದು | ಫೈವ್ | |
-| 3 | ten | ಹತ್ತು | ಟೆನ್ | |
-| 4 | One coffee, please | ಒಂದು ಕಾಫಿ, ದಯವಿಟ್ಟು | ಒನ್ ಕಾಫಿ, ಪ್ಲೀಸ್ | |
-| 5 | What time is it | ಈಗ ಎಷ್ಟು ಗಂಟೆ | ವಾಟ್ ಟೈಮ್ ಈಸ್ ಇಟ್ | |
-| 6 | It is five o'clock | ಈಗ ಐದು ಗಂಟೆ | ಇಟ್ ಈಸ್ ಫೈವ್ ಒಕ್ಲಾಕ್ | |
-| 7 | today | ಇವತ್ತು | ಟುಡೇ | |
-| 8 | tomorrow | ನಾಳೆ | ಟುಮಾರೊ | |
-| 9 | I will come tomorrow | ನಾನು ನಾಳೆ ಬರುತ್ತೇನೆ | ಐ ವಿಲ್ ಕಮ್ ಟುಮಾರೊ | |
+| 1 | One coffee, please | ಒಂದು ಕಾಫಿ, ದಯವಿಟ್ಟು | ಒನ್ ಕಾಫಿ, ಪ್ಲೀಸ್ | |
+| 2 | What time is it | ಈಗ ಎಷ್ಟು ಗಂಟೆ | ವಾಟ್ ಟೈಮ್ ಈಸ್ ಇಟ್ | |
+| 3 | It is five o'clock | ಈಗ ಐದು ಗಂಟೆ | ಇಟ್ ಈಸ್ ಫೈವ್ ಒಕ್ಲಾಕ್ | |
+| 4 | today | ಇವತ್ತು | ಟುಡೇ | |
+| 5 | tomorrow | ನಾಳೆ | ಟುಮಾರೊ | |
+| 6 | I will come tomorrow | ನಾನು ನಾಳೆ ಬರುತ್ತೇನೆ | ಐ ವಿಲ್ ಕಮ್ ಟುಮಾರೊ | |
+| 7 | What day is today | ಇವತ್ತು ಯಾವ ದಿನ | ವಾಟ್ ಡೇ ಈಸ್ ಟುಡೇ | |
+| 8 | Sunday | ಭಾನುವಾರ | ಸಂಡೇ | |
+| 9 | Monday | ಸೋಮವಾರ | ಮಂಡೇ | |
 | 10 | one | ಒಂದು | ಒನ್ | |
-| 11 | three | ಮೂರು | ತ್ರೀ | |
-| 12 | four | ನಾಲ್ಕು | ಫೋರ್ | |
-| 13 | twenty | ಇಪ್ಪತ್ತು | ಟ್ವೆಂಟಿ | |
-| 14 | hundred | ನೂರು | ಹಂಡ್ರೆಡ್ | |
-| 15 | What day is today | ಇವತ್ತು ಯಾವ ದಿನ | ವಾಟ್ ಡೇ ಈಸ್ ಟುಡೇ | |
-| 16 | Sunday | ಭಾನುವಾರ | ಸಂಡೇ | |
-| 17 | Monday | ಸೋಮವಾರ | ಮಂಡೇ | |
+| 11 | two | ಎರಡು | ಟೂ | |
+| 12 | three | ಮೂರು | ತ್ರೀ | |
+| 13 | four | ನಾಲ್ಕು | ಫೋರ್ | |
+| 14 | five | ಐದು | ಫೈವ್ | |
+| 15 | ten | ಹತ್ತು | ಟೆನ್ | |
+| 16 | twenty | ಇಪ್ಪತ್ತು | ಟ್ವೆಂಟಿ | |
+| 17 | hundred | ನೂರು | ಹಂಡ್ರೆಡ್ | |
 
 ## 📱 ಫೋನ್ ಕರೆ — Phone & video call
 
@@ -376,7 +377,7 @@ Check (a) the Kannada meaning is natural spoken Kannada, (b) the pronunciation c
 | 5 | I made a new friend today | ಇವತ್ತು ಹೊಸ ಗೆಳತಿ ಸಿಕ್ಕಿದಳು | ಐ ಮೇಡ್ ಎ ನ್ಯೂ ಫ್ರೆಂಡ್ ಟುಡೇ | |
 | 6 | Everyone was very kind to us | ಎಲ್ಲರೂ ನಮಗೆ ತುಂಬಾ ಒಳ್ಳೆಯವರಾಗಿದ್ದರು | ಎವ್ರಿಒನ್ ವಾಸ್ ವೆರಿ ಕೈಂಡ್ ಟು ಅಸ್ | |
 
-## 🪶 Guru ಸಂಭಾಷಣೆಗಳು — conversation practice lines
+## 🪶 Guru ಸಂಭಾಷಣೆಗಳು
 
 | English | ಕನ್ನಡ | OK? |
 |---|---|---|
@@ -411,4 +412,4 @@ Check (a) the Kannada meaning is natural spoken Kannada, (b) the pronunciation c
 | I miss you | ನಿನ್ನ ನೆನಪು ಆಗ್ತಿದೆ | |
 
 ---
-_26 parvas · 242 course items · 29 dialog lines._
+_26 parvas · 244 items · 29 dialog lines._
