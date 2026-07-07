@@ -24,6 +24,8 @@
     background:linear-gradient(180deg,var(--sky1) 0%,var(--sky2) 30%,var(--sky3) 62%,var(--sky4) 82%,var(--horizon) 105%);
     background-attachment:fixed;
   }
+  body.sky-morning{background:linear-gradient(180deg,#241638 0%,#3A2158 28%,#7A3D66 58%,#C97C5A 84%,#E8B36A 105%);background-attachment:fixed}
+  body.sky-day{background:linear-gradient(180deg,#1B2145 0%,#2C3168 34%,#5C4C86 64%,#8E5C74 85%,#D89A5E 105%);background-attachment:fixed}
   .kn{font-family:"Noto Sans Kannada","Noto Sans","Nirmala UI",sans-serif}
   button{font-family:inherit;font-weight:800;cursor:pointer}
   .hidden{display:none!important}
@@ -70,7 +72,7 @@
   .bg-ganesha{position:fixed;right:-30px;top:30%;width:220px;opacity:.12;z-index:0;pointer-events:none;filter:drop-shadow(0 0 30px rgba(224,177,94,.25))}
   .bg-gopuram{position:fixed;bottom:0;left:0;width:100%;height:110px;opacity:.65;z-index:0;pointer-events:none}
   @media (prefers-reduced-motion:reduce){
-    .stars,.stars2,.petal,.cloud,.node .bubble,.mascot{animation:none!important}
+    .stars,.stars2,.petal,.cloud,.node .bubble,.mascot,.diya.lit{animation:none!important}
     *{transition:none!important}
   }
 
@@ -241,6 +243,13 @@
     font-size:calc(1.02rem*var(--fs));box-shadow:0 8px 22px rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.14)}
   .level-band .lb-en{display:block;font-size:calc(.66rem*var(--fs));letter-spacing:1.3px;text-transform:uppercase;opacity:.85;margin-top:4px;font-weight:800}
 
+  /* ================= PROGRESS RANGOLI ================= */
+  .rangoli-wrap{text-align:center;padding:2px 0 10px}
+  .rangoli{width:150px;height:150px;display:inline-block;filter:drop-shadow(0 0 22px rgba(224,177,94,.25))}
+  .rangoli-cap{font-size:calc(.72rem*var(--fs));color:#D9C4F0;font-weight:700;margin-top:2px}
+  .r-lit{fill:var(--gold);stroke:none;opacity:.95}
+  .r-dim{fill:none;stroke:rgba(224,177,94,.3);stroke-width:1.4}
+
   /* ================= TEMPLE-DOOR COURTYARD ================= */
   .hero{width:100%;border:1.5px solid rgba(255,243,214,.55);border-radius:18px;padding:16px;cursor:pointer;
     background:linear-gradient(160deg,#F2CE7E,#E0B15E 55%,#B9852F);color:#3A2504;display:flex;flex-direction:column;gap:3px;
@@ -264,7 +273,8 @@
   .diya{width:70px;height:76px;border:2px solid var(--silk-line);border-radius:50% 50% 42% 42%;background:#fff;
     font-size:1.5rem;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;font-weight:900;color:var(--ink);font-family:inherit;cursor:pointer}
   .diya span{font-size:.68rem;color:var(--ink-soft)}
-  .diya.lit{background:linear-gradient(180deg,#FFF3D6,#F2CE7E);border-color:var(--gold-d)}
+  .diya.lit{background:linear-gradient(180deg,#FFF3D6,#F2CE7E);border-color:var(--gold-d);animation:flick 2.6s ease-in-out infinite}
+  @keyframes flick{0%,100%{filter:brightness(1)}50%{filter:brightness(1.22) drop-shadow(0 0 7px rgba(255,200,90,.65))}}
   .diya.next{border-color:var(--gold);box-shadow:0 0 18px rgba(224,177,94,.55)}
   .diya.off{opacity:.45;cursor:default}
 
@@ -358,6 +368,10 @@
       <button class="hero hidden kn" id="heroGo"></button>
       <button class="btn3d hidden" id="btnReview" style="width:100%">🏹 ದಿನದ ಅಭ್ಯಾಸ · TODAY'S ABHYASA</button>
       <button class="btn3d jade" id="btnGuru" style="width:100%;margin-top:12px">🪶 ಗುರು ಜೊತೆ ಮಾತು · PRACTICE CONVERSATION</button>
+    </div>
+    <div class="rangoli-wrap">
+      <svg id="rangoliSvg" class="rangoli" viewBox="0 0 160 160" aria-hidden="true"></svg>
+      <div class="rangoli-cap kn" id="rangoliCap"></div>
     </div>
     <div id="pathNodes"></div>
     <div class="journey-end">
@@ -455,6 +469,7 @@
     <button class="reset kn" id="btnProfile" style="border-color:var(--silk-line);color:var(--ink)">ಹೆಸರು / ಗುರಿ ಬದಲಿಸಿ · Edit name &amp; goals</button>
     <button class="reset kn" id="btnReset">ಪ್ರಗತಿಯನ್ನು ಅಳಿಸಿ · Reset all progress</button>
     <button class="btn3d close kn" id="btnCloseSheet">ಮುಚ್ಚಿ · CLOSE</button>
+    <div class="sub" style="text-align:center;margin-top:12px;opacity:.7">ಜನನಿ · Janani v1.0.0 — made with love</div>
   </div>
 </div>
 
@@ -900,6 +915,7 @@
   function renderPath(){
     renderHud();
     $("greetTitle").textContent="ನಮಸ್ಕಾರ, "+profName()+" 🌼";
+    renderRangoli();
     var next=null,i;
     for(i=0;i<LESSONS.length;i++){ if(!state.done[LESSONS[i].key]){ next=LESSONS[i]; break; } }
     var hero=$("heroGo");
@@ -934,6 +950,23 @@
     Array.prototype.forEach.call($("pathNodes").querySelectorAll(".door"),function(d){
       d.addEventListener("click",function(){ openParva(+d.getAttribute("data-ui")); });
     });
+  }
+  function renderRangoli(){
+    var total=LESSONS.length, done=0;
+    LESSONS.forEach(function(l){ if(state.done[l.key]) done++; });
+    var svg=$("rangoliSvg"); if(!svg) return;
+    var parts=[{t:"circle",a:{cx:80,cy:80,r:6}}], i;
+    for(i=0;i<8;i++)  parts.push({t:"ellipse",a:{cx:80,cy:52,rx:7,ry:16},rot:i*45});
+    for(i=0;i<12;i++) parts.push({t:"circle",a:{cx:80,cy:28,r:3.5},rot:i*30+15});
+    for(i=0;i<8;i++)  parts.push({t:"path",a:{d:"M80,14 q6,10 0,20 q-6,-10 0,-20"},rot:i*45+22.5});
+    var lit=Math.round(parts.length*done/Math.max(1,total));
+    var out="";
+    parts.forEach(function(p,ix){
+      var attrs="",k; for(k in p.a) attrs+=k+'="'+p.a[k]+'" ';
+      out+="<"+p.t+" "+attrs+'class="'+(ix<lit?"r-lit":"r-dim")+'"'+(p.rot!=null?' transform="rotate('+p.rot+' 80 80)"':"")+"/>";
+    });
+    svg.innerHTML=out;
+    $("rangoliCap").textContent="ನಿಮ್ಮ ಪ್ರಗತಿಯ ರಂಗೋಲಿ · "+done+" / "+total+" ಪಾಠ";
   }
   function openParva(ui){
     var u=UNITS[ui], uL=LESSONS.filter(function(l){return l.ui===ui;});
@@ -1426,6 +1459,11 @@
     renderSetup(); show("setup");
   };
 
+  (function(){
+    var h=new Date().getHours();
+    if(h>=5&&h<11) document.body.classList.add("sky-morning");
+    else if(h>=11&&h<17) document.body.classList.add("sky-day");
+  })();
   applyFs(); applyTg();
   /* #demo — seeded state for store screenshots; harmless for real users */
   if(location.hash.indexOf("#demo")===0 && !state.profile){
