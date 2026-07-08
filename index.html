@@ -371,6 +371,7 @@
       <button class="hero hidden kn" id="heroGo"></button>
       <button class="btn3d hidden" id="btnReview" style="width:100%">🏹 ದಿನದ ಅಭ್ಯಾಸ · TODAY'S ABHYASA</button>
       <button class="btn3d jade" id="btnGuru" style="width:100%;margin-top:12px">🪶 ಗುರು ಜೊತೆ ಮಾತು · PRACTICE CONVERSATION</button>
+      <button class="btn3d ghost" id="btnShare" style="width:100%;margin-top:12px">📤 ಕುಟುಂಬಕ್ಕೆ ಪ್ರಗತಿ ಕಳಿಸಿ · SHARE MY PROGRESS</button>
     </div>
     <div class="rangoli-wrap">
       <svg id="rangoliSvg" class="rangoli" viewBox="0 0 160 160" aria-hidden="true"></svg>
@@ -1606,6 +1607,20 @@
   $("btnDoneNext").onclick=function(){ renderPath(); show("path"); };
   $("btnReview").onclick=function(){ startReview(); };
   $("btnGuru").onclick=function(){ guruOpen(); };
+  $("btnShare").onclick=function(){
+    var total=LESSONS.length, done=0;
+    LESSONS.forEach(function(l){ if(state.done[l.key]) done++; });
+    var lvl=1, i;
+    for(i=0;i<LESSONS.length;i++){ if(state.done[LESSONS[i].key]) lvl=Math.max(lvl,UNITS[LESSONS[i].ui].lvl||1); }
+    var txt="🪔 ಜನನಿ · Janani — "+profName()+"\n"+
+      "🔥 "+state.streak+" ದಿನದ ಸರಣಿ · day streak\n"+
+      "🪔 "+done+" / "+total+" ಪಾಠ ಮುಗಿದಿದೆ · lessons done\n"+
+      "⭐ "+state.xp+" XP · ಹಂತ "+lvl+" · Level "+lvl+"\n"+
+      "ನನ್ನ ಪ್ರಗತಿಯ ರಂಗೋಲಿ ಬೆಳೆಯುತ್ತಿದೆ! My rangoli is growing!\n"+
+      "https://jarvisss007.github.io/janani-english/";
+    if(navigator.share){ navigator.share({text:txt}).catch(function(){}); }
+    else{ window.open("https://wa.me/?text="+encodeURIComponent(txt),"_blank"); }
+  };
   $("btnGuruBack").onclick=function(){ renderPath(); show("path"); };
   $("btnSend").onclick=function(){ guruSendText(); };
   $("guruText").addEventListener("keydown",function(e){ if(e.key==="Enter") guruSendText(); });
