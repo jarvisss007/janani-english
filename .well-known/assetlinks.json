@@ -1,0 +1,8 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "io.github.jarvisss007.janani",
+    "sha256_cert_fingerprints": ["24:5D:52:4C:42:F8:9E:76:0A:17:F7:BA:B0:80:F5:91:DB:49:79:C8:24:6F:BF:CE:62:25:08:B5:FD:1C:B9:B5"]
+  }
+}]
